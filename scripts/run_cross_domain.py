@@ -1,65 +1,96 @@
-"""Cross-domain transfer experiments — Cassio's coordination.
+"""Cross-domain aggregation — Cassio's task.
 
-Runs both beat and pitch models on both domains and produces a combined summary table.
+Reads the per-condition result files produced by Clara (rhythm) and Louis
+(pitch) and stitches them into a single unified summary table covering
+all 3 conditions (A / B / C) × 2 domains (Western / Carnatic) for each
+task.
+
+This script does NOT retrain or re-run any model. It only reads CSVs and
+JSONs from disk, so it's cheap (milliseconds) and can be re-run any time
+new results land.
+
+Expected input layout (see TUTORIAL.md §3 and §4):
+
+    results/
+    ├── rhythm/
+    │   ├── A_madmom/beat_results.csv
+    │   ├── B_carnatic_from_scratch/test_summary.json
+    │   ├── B_on_western/beat_results.csv
+    │   ├── C_finetuned_from_western/test_summary.json
+    │   └── C_on_western/beat_results.csv
+    └── pitch/
+        ├── A_crepe/pitch_results.csv
+        ├── B_carnatic_from_scratch/comparison_all.csv
+        └── C_finetuned_from_crepe/comparison_all.csv
+
+Missing files emit a warning but don't crash — useful while teammates'
+runs are still in progress.
 
 Usage:
-    python scripts/run_cross_domain.py \
-        --saraga-home  data/raw/saraga \
-        --gtzan-home   data/raw/gtzan \
-        --maestro-home data/raw/maestro \
-        --output-dir   results/cross_domain \
-        --max-tracks   10
+    PYTHONPATH=. python scripts/run_cross_domain.py \
+        --results-root results \
+        --output-dir   results/cross_domain
 """
 
 import argparse
-import json
 from pathlib import Path
 
-import pandas as pd
-
-from src.preprocessing.saraga import get_saraga_split
-from src.preprocessing.gtzan import get_gtzan_split
-from src.preprocessing.maestro import get_maestro_split
 from src.cross_domain.experiments import (
-    run_beat_cross_domain,
-    run_pitch_cross_domain,
-    summarise_cross_domain,
+    load_all_results,
+    summarise,
+    pivot_table,
     save_results,
+    discover_results,
 )
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--saraga-home", default="data/raw/saraga")
-    parser.add_argument("--gtzan-home", default="data/raw/gtzan")
-    parser.add_argument("--maestro-home", default="data/raw/maestro")
+    parser.add_argument("--results-root", default="results",
+                        help="Root directory containing rhythm/ and pitch/ subfolders")
     parser.add_argument("--output-dir", default="results/cross_domain")
-    parser.add_argument("--max-tracks", type=int, default=None)
+    parser.add_argument("--strict", action="store_true",
+                        help="Fail if any expected result file is missing")
     args = parser.parse_args()
 
+    results_root = Path(args.results_root)
     out = Path(args.output_dir)
     out.mkdir(parents=True, exist_ok=True)
 
-    print("Loading datasets...")
-    carnatic = get_saraga_split(args.saraga_home, split="test", max_tracks=args.max_tracks)
-    western_rhythm = get_gtzan_split(args.gtzan_home, max_tracks=args.max_tracks)
-    western_pitch = get_maestro_split(args.maestro_home, split="test", max_tracks=args.max_tracks)
+    # ── Report which files were found ─────────────────────────────────────
+    print("Discovering result files…")
+    found = discover_results(results_root)
+    for label, path in found.items():
+        status = "✓" if path else "MISSING"
+        print(f"  [{status}] {label:<10} {path if path else ''}")
 
-    print("\n--- Beat tracking cross-domain ---")
-    beat_df = run_beat_cross_domain(carnatic, western_rhythm)
-    save_results(beat_df, str(out / "beat_cross_domain.csv"))
-    beat_summary = summarise_cross_domain(beat_df, task="beat_tracking")
-    print(beat_summary.to_string())
+    # ── Load + aggregate ──────────────────────────────────────────────────
+    print("\nLoading all available results…")
+    long_df = load_all_results(results_root, strict=args.strict)
+    save_results(long_df, str(out / "all_results_long.csv"))
 
-    print("\n--- Pitch estimation cross-domain ---")
-    pitch_df = run_pitch_cross_domain(carnatic, western_pitch)
-    save_results(pitch_df, str(out / "pitch_cross_domain.csv"))
-    pitch_summary = summarise_cross_domain(pitch_df, task="pitch_estimation")
-    print(pitch_summary.to_string())
+    summary = summarise(long_df)
+    save_results(summary, str(out / "cross_domain_summary.csv"))
 
-    combined = pd.concat([beat_summary, pitch_summary])
-    combined.to_csv(out / "cross_domain_summary.csv")
-    print(f"\nCross-domain summary saved to {out / 'cross_domain_summary.csv'}")
+    # ── Pretty-print the 3 × 2 tables ─────────────────────────────────────
+    print("\n=== 3 × 2 summary tables (mean across tracks) ===")
+    for task, metric in [
+        ("beat",  "f_measure"),
+        ("beat",  "cemgil"),
+        ("beat",  "downbeat_f_measure"),
+        ("pitch", "raw_pitch_accuracy"),
+        ("pitch", "overall_accuracy"),
+        ("pitch", "mean_abs_error_cents"),
+    ]:
+        table = pivot_table(summary, metric=metric, task=task)
+        if table.empty:
+            continue
+        print(f"\n--- {task} | {metric} ---")
+        print(table.to_string())
+
+    print(f"\nSaved long-form table:  {out / 'all_results_long.csv'}")
+    print(f"Saved summary table:    {out / 'cross_domain_summary.csv'}")
+    print("\nNext: open notebooks/04_cross_domain.ipynb for figures.")
 
 
 if __name__ == "__main__":

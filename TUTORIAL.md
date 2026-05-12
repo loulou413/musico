@@ -348,32 +348,87 @@ After running §3 and §4, your six headline numbers per task live here:
 
 ---
 
-## §6 — Cross-domain combined run  [Cassio]
+## §6 — Cross-domain aggregation  [Cassio]
 
-Once Clara and Louis have produced their per-task results, run the combined
-cross-domain script to produce the unified report table.
+### What this step does (and doesn't do)
+
+The cross-domain step **does not retrain anything**. It reads the per-condition
+result files that Clara (§3) and Louis (§4) produced, stitches them into one
+unified long-form table, and prints the 3 × 2 summary per task and metric.
+
+So Cassio's role is the **aggregator + analyst**, not a re-runner. The script
+is cheap (milliseconds) and can be re-run any time new results land on disk.
+
+### When can Cassio start?
+
+- **Any time** — `run_cross_domain.py` simply reports which result files are
+  missing and proceeds with what it finds. You can run it after only condition A
+  is done to see the current 3 × 2 grid filling in.
+- **No retraining** ever happens here, regardless of order.
+
+### Run it
 
 ```bash
 PYTHONPATH=. python scripts/run_cross_domain.py \
-    --saraga-home  data/raw/saraga \
-    --gtzan-home   data/raw/gtzan \
-    --maestro-home data/raw/maestro \
+    --results-root results \
     --output-dir   results/cross_domain
 ```
 
-**Produces in `results/cross_domain/`:**
+The script first lists which expected files were found vs missing:
+
+```
+Discovering result files…
+  [✓]       beat_A     results/rhythm/A_madmom/beat_results.csv
+  [MISSING] beat_B_W
+  [✓]       beat_B_C   results/rhythm/B_carnatic_from_scratch/test_summary.json
+  …
+```
+
+Add `--strict` if you want it to crash on any missing file instead of warning.
+
+### What it produces in `results/cross_domain/`
 
 | File | Contents |
 |---|---|
-| `beat_cross_domain.csv` | Per-track beat scores, all tracks, both domains |
-| `pitch_cross_domain.csv` | Per-track pitch scores, all tracks, both domains |
-| `cross_domain_summary.csv` | **Aggregated mean ± std for every metric, by domain and task — this is the table that goes into the report** |
+| `all_results_long.csv` | Long-form table: one row per (task, condition, domain, track, metric, value). The raw input for any notebook figure. |
+| `cross_domain_summary.csv` | Aggregated mean ± std for every (task, metric, condition, domain) — **this is the table that goes into the report**. |
 
-Then open the cross-domain notebook for the report figures:
+It also prints the 3 × 2 pivots to the terminal so you can sanity-check at a glance:
+
+```
+--- beat | f_measure ---
+domain     western  carnatic
+condition
+A           0.7811    0.4203
+B           0.5523    0.6087
+C           0.6612    0.6791
+
+--- pitch | raw_pitch_accuracy ---
+…
+```
+
+### Where each input file comes from
+
+| Aggregator label | Source script (§) | File on disk |
+|---|---|---|
+| `beat_A` | §3.1 | `results/rhythm/A_madmom/beat_results.csv` |
+| `beat_B_W` | §3.2 step 2 | `results/rhythm/B_on_western/beat_results.csv` |
+| `beat_B_C` | §3.2 step 1 | `results/rhythm/B_carnatic_from_scratch/test_summary.json` |
+| `beat_C_W` | §3.3 step C.3 | `results/rhythm/C_on_western/beat_results.csv` |
+| `beat_C_C` | §3.3 step C.2 | `results/rhythm/C_finetuned_from_western/test_summary.json` |
+| `pitch_A` | §4.1 | `results/pitch/A_crepe/pitch_results.csv` |
+| `pitch_B` | §4.2 | `results/pitch/B_carnatic_from_scratch/comparison_all.csv` |
+| `pitch_C` | §4.3 step C.2 | `results/pitch/C_finetuned_from_crepe/comparison_all.csv` |
+
+### Notebook for figures
 
 ```bash
 jupyter notebook notebooks/04_cross_domain.ipynb
 ```
+
+The notebook reads `results/cross_domain/all_results_long.csv` and produces
+grouped bar charts comparing the three conditions on each domain × task ×
+metric. Edit it freely — it's the place where the report figures get shaped.
 
 ---
 

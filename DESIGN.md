@@ -296,11 +296,11 @@ new dataset is a matter of writing one new loader.
 | `evaluation.py` | `mir_eval.melody.evaluate` wrapper — RPA, OA, MAE cents, semitone-snap ratio (a Carnatic-specific metric: fraction of voiced frames within ±25 cents of a 12-TET note, useful for detecting gamaka mishandling). |
 | `analysis.py` | Plotting helpers. |
 
-### `src/cross_domain/`  — combined experiments
+### `src/cross_domain/`  — aggregation, not re-running
 
 | File | What it does |
 |---|---|
-| `experiments.py` | Runs both beat and pitch on both domains in one pass. Produces the unified CSVs used in `notebooks/04_cross_domain.ipynb` and the report's headline table. |
+| `experiments.py` | **Reads** the per-condition result files produced by §3 and §4 from disk and stitches them into one long-form DataFrame and a 3 × 2 summary table. Crucially, it does *not* re-run models — Cassio's role is to aggregate Clara's and Louis's outputs, not to retrain anything. Missing input files emit a warning but don't crash, so the aggregator can be re-run any time new results land. Exposes `load_all_results`, `summarise`, `pivot_table`, `discover_results`. |
 
 ### `scripts/`  — entry points
 
@@ -313,7 +313,7 @@ new dataset is a matter of writing one new loader.
 | `train_pitch_carnatic.py` | Same for pitch with `CREPELike`. `--init-checkpoint results/pitch/crepe_pretrained.pt` = fine-tune real CREPE; without = from scratch. |
 | `pretrain_beat_western.py` | **Step 1 of beat condition C.** Trains `BeatActivationModel` on GTZAN beats to produce the Western checkpoint that `train_beat_carnatic.py --init-checkpoint` consumes. |
 | `convert_crepe_weights.py` | **Step 1 of pitch condition C.** Loads the official Keras CREPE 'full' model, copies its weights into a `CREPELike` PyTorch `state_dict`, verifies bit-exact output equivalence, and saves the `.pt`. |
-| `run_cross_domain.py` | Cassio's aggregation step — produces the final report table. |
+| `run_cross_domain.py` | Cassio's aggregation step. Reads Clara's and Louis's result files from disk, prints the 3 × 2 summary tables, and writes `results/cross_domain/all_results_long.csv` + `cross_domain_summary.csv` for the report. Does not retrain. Tolerates missing files (warns) so it can be run incrementally. |
 
 ### `notebooks/`
 
