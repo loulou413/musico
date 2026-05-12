@@ -15,8 +15,11 @@ def results_to_dataframe(results: list[BeatEvalResult]) -> pd.DataFrame:
 
 
 def plot_metric_by_domain(df: pd.DataFrame, metric: str, output_dir: str) -> None:
+    plot_df = df.dropna(subset=[metric])
+    if plot_df.empty or plot_df["domain"].nunique() < 2:
+        return
     fig, ax = plt.subplots(figsize=(7, 4))
-    sns.boxplot(data=df, x="domain", y=metric, ax=ax)
+    sns.boxplot(data=plot_df, x="domain", y=metric, ax=ax)
     ax.set_title(f"Beat tracking — {metric}")
     ax.set_xlabel("Domain")
     ax.set_ylabel(metric)

@@ -58,7 +58,7 @@ def evaluate_beats(
         domain=track.domain,
         f_measure=scores["F-measure"],
         cemgil=scores["Cemgil"],
-        continuity=scores["CMLt"],
+        continuity=scores["Correct Metric Level Total"],
         information_gain=scores["Information gain"],
         downbeat_f_measure=db_f,
         n_ref_beats=len(ref_beats),

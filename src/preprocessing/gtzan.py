@@ -19,7 +19,7 @@ def load_gtzan_track(track, sr: int = 22050) -> AudioTrack:
 
     beat_times = None
     if hasattr(track, "beats") and track.beats is not None:
-        beat_times = np.array(track.beats.beat_times)
+        beat_times = np.array(track.beats.times)
 
     metadata = {
         "genre": getattr(track, "genre", None),
