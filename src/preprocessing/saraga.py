@@ -28,13 +28,10 @@ def load_saraga_track(track, data_home: str, sr: int = 22050) -> AudioTrack:
     f0_times = None
     f0_freqs = None
 
-    # Beats / sama (downbeat equivalent in Carnatic)
-    if hasattr(track, "beats") and track.beats is not None:
-        beats = track.beats
-        beat_times = np.array(beats.times)
-        # sama positions (first beat of each tala cycle) treated as downbeats
-        sama_mask = np.array(beats.positions) == 1
-        downbeat_times = beat_times[sama_mask]
+    # Sama = first beat of each tala cycle; used as both beats and downbeats
+    if hasattr(track, "sama") and track.sama is not None:
+        beat_times = np.array(track.sama.times)
+        downbeat_times = beat_times
 
     # Pitch (vocal / lead melodic line)
     if hasattr(track, "pitch_vocal") and track.pitch_vocal is not None:
