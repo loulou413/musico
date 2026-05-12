@@ -52,7 +52,15 @@ def main():
                         help="Cap number of Saraga tracks (useful for quick tests)")
     parser.add_argument("--compare-madmom", action="store_true",
                         help="Also run madmom baseline on test split and compare")
+    parser.add_argument("--init-checkpoint", default=None,
+                        help="Path to a .pt checkpoint to initialise weights from "
+                             "(fine-tuning). When set, --lr defaults to 1e-4 if "
+                             "not explicitly overridden.")
     args = parser.parse_args()
+
+    if args.init_checkpoint and args.lr == 1e-3:
+        args.lr = 1e-4
+        print(f"[fine-tune] Lowered default LR to {args.lr}")
 
     out = Path(args.output_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -105,6 +113,15 @@ def main():
     )
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"\nModel: {n_params:,} trainable parameters")
+
+    if args.init_checkpoint:
+        print(f"Loading initial weights from {args.init_checkpoint}")
+        state = torch.load(args.init_checkpoint, map_location="cpu")
+        missing, unexpected = model.load_state_dict(state, strict=False)
+        if missing:
+            print(f"  Missing keys: {missing}")
+        if unexpected:
+            print(f"  Unexpected keys: {unexpected}")
 
     history = train(
         model=model,

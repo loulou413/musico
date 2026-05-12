@@ -1,12 +1,18 @@
-"""CREPE-compatible pitch estimation CNN (PyTorch).
+"""CREPE pitch estimation CNN (PyTorch).
 
-Architecture mirrors the original CREPE paper (Kim et al., 2018):
-  6 × Conv1d blocks with increasing filter widths, batch norm, dropout
-  → Flatten → Linear(360) → Sigmoid
+Architecture is a faithful port of the official CREPE 'full' model
+(Kim et al., 2018), so the official pretrained Keras weights can be
+loaded into it (see scripts/convert_crepe_weights.py).
 
-Using the same 360-bin frequency grid as CREPE means:
-  - Output probabilities are directly comparable to CREPE's output.
-  - The trained Carnatic model can be evaluated with the same mir_eval pipeline.
+Layer spec (matches crepe.core.build_and_load_model('full')):
+  conv1: 1024 filters, kernel (512, 1), stride (4, 1), 'same' padding, ReLU
+  conv2-4: 128 filters, kernel (64, 1), stride 1, 'same' padding, ReLU
+  conv5: 256 filters, kernel (64, 1), stride 1, 'same' padding, ReLU
+  conv6: 512 filters, kernel (64, 1), stride 1, 'same' padding, ReLU
+Each conv is followed by BatchNorm → MaxPool(2, 1, 'valid') → Dropout.
+Final: Flatten → Dense(360, sigmoid).
+
+Total params: ~22.2M (matches Keras model count).
 
 Input:  (batch, 1, 1024)   — normalised 64 ms audio frame at 16 kHz
 Output: (batch, 360)        — per-bin activation in [0, 1]
@@ -14,14 +20,14 @@ Output: (batch, 360)        — per-bin activation in [0, 1]
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 import numpy as np
 
 from .dataset import PITCH_BINS_HZ, PITCH_BINS_CENTS, N_BINS
 
 
-# Layer specs from CREPE Table 1
 _LAYERS = [
-    # (n_filters, filter_width, stride)
+    # (n_filters, kernel, stride)
     (1024, 512, 4),
     (128,   64, 1),
     (128,   64, 1),
@@ -31,45 +37,111 @@ _LAYERS = [
 ]
 
 
-class CREPELike(nn.Module):
-    """Lightweight CREPE-style CNN pitch estimator.
+def _tf_same_pad_1d(in_len: int, kernel: int, stride: int) -> tuple[int, int]:
+    """Compute asymmetric TF 'same' padding for stride > 1.
 
-    The default capacity matches CREPE's "small" model; adjust n_filters_scale
-    to shrink or grow all layers uniformly.
+    out = ceil(in / stride), total_pad = max((out - 1) * stride + kernel - in, 0).
+    TF puts the extra pixel on the right.
+    """
+    out_len = (in_len + stride - 1) // stride
+    total = max((out_len - 1) * stride + kernel - in_len, 0)
+    left = total // 2
+    right = total - left
+    return left, right
+
+
+class _CREPEConvBlock(nn.Module):
+    """conv (with TF 'same' padding) → BN → ReLU → MaxPool(2,'valid') → Dropout."""
+
+    def __init__(
+        self,
+        in_ch: int,
+        out_ch: int,
+        kernel: int,
+        stride: int,
+        in_len: int,
+        dropout: float = 0.25,
+        bn_eps: float = 1e-3,
+        bn_momentum: float = 0.01,   # PyTorch momentum = 1 - TF momentum (0.99)
+    ):
+        super().__init__()
+        self.pad_left, self.pad_right = _tf_same_pad_1d(in_len, kernel, stride)
+        self.conv = nn.Conv2d(
+            in_ch, out_ch,
+            kernel_size=(kernel, 1),
+            stride=(stride, 1),
+            padding=0,   # we pad manually
+            bias=True,
+        )
+        self.bn = nn.BatchNorm2d(out_ch, eps=bn_eps, momentum=bn_momentum)
+        self.pool = nn.MaxPool2d(kernel_size=(2, 1), stride=(2, 1))   # 'valid'
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        # x: (B, C, L, 1)
+        # Order matches Keras CREPE: Conv(relu) → BN → MaxPool → Dropout.
+        # (Keras Conv2D bakes the activation into the conv layer itself, so ReLU
+        # is applied *before* BN here.)
+        x = F.pad(x, (0, 0, self.pad_left, self.pad_right))   # pad along L only
+        x = self.conv(x)
+        x = F.relu(x)
+        x = self.bn(x)
+        x = self.pool(x)
+        x = self.dropout(x)
+        return x
+
+
+class CREPELike(nn.Module):
+    """Faithful PyTorch port of CREPE 'full'.
+
+    The signature keeps `n_filters_scale` for backward compatibility with
+    existing checkpoints/CLI flags. Only `n_filters_scale=1.0` is compatible
+    with the official CREPE weights — other values yield a from-scratch model
+    that won't accept the converted weights.
     """
 
-    def __init__(self, n_filters_scale: float = 0.5, dropout: float = 0.25):
+    def __init__(self, n_filters_scale: float = 1.0, dropout: float = 0.25):
         super().__init__()
-        layers = []
+        self.n_filters_scale = n_filters_scale
+
+        # Track length flowing through the network. Starts at 1024.
+        cur_len = 1024
         in_ch = 1
-        for n_filt, width, stride in _LAYERS:
-            out_ch = max(1, int(n_filt * n_filters_scale))
-            layers += [
-                nn.Conv1d(in_ch, out_ch, kernel_size=width, stride=stride,
-                          padding=width // 2),
-                nn.BatchNorm1d(out_ch),
-                nn.ReLU(),
-                nn.Dropout(dropout),
-                nn.MaxPool1d(kernel_size=2, stride=2),
-            ]
+        blocks = []
+        for (n_filt, kernel, stride) in _LAYERS:
+            out_ch = max(1, int(round(n_filt * n_filters_scale)))
+            blocks.append(_CREPEConvBlock(
+                in_ch=in_ch, out_ch=out_ch,
+                kernel=kernel, stride=stride,
+                in_len=cur_len, dropout=dropout,
+            ))
+            # post-conv length = ceil(cur_len / stride); post-pool = floor / 2
+            cur_len = (cur_len + stride - 1) // stride
+            cur_len = cur_len // 2
             in_ch = out_ch
+        self.blocks = nn.ModuleList(blocks)
 
-        self.conv = nn.Sequential(*layers)
-
-        # Dynamically compute flattened size with a dummy forward pass
-        with torch.no_grad():
-            dummy = torch.zeros(1, 1, 1024)
-            flat = self.conv(dummy).view(1, -1).shape[1]
-
-        self.fc = nn.Sequential(
-            nn.Linear(flat, N_BINS),
-            nn.Sigmoid(),
-        )
+        # After 6 blocks, feature shape is (B, in_ch=last_filters, cur_len, 1)
+        # CREPE transposes (Permute (3,1,2)) → (B, 1, last_filters, cur_len) before flatten,
+        # but since we just flatten everything, ordering must match to use TF weights.
+        # We emulate TF's Permute((3,1,2)) + Flatten ordering in forward().
+        self.flatten_size = in_ch * cur_len
+        self.classifier = nn.Linear(self.flatten_size, N_BINS)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """x: (B, 1, 1024) → (B, 360)"""
-        feat = self.conv(x)
-        return self.fc(feat.view(feat.size(0), -1))
+        # Reshape (B, 1, 1024) → (B, 1, 1024, 1) to match Keras's (H=1024, W=1, C=1)
+        x = x.unsqueeze(-1)
+        for blk in self.blocks:
+            x = blk(x)
+        # x: (B, C, H, W=1).  Keras Permute(dims=(2,1,3)) reorders (H,W,C) → (W,H,C),
+        # then row-major Flatten. With W=1 this is equivalent to flattening as
+        # [h0_c0, h0_c1, ..., h0_cN, h1_c0, ...]  — i.e. H is the outer index, C inner.
+        # In PyTorch (B,C,H,W) we must transpose to (B,H,W,C) first.
+        x = x.permute(0, 2, 3, 1).contiguous()  # (B, H, W, C)
+        x = x.view(x.size(0), -1)               # row-major: H outer, W middle, C inner
+        x = self.classifier(x)
+        return torch.sigmoid(x)
 
 
 # ── Inference helpers ─────────────────────────────────────────────────────────
@@ -80,33 +152,22 @@ def activation_to_hz(activation: np.ndarray) -> float:
 
 
 def activation_to_hz_viterbi(activations: np.ndarray, transition_sigma: float = 1.0) -> np.ndarray:
-    """Viterbi decoding over a sequence of activations → Hz per frame.
-
-    Penalises large pitch jumps between frames (important for gamakas vs noise).
-    activations: (T, N_BINS)
-    returns:     (T,) Hz array
-    """
+    """Viterbi decoding over a sequence of activations → Hz per frame."""
     T = len(activations)
     log_emit = np.log(activations + 1e-8)
-
-    # Transition cost: Gaussian over bin distance
     bin_dist = np.abs(np.arange(N_BINS)[:, None] - np.arange(N_BINS)[None, :])
     log_trans = -0.5 * (bin_dist / transition_sigma) ** 2
 
     viterbi = np.full((T, N_BINS), -np.inf)
     backptr = np.zeros((T, N_BINS), dtype=int)
     viterbi[0] = log_emit[0]
-
     for t in range(1, T):
-        scores = viterbi[t - 1][:, None] + log_trans   # (N_BINS, N_BINS)
-        best_prev = np.argmax(scores, axis=0)            # (N_BINS,)
+        scores = viterbi[t - 1][:, None] + log_trans
+        best_prev = np.argmax(scores, axis=0)
         viterbi[t] = scores[best_prev, np.arange(N_BINS)] + log_emit[t]
         backptr[t] = best_prev
-
-    # Traceback
     path = np.zeros(T, dtype=int)
     path[-1] = int(np.argmax(viterbi[-1]))
     for t in range(T - 2, -1, -1):
         path[t] = backptr[t + 1, path[t + 1]]
-
     return PITCH_BINS_HZ[path]

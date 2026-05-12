@@ -1,305 +1,446 @@
-# Run Tutorial — Carnatic vs Western Music ML Project
+# Carnatic vs Western Music ML — Run Tutorial
 
-This document tells Clara and Cassio exactly what commands to run, in what order, and what to expect.  
-Louis handles the pitch side; see the sections marked **[Clara]** and **[Cassio]** for your parts.
+This document tells you **exactly which command to run, from which directory,
+and what file each command produces**. Follow it top-to-bottom.
+
+The full experimental design is a **3 × 2 grid**: three model conditions
+evaluated on two musical domains.
+
+|   | Western data (GTZAN / MAESTRO) | Carnatic data (Saraga) |
+|---|---|---|
+| **A. Western pretrained model** | A-W | A-C |
+| **B. From-scratch model trained on Carnatic** | B-W | B-C |
+| **C. Western pretrained + fine-tuned on Carnatic** | C-W | C-C |
+
+For each task (beat, pitch), you produce all six numbers.
 
 ---
 
-## 0. Setup (everyone, once)
+## Who runs what
 
-### 0.1 Create a virtual environment
+| Person | Task | Sections to run |
+|---|---|---|
+| **Clara** | Rhythm / beat tracking | §0, §1, §2, §3 (beat parts), §5 |
+| **Louis** | Pitch estimation | §0, §1, §2, §4 (pitch parts), §5 |
+| **Cassio** | Cross-domain summary | §0, §1, §6 (after Clara + Louis are done) |
+
+---
+
+## §0 — One-time setup (everyone)
+
+### 0.1 Activate the conda environment
+
+The `musico` conda env was already created with all dependencies installed
+(madmom from GitHub master, tensorflow-macos, torch, crepe, mirdata, compiam, etc.).
 
 ```bash
-cd /path/to/proj
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+cd /path/to/musico                    # the project root
+conda activate musico
 ```
 
-> **Note on TensorFlow (CREPE):** if you are on Apple Silicon or a machine without a GPU, replace `tensorflow>=2.12.0` in `requirements.txt` with `tensorflow-macos` or `tensorflow-cpu` before installing.
+If you somehow don't have the env, see [§7 Troubleshooting](#7-troubleshooting).
 
-### 0.2 Verify the install
+### 0.2 Always run commands from the project root with `PYTHONPATH=.`
+
+Every `python scripts/…` command in this tutorial **must** be prefixed with
+`PYTHONPATH=.` so the `src/` package is importable. Example:
 
 ```bash
-python - <<'EOF'
-import librosa, mirdata, madmom, crepe, torch, mir_eval
-print("All imports OK")
-EOF
+PYTHONPATH=. python scripts/run_rhythm_experiments.py …
+```
+
+If you forget, you'll see `ModuleNotFoundError: No module named 'src'`.
+
+### 0.3 Verify the install
+
+```bash
+PYTHONPATH=. python -c "import librosa, mirdata, madmom, crepe, torch, mir_eval, tensorflow; print('All imports OK')"
 ```
 
 ---
 
-## 1. Download the datasets (everyone, once)
+## §1 — Download the datasets (everyone, once)
 
-Run these three commands.  Each one downloads audio + annotations into `data/raw/`.  
-They can take a while depending on your connection — the datasets are several GB each.
+Each command writes to `data/raw/<dataset>/`. They can take a while
+(several GB each).
 
 ```bash
-# Saraga Carnatic (~5 GB)
-python scripts/download_data.py --dataset saraga --data-home data/raw/saraga
+# Saraga Carnatic (~5 GB)  — used as the Indian/Carnatic data
+PYTHONPATH=. python scripts/download_data.py --dataset saraga --data-home data/raw/saraga
 
-# GTZAN genre (~1.2 GB)  — used for beat tracking
-python scripts/download_data.py --dataset gtzan  --data-home data/raw/gtzan
+# GTZAN genre (~1.2 GB)    — used for Western beat tracking
+PYTHONPATH=. python scripts/download_data.py --dataset gtzan --data-home data/raw/gtzan
 
-# MAESTRO (~90 GB full, or annotations only for a quick test)
-python scripts/download_data.py --dataset maestro --data-home data/raw/maestro
-# If you only want annotations (no audio) to save space:
-python scripts/download_data.py --dataset maestro --data-home data/raw/maestro --partial
+# MAESTRO annotations-only (~50 MB)  — used for Western pitch estimation
+PYTHONPATH=. python scripts/download_data.py --dataset maestro --data-home data/raw/maestro --partial
 ```
 
-After downloading, each command prints `Done.` if the files are valid.
+Each command prints `Done.` on success.
+
+> If a download fails partway, just re-run the command — `mirdata` will skip
+> files that are already present.
 
 ---
 
-## 2. [Clara] Rhythm / Beat Tracking
+## §2 — Quick smoke-test (optional, recommended before full runs)
 
-Clara runs two experiments:
-1. **Baseline** — the Western-trained madmom model on both Carnatic (Saraga) and Western (GTZAN) data.
-2. **Carnatic model** — train a CNN+BiLSTM on Saraga beat annotations, then compare it to the baseline.
-
----
-
-### 2.1 Baseline: madmom on both domains
+Add `--max-tracks 3` to any experiment to run on only 3 tracks. A full
+pipeline at 3 tracks finishes in a few minutes and tells you whether the
+data paths and code are working before you commit to hours of real runs.
 
 ```bash
-python scripts/run_rhythm_experiments.py \
+PYTHONPATH=. python scripts/run_rhythm_experiments.py \
     --saraga-home data/raw/saraga \
     --gtzan-home  data/raw/gtzan \
-    --output-dir  results/rhythm/madmom \
+    --output-dir  results/smoke_test \
     --backend     madmom \
-    --max-tracks  20        # remove this line to run on all tracks
+    --max-tracks  3
 ```
 
-**What it produces** in `results/rhythm/madmom/`:
-
-| File | What it is |
-|---|---|
-| `beat_results.csv` | Per-track scores (F-measure, Cemgil, CMLt, downbeat F) |
-| `beat_summary.json` | Mean ± std across all tracks, split by domain |
-| `figures/beat_f_measure.png` | Boxplot: Carnatic vs Western |
-| `figures/tempo_scatter.png` | Estimated vs reference BPM |
-| `drift/<track_id>.png` | Beat drift over time for each track |
-
-**Expected output snippet:**
-
-```
-[carnatic] saraga_carnatic/audio_...
-    Sam alignment: {'precision': 0.12, 'recall': 0.09, 'f1': 0.10, 'n_hits': 2}
-[western] gtzan_genre/audio_...
-=== Summary ===
-{
-  "f_measure": {"mean": 0.71, "std": 0.18, ...},   ← Western
-  ...
-}
-```
-
-The F-measure will be noticeably lower for Carnatic tracks than for Western ones.  That gap is the core result.
+If this finishes without errors, proceed to the real runs.
 
 ---
 
-### 2.2 Train the Carnatic beat model
+## §3 — RHYTHM / BEAT TRACKING  [Clara]
+
+You'll produce three beat models and evaluate each on both domains.
+
+### 3.1 — Condition A: Western pretrained (madmom)
+
+The **madmom** library ships a CNN+DBN beat tracker pretrained on Western
+data. We run it as-is on both Western (GTZAN) and Carnatic (Saraga) data.
 
 ```bash
-python scripts/train_beat_carnatic.py \
-    --saraga-home   data/raw/saraga \
-    --output-dir    results/rhythm/carnatic_model \
-    --epochs        50 \
-    --max-tracks    80 \
+PYTHONPATH=. python scripts/run_rhythm_experiments.py \
+    --saraga-home data/raw/saraga \
+    --gtzan-home  data/raw/gtzan \
+    --output-dir  results/rhythm/A_madmom \
+    --backend     madmom
+```
+
+**Produces in `results/rhythm/A_madmom/`:**
+
+| File | Contents |
+|---|---|
+| `beat_results.csv` | Per-track scores (F-measure, Cemgil, CMLt, downbeat F) |
+| `beat_summary.json` | Mean ± std across all tracks, **split by domain (carnatic vs western)** |
+| `figures/beat_f_measure.png` | Boxplot: Carnatic vs Western |
+| `figures/tempo_scatter.png` | Estimated vs reference BPM |
+
+> This single command produces both **A-W** (madmom on Western)
+> and **A-C** (madmom on Carnatic). Look at the `domain` column / key
+> in the output files.
+
+### 3.2 — Condition B: Train a beat model from scratch on Carnatic
+
+This trains the project's own `BeatActivationModel` (CNN + BiLSTM) on
+Saraga from random initialisation.
+
+```bash
+PYTHONPATH=. python scripts/train_beat_carnatic.py \
+    --saraga-home data/raw/saraga \
+    --output-dir  results/rhythm/B_carnatic_from_scratch \
+    --epochs 50 --max-tracks 80 \
     --compare-madmom
 ```
 
-| Argument | What it does |
+**Produces in `results/rhythm/B_carnatic_from_scratch/`:**
+
+| File | Contents |
 |---|---|
-| `--epochs 50` | Maximum training epochs (early stopping may stop sooner) |
-| `--max-tracks 80` | Use 80 Saraga tracks; remove to use all |
-| `--compare-madmom` | After training, prints a side-by-side table vs madmom on Carnatic test tracks |
+| `best_model.pt` | PyTorch checkpoint (best validation F-measure) |
+| `history.json` | Loss + val F-measure per epoch |
+| `learning_curves.png` | Train/val curves |
+| `test_summary.json` | **B-C**: Carnatic model on Carnatic test |
+| `madmom_comparison.json` | Side-by-side B-C vs A-C |
 
-**What it produces** in `results/rhythm/carnatic_model/`:
-
-| File | What it is |
-|---|---|
-| `best_model.pt` | Saved PyTorch checkpoint (best validation F-measure) |
-| `history.json` | Loss + F-measure per epoch |
-| `learning_curves.png` | Training / validation curves |
-| `test_summary.json` | Carnatic model scores on held-out Saraga test tracks |
-| `madmom_comparison.json` | Side-by-side: Carnatic model vs madmom |
-
-**Expected terminal output at the end:**
-
-```
-=== Comparison on Carnatic test set ===
-Metric                    Carnatic model   Madmom (Western)
-------------------------------------------------------------
-f_measure                         0.5412             0.3201
-cemgil                            0.4890             0.2743
-continuity                        0.3900             0.1850
-downbeat_f_measure                0.3100             0.0870
-```
-
-The Carnatic model should beat madmom on all metrics for Carnatic music.
-
----
-
-### 2.3 Evaluate the Carnatic model on Western data (transfer test)
-
-This checks whether the Carnatic-trained model generalises back to Western music.
+Then evaluate **B-W** (the from-scratch Carnatic model on Western data):
 
 ```bash
-python scripts/run_rhythm_experiments.py \
+PYTHONPATH=. python scripts/run_rhythm_experiments.py \
     --saraga-home data/raw/saraga \
     --gtzan-home  data/raw/gtzan \
-    --output-dir  results/rhythm/carnatic_on_western \
+    --output-dir  results/rhythm/B_on_western \
     --backend     carnatic \
-    --carnatic-checkpoint results/rhythm/carnatic_model/best_model.pt \
-    --max-tracks  20
+    --carnatic-checkpoint results/rhythm/B_carnatic_from_scratch/best_model.pt
 ```
 
-Compare `beat_summary.json` here vs the one from step 2.1.  
-You will likely see that the Carnatic model is worse on Western music — that asymmetry is a key finding.
+The `beat_summary.json` in `results/rhythm/B_on_western/` gives you **B-W**.
 
----
+### 3.3 — Condition C: Pretrain on Western, fine-tune on Carnatic
 
-### 2.4 Notebook for figures
+madmom isn't a PyTorch module so we can't fine-tune its weights directly.
+Instead we pretrain the same `BeatActivationModel` architecture on GTZAN
+beats, then fine-tune that checkpoint on Saraga.
 
-Open the rhythm analysis notebook to produce report-ready figures:
+**Step C.1 — Pretrain on GTZAN:**
+
+```bash
+PYTHONPATH=. python scripts/pretrain_beat_western.py \
+    --gtzan-home data/raw/gtzan \
+    --output-dir results/rhythm/C_western_pretrained \
+    --epochs 30
+```
+
+Produces `results/rhythm/C_western_pretrained/best_model.pt` — the
+Western-pretrained checkpoint.
+
+**Step C.2 — Fine-tune on Saraga:**
+
+```bash
+PYTHONPATH=. python scripts/train_beat_carnatic.py \
+    --saraga-home data/raw/saraga \
+    --output-dir  results/rhythm/C_finetuned_from_western \
+    --init-checkpoint results/rhythm/C_western_pretrained/best_model.pt \
+    --epochs 50 --max-tracks 80 \
+    --compare-madmom
+```
+
+> When `--init-checkpoint` is set, the learning rate is automatically
+> dropped to 1e-4 (10× lower than from-scratch). This is the standard
+> rule for fine-tuning so the pretrained features aren't wrecked.
+
+**Produces in `results/rhythm/C_finetuned_from_western/`:**
+
+| File | Contents |
+|---|---|
+| `best_model.pt` | Fine-tuned checkpoint |
+| `test_summary.json` | **C-C**: fine-tuned model on Carnatic test |
+| `madmom_comparison.json` | Side-by-side C-C vs A-C |
+| `learning_curves.png` | Train/val curves |
+
+**Step C.3 — Evaluate C on Western data (C-W):**
+
+```bash
+PYTHONPATH=. python scripts/run_rhythm_experiments.py \
+    --saraga-home data/raw/saraga \
+    --gtzan-home  data/raw/gtzan \
+    --output-dir  results/rhythm/C_on_western \
+    --backend     carnatic \
+    --carnatic-checkpoint results/rhythm/C_finetuned_from_western/best_model.pt
+```
+
+`beat_summary.json` here = **C-W**.
+
+### 3.4 — Beat analysis notebook
 
 ```bash
 jupyter notebook notebooks/02_rhythm_analysis.ipynb
 ```
 
-It reads `results/rhythm/madmom/beat_results.csv` automatically.  Run all cells top to bottom.
+It reads `results/rhythm/A_madmom/beat_results.csv` by default.
+Edit the path at the top of the notebook to swap in B or C results.
 
 ---
 
-## 3. [Cassio] Cross-Domain Summary
+## §4 — PITCH ESTIMATION  [Louis]
 
-After Clara's rhythm experiments and Louis's pitch experiments are done, run the combined cross-domain script.
+Same three-condition design as rhythm, but the Western pretrained model
+is **CREPE** (Kim et al. 2018) and we have a faithful PyTorch port that
+can load CREPE's official weights for fine-tuning.
 
-### 3.1 Run the cross-domain pipeline
+### 4.1 — Condition A: Western pretrained (CREPE)
 
 ```bash
-python scripts/run_cross_domain.py \
+PYTHONPATH=. python scripts/run_pitch_experiments.py \
+    --saraga-home  data/raw/saraga \
+    --maestro-home data/raw/maestro \
+    --output-dir   results/pitch/A_crepe
+```
+
+**Produces in `results/pitch/A_crepe/`:**
+
+| File | Contents |
+|---|---|
+| `pitch_results.csv` | Per-track RPA, OA, MAE cents, by domain |
+| `pitch_summary.json` | Mean ± std, **split by domain** |
+| `gamaka_errors.csv` | Carnatic-specific gamaka analysis |
+| `figures/` | Boxplots, scatter, etc. |
+
+This single run gives you **A-W** and **A-C**.
+
+### 4.2 — Condition B: Train pitch model from scratch on Carnatic
+
+```bash
+PYTHONPATH=. python scripts/train_pitch_carnatic.py \
+    --saraga-home  data/raw/saraga \
+    --maestro-home data/raw/maestro \
+    --output-dir   results/pitch/B_carnatic_from_scratch \
+    --epochs 30 --max-tracks 60 \
+    --compare-all
+```
+
+The `--compare-all` flag runs the from-scratch model **plus CREPE plus pyin**
+on the test sets of both domains, producing the 3-models × 2-domains table.
+
+**Produces in `results/pitch/B_carnatic_from_scratch/`:**
+
+| File | Contents |
+|---|---|
+| `best_model.pt` | Trained checkpoint |
+| `history.json` | Train/val loss + RPA per epoch |
+| `learning_curves.png` | Loss / RPA / OA curves |
+| `test_carnatic_summary.json` | **B-C** |
+| `comparison_all.csv` | Every method × every test track |
+| `comparison_summary.csv` | Aggregated by method × domain (**includes B-W and B-C**) |
+
+### 4.3 — Condition C: Load real CREPE weights, fine-tune on Saraga
+
+**Step C.1 — Convert Keras CREPE weights → PyTorch checkpoint** (one-time):
+
+```bash
+PYTHONPATH=. python scripts/convert_crepe_weights.py \
+    --output results/pitch/crepe_pretrained.pt
+```
+
+This loads the official `crepe` Keras model, copies every conv/BN/dense
+weight into a PyTorch `state_dict`, and **verifies** that running a random
+input through both Keras and the PyTorch port produces identical outputs
+(max diff < 1e-4). If verification fails the script aborts.
+
+**Step C.2 — Fine-tune on Saraga:**
+
+```bash
+PYTHONPATH=. python scripts/train_pitch_carnatic.py \
+    --saraga-home  data/raw/saraga \
+    --maestro-home data/raw/maestro \
+    --output-dir   results/pitch/C_finetuned_from_crepe \
+    --init-checkpoint results/pitch/crepe_pretrained.pt \
+    --epochs 30 --max-tracks 60 \
+    --compare-all
+```
+
+**Produces in `results/pitch/C_finetuned_from_crepe/`:**
+
+Same file set as 4.2. `comparison_summary.csv` here contains **C-W** and **C-C**.
+
+### 4.4 — Pitch analysis notebook
+
+```bash
+jupyter notebook notebooks/03_pitch_analysis.ipynb
+```
+
+---
+
+## §5 — Where every number in the report comes from
+
+After running §3 and §4, your six headline numbers per task live here:
+
+### Beat (F-measure):
+
+| Cell | File | Look for |
+|---|---|---|
+| A-W | `results/rhythm/A_madmom/beat_summary.json` | `f_measure.mean` in the `western` block |
+| A-C | `results/rhythm/A_madmom/beat_summary.json` | `f_measure.mean` in the `carnatic` block |
+| B-W | `results/rhythm/B_on_western/beat_summary.json` | `f_measure.mean` (western) |
+| B-C | `results/rhythm/B_carnatic_from_scratch/test_summary.json` | `f_measure.mean` |
+| C-W | `results/rhythm/C_on_western/beat_summary.json` | `f_measure.mean` (western) |
+| C-C | `results/rhythm/C_finetuned_from_western/test_summary.json` | `f_measure.mean` |
+
+### Pitch (RPA):
+
+| Cell | File | Look for |
+|---|---|---|
+| A-W | `results/pitch/A_crepe/pitch_summary.json` | `raw_pitch_accuracy.mean` (western) |
+| A-C | `results/pitch/A_crepe/pitch_summary.json` | `raw_pitch_accuracy.mean` (carnatic) |
+| B-W, B-C | `results/pitch/B_carnatic_from_scratch/comparison_summary.csv` | `method=carnatic` rows |
+| C-W, C-C | `results/pitch/C_finetuned_from_crepe/comparison_summary.csv` | `method=carnatic` rows |
+
+---
+
+## §6 — Cross-domain combined run  [Cassio]
+
+Once Clara and Louis have produced their per-task results, run the combined
+cross-domain script to produce the unified report table.
+
+```bash
+PYTHONPATH=. python scripts/run_cross_domain.py \
     --saraga-home  data/raw/saraga \
     --gtzan-home   data/raw/gtzan \
     --maestro-home data/raw/maestro \
-    --output-dir   results/cross_domain \
-    --max-tracks   20
+    --output-dir   results/cross_domain
 ```
 
-This runs both the beat tracker and the pitch estimator on both domains in one go and produces a combined summary table.
+**Produces in `results/cross_domain/`:**
 
-**What it produces** in `results/cross_domain/`:
-
-| File | What it is |
+| File | Contents |
 |---|---|
-| `beat_cross_domain.csv` | Per-track beat scores for all tracks, both domains |
-| `pitch_cross_domain.csv` | Per-track pitch scores for all tracks, both domains |
-| `cross_domain_summary.csv` | Aggregated mean ± std for every metric, grouped by domain and task |
+| `beat_cross_domain.csv` | Per-track beat scores, all tracks, both domains |
+| `pitch_cross_domain.csv` | Per-track pitch scores, all tracks, both domains |
+| `cross_domain_summary.csv` | **Aggregated mean ± std for every metric, by domain and task — this is the table that goes into the report** |
 
-### 3.2 Cross-domain notebook
+Then open the cross-domain notebook for the report figures:
 
 ```bash
 jupyter notebook notebooks/04_cross_domain.ipynb
 ```
 
-This notebook reads the CSVs and produces the grouped bar charts comparing performance across domains and tasks.
+---
+
+## §7 — Troubleshooting
+
+**`ModuleNotFoundError: No module named 'src'`**
+You forgot `PYTHONPATH=.`. Always prefix every script with it.
+
+**`No module named 'madmom'` / `tensorflow` / `crepe`**
+You're not in the `musico` conda env. Run `conda activate musico`.
+
+**`mirdata: dataset not found`**
+The `--saraga-home` (or `--gtzan-home`, `--maestro-home`) path must point
+at the same directory you passed to `download_data.py`. The path must
+contain the dataset's subfolder that mirdata created.
+
+**`CUDA out of memory`**
+Reduce `--batch-size` (e.g. 32 for beat, 64 for pitch). On Apple Silicon
+there's no CUDA; everything runs on CPU automatically.
+
+**Training is very slow (CPU only)**
+Use `--max-tracks 20 --epochs 10` for a faster run. CPU training of the
+beat model at 20 tracks × 10 epochs ≈ 15–20 minutes.
+
+**CREPE weight conversion fails verification**
+The bit-exact port lives in `src/pitch/model.py`. If you change anything
+in that file (architecture, padding, ReLU order, flatten order), the
+verification in `convert_crepe_weights.py` will reject the conversion.
+Don't edit that file.
+
+**Fine-tuning seems to be making things worse**
+Check that `--init-checkpoint` actually printed `Loading initial weights
+from …` at the start. If the LR wasn't dropped to 1e-4 automatically,
+pass `--lr 1e-4` explicitly.
 
 ---
 
-### 3.3 Full comparison table (after all training is done)
-
-Once Louis has trained the pitch model, run the full 3-model × 2-domain comparison:
-
-```bash
-python scripts/train_pitch_carnatic.py \
-    --saraga-home  data/raw/saraga \
-    --maestro-home data/raw/maestro \
-    --output-dir   results/pitch/carnatic_model \
-    --compare-all \
-    --max-tracks   60
-```
-
-This produces `results/pitch/carnatic_model/comparison_summary.csv`:
-
-```
-method    domain     RPA_mean  RPA_std  OA_mean  MAE_cents_mean
-carnatic  carnatic   …         …        …        …
-carnatic  western    …         …        …        …
-crepe     carnatic   …         …        …        …
-crepe     western    …         …        …        …
-pyin      carnatic   …         …        …        …
-pyin      western    …         …        …        …
-```
-
-That table goes directly into the report.
-
----
-
-## 4. Quick-test mode (no data yet)
-
-If you want to verify that the pipeline runs end-to-end before the full data download finishes, use `--max-tracks 3` everywhere:
-
-```bash
-python scripts/run_rhythm_experiments.py \
-    --saraga-home data/raw/saraga \
-    --gtzan-home  data/raw/gtzan \
-    --output-dir  results/smoke_test \
-    --max-tracks  3
-
-python scripts/train_beat_carnatic.py \
-    --saraga-home data/raw/saraga \
-    --output-dir  results/smoke_test/beat_model \
-    --epochs 2 --max-tracks 5
-```
-
-A full run with 3 tracks should finish in a few minutes.
-
----
-
-## 5. Result files reference
+## §8 — Full directory layout after everything runs
 
 ```
 results/
 ├── rhythm/
-│   ├── madmom/
-│   │   ├── beat_results.csv          ← per-track, madmom on both domains
-│   │   ├── beat_summary.json
-│   │   └── figures/
-│   ├── carnatic_model/
-│   │   ├── best_model.pt             ← trained checkpoint
-│   │   ├── learning_curves.png
-│   │   ├── test_summary.json         ← Carnatic model on Carnatic test
-│   │   └── madmom_comparison.json    ← side-by-side
-│   └── carnatic_on_western/
-│       └── beat_results.csv          ← Carnatic model on Western test
+│   ├── A_madmom/                              ← Western pretrained, both domains
+│   │   ├── beat_results.csv, beat_summary.json, figures/
+│   ├── B_carnatic_from_scratch/               ← B-C
+│   │   ├── best_model.pt, history.json, test_summary.json,
+│   │   │   madmom_comparison.json, learning_curves.png
+│   ├── B_on_western/                          ← B-W
+│   │   └── beat_results.csv, beat_summary.json
+│   ├── C_western_pretrained/                  ← intermediate: GTZAN-pretrained ckpt
+│   │   └── best_model.pt, learning_curves.png
+│   ├── C_finetuned_from_western/              ← C-C
+│   │   ├── best_model.pt, test_summary.json,
+│   │   │   madmom_comparison.json, learning_curves.png
+│   └── C_on_western/                          ← C-W
+│       └── beat_results.csv, beat_summary.json
 ├── pitch/
-│   ├── pitch_results.csv             ← CREPE/pyin on both domains
-│   ├── pitch_summary.json
-│   ├── gamaka_errors.csv             ← Carnatic-specific gamaka analysis
-│   ├── carnatic_model/
-│   │   ├── best_model.pt
-│   │   ├── learning_curves.png
-│   │   └── comparison_summary.csv    ← 3 models × 2 domains
-│   └── figures/
+│   ├── A_crepe/                               ← A-W and A-C
+│   │   ├── pitch_results.csv, pitch_summary.json,
+│   │   │   gamaka_errors.csv, figures/
+│   ├── crepe_pretrained.pt                    ← converted CREPE weights (input to C)
+│   ├── B_carnatic_from_scratch/               ← B-W and B-C
+│   │   ├── best_model.pt, comparison_summary.csv, …
+│   └── C_finetuned_from_crepe/                ← C-W and C-C
+│       └── best_model.pt, comparison_summary.csv, …
 └── cross_domain/
     ├── beat_cross_domain.csv
     ├── pitch_cross_domain.csv
-    └── cross_domain_summary.csv      ← goes into the report
+    └── cross_domain_summary.csv               ← goes into the report
 ```
-
----
-
-## 6. Troubleshooting
-
-**`ImportError: No module named 'madmom'`**  
-madmom requires Cython at install time: `pip install cython` then `pip install madmom`.
-
-**`CUDA out of memory`**  
-Reduce `--batch-size` (e.g. `--batch-size 32` for beat, `--batch-size 64` for pitch).
-
-**`mirdata: dataset not found`**  
-Make sure `--saraga-home` points to the directory that was passed to `download_data.py`.  
-The path must contain the `saraga_carnatic` subfolder that mirdata creates.
-
-**Training is very slow (no GPU)**  
-Use `--max-tracks 20 --epochs 10` for a faster run.  CPU training of the beat model with 20 tracks and 10 epochs takes roughly 15–20 minutes.

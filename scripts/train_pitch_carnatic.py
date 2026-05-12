@@ -39,12 +39,22 @@ def main():
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--patience", type=int, default=6)
-    parser.add_argument("--n-filters-scale", type=float, default=0.5,
-                        help="Scale factor for all CREPE conv layer widths (0.5 = half-size)")
+    parser.add_argument("--n-filters-scale", type=float, default=1.0,
+                        help="Scale factor for CREPE conv layer widths. 1.0 = full "
+                             "CREPE (~22M params, required for loading official CREPE "
+                             "weights via --init-checkpoint). 0.5 = smaller, faster.")
     parser.add_argument("--max-tracks", type=int, default=None)
     parser.add_argument("--compare-all", action="store_true",
                         help="After training, compare Carnatic model vs CREPE vs pyin")
+    parser.add_argument("--init-checkpoint", default=None,
+                        help="Path to a .pt checkpoint to initialise weights from "
+                             "(fine-tuning). When set, --lr defaults to 1e-4 if "
+                             "not explicitly overridden.")
     args = parser.parse_args()
+
+    if args.init_checkpoint and args.lr == 1e-3:
+        args.lr = 1e-4
+        print(f"[fine-tune] Lowered default LR to {args.lr}")
 
     out = Path(args.output_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -84,6 +94,16 @@ def main():
     model = CREPELike(n_filters_scale=args.n_filters_scale)
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"\nModel: {n_params:,} trainable parameters")
+
+    if args.init_checkpoint:
+        import torch
+        print(f"Loading initial weights from {args.init_checkpoint}")
+        state = torch.load(args.init_checkpoint, map_location="cpu")
+        missing, unexpected = model.load_state_dict(state, strict=False)
+        if missing:
+            print(f"  Missing keys: {missing}")
+        if unexpected:
+            print(f"  Unexpected keys: {unexpected}")
 
     history = train(
         model=model,
