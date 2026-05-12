@@ -1,0 +1,45 @@
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  results: results
+
+datasets:
+  saraga:
+    path: data/raw/saraga
+    # compiam/mirdata key: "saraga_carnatic"
+    splits: [train, test]
+  maestro:
+    path: data/raw/maestro
+    # mirdata key: "maestro"
+    splits: [train, validation, test]
+  gtzan:
+    path: data/raw/gtzan
+    # mirdata key: "gtzan_genre"
+    splits: [train, test]
+
+audio:
+  sample_rate: 22050
+  hop_length: 512
+  n_fft: 2048
+  frame_length: 2048
+
+beat_tracking:
+  # madmom DBNBeatTracker defaults
+  fps: 100
+  min_bpm: 40
+  max_bpm: 240
+  # mir_eval tolerance window (seconds)
+  tolerance: 0.07
+
+pitch:
+  # crepe model size: tiny | small | medium | large | full
+  model_capacity: medium
+  viterbi: true
+  # confidence threshold for voiced/unvoiced
+  confidence_threshold: 0.8
+  # cents tolerance for pitch evaluation
+  cents_tolerance: 50
+
+cross_domain:
+  train_sets: [western, carnatic]
+  test_sets: [western, carnatic]
