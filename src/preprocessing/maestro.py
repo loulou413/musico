@@ -9,6 +9,11 @@ try:
 except ImportError:
     mirdata = None
 
+try:
+    from tqdm import tqdm as _tqdm
+except ImportError:
+    _tqdm = None
+
 from .common import AudioTrack, load_audio, normalize
 
 
@@ -22,17 +27,22 @@ def load_maestro_track(track, sr: int = 22050) -> AudioTrack:
     f0_times, f0_freqs = None, None
     if hasattr(track, "notes") and track.notes is not None:
         notes = track.notes
-        # Build a frame-level pitch annotation at 10 ms resolution
+        # Build a frame-level pitch annotation at 10 ms resolution.
+        # Only keep frames where exactly one note is active — polyphonic frames
+        # are set to 0 (unvoiced) so mir_eval only scores unambiguous pitches.
         duration = audio.shape[0] / sr
         times = np.arange(0, duration, 0.01)
+        note_count = np.zeros(len(times), dtype=int)
         freqs = np.zeros(len(times))
-        for onset, offset, pitch, vel in zip(
-            notes.start_times, notes.end_times, notes.pitches, notes.velocities
-        ):
+        starts = notes.intervals[:, 0] if hasattr(notes, "intervals") else notes.start_times
+        ends   = notes.intervals[:, 1] if hasattr(notes, "intervals") else notes.end_times
+        for onset, offset, pitch in zip(starts, ends, notes.pitches):
             mask = (times >= onset) & (times < offset)
-            # Keep highest pitch per frame (melody approximation)
             midi_hz = 440.0 * (2.0 ** ((pitch - 69) / 12.0))
+            note_count[mask] += 1
             freqs[mask] = np.maximum(freqs[mask], midi_hz)
+        # Zero out polyphonic frames
+        freqs[note_count != 1] = 0.0
         f0_times = times
         f0_freqs = freqs
 
@@ -72,10 +82,15 @@ def get_maestro_split(
         ids = ids[:max_tracks]
 
     tracks = []
-    for tid in ids:
+    it = _tqdm(ids, desc="Loading MAESTRO", unit="track") if _tqdm else ids
+    for tid in it:
         track = dataset.track(tid)
         try:
             tracks.append(load_maestro_track(track, sr=sr))
         except Exception as exc:
-            print(f"[maestro] Skipping {tid}: {exc}")
+            msg = f"[maestro] Skipping {tid}: {exc}"
+            if _tqdm:
+                _tqdm.write(msg)
+            else:
+                print(msg)
     return tracks

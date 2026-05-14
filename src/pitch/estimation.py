@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 try:
-    import crepe
+    import torchcrepe
     _CREPE_AVAILABLE = True
 except ImportError:
     _CREPE_AVAILABLE = False
@@ -32,17 +32,32 @@ class PitchPrediction:
 def estimate_pitch_crepe(
     audio: np.ndarray,
     sr: int,
-    model_capacity: str = "medium",
+    model_capacity: str = "full",
     viterbi: bool = True,
     confidence_threshold: float = 0.8,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Returns (times_s, freqs_hz, confidence). Unvoiced frames → freq=0."""
     if not _CREPE_AVAILABLE:
-        raise ImportError("crepe is required: pip install crepe")
-    times, freqs, conf, _ = crepe.predict(
-        audio, sr, model_capacity=model_capacity, viterbi=viterbi, verbose=0
+        raise ImportError("torchcrepe is required: pip install torchcrepe")
+    import torch
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    audio_tensor = torch.tensor(audio, dtype=torch.float32).unsqueeze(0)
+    hop_length = int(sr * 0.01)  # 10 ms hops to match original CREPE
+    freqs, conf = torchcrepe.predict(
+        audio_tensor,
+        sr,
+        hop_length=hop_length,
+        fmin=32.70,
+        fmax=1975.5,
+        model=model_capacity,
+        decoder=torchcrepe.decode.viterbi if viterbi else torchcrepe.decode.argmax,
+        device=device,
+        return_periodicity=True,
+        batch_size=2048,
     )
-    freqs = freqs.copy()
+    freqs = freqs.squeeze(0).cpu().numpy()
+    conf = conf.squeeze(0).cpu().numpy()
+    times = np.arange(len(freqs)) * 0.01
     freqs[conf < confidence_threshold] = 0.0
     return times, freqs, conf
 
@@ -69,7 +84,7 @@ def estimate_pitch_carnatic_model(
     sr: int,
     checkpoint_path: str,
     viterbi: bool = True,
-    confidence_threshold: float = 0.4,
+    confidence_threshold: float = 0.0,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Run the Saraga-trained CREPELike model. Returns (times_s, freqs_hz, confidence)."""
     if not _TORCH_AVAILABLE:

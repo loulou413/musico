@@ -1,0 +1,828 @@
+=== GPU check ===
+CUDA OK — NVIDIA GeForce RTX 5060 Laptop GPU
+
+=== Condition A: CREPE pretrained (gives A-W and A-C) ===
+Loading Saraga tracks...
+Loading Saraga:   0%|          | 0/60 [00:00<?, ?track/s]Loading Saraga:   2%|▏         | 1/60 [00:03<02:59,  3.04s/track]Loading Saraga:   3%|▎         | 2/60 [00:05<02:33,  2.64s/track]Loading Saraga:   5%|▌         | 3/60 [00:06<01:47,  1.88s/track]Loading Saraga:   7%|▋         | 4/60 [00:06<01:13,  1.31s/track]Loading Saraga:   8%|▊         | 5/60 [00:07<00:57,  1.05s/track]Loading Saraga:  10%|█         | 6/60 [00:07<00:42,  1.27track/s]Loading Saraga:  12%|█▏        | 7/60 [00:08<00:46,  1.14track/s]Loading Saraga:  13%|█▎        | 8/60 [00:10<01:01,  1.18s/track]Loading Saraga:  15%|█▌        | 9/60 [00:11<00:58,  1.15s/track]Loading Saraga:  17%|█▋        | 10/60 [00:12<00:46,  1.09track/s]Loading Saraga:  18%|█▊        | 11/60 [00:12<00:40,  1.21track/s]Loading Saraga:  20%|██        | 12/60 [00:12<00:31,  1.53track/s]Loading Saraga:  22%|██▏       | 13/60 [00:13<00:29,  1.61track/s]Loading Saraga:  23%|██▎       | 14/60 [00:13<00:23,  1.94track/s]Loading Saraga:  25%|██▌       | 15/60 [00:14<00:30,  1.49track/s]Loading Saraga:  27%|██▋       | 16/60 [00:15<00:29,  1.51track/s]Loading Saraga:  28%|██▊       | 17/60 [00:20<01:29,  2.07s/track]Loading Saraga:  30%|███       | 18/60 [00:21<01:07,  1.60s/track]Loading Saraga:  32%|███▏      | 19/60 [00:21<00:53,  1.32s/track]Loading Saraga:  33%|███▎      | 20/60 [00:22<00:44,  1.12s/track]Loading Saraga:  35%|███▌      | 21/60 [00:26<01:14,  1.91s/track]Loading Saraga:  37%|███▋      | 22/60 [00:26<00:53,  1.40s/track]Loading Saraga:  38%|███▊      | 23/60 [00:27<00:43,  1.16s/track]Loading Saraga:  40%|████      | 24/60 [00:27<00:30,  1.18track/s]Loading Saraga:  42%|████▏     | 25/60 [00:27<00:23,  1.47track/s]Loading Saraga:  43%|████▎     | 26/60 [00:28<00:21,  1.61track/s]Loading Saraga:  45%|████▌     | 27/60 [00:29<00:31,  1.05track/s]Loading Saraga:  47%|████▋     | 28/60 [00:30<00:25,  1.25track/s]Loading Saraga:  48%|████▊     | 29/60 [00:35<01:06,  2.15s/track]Loading Saraga:  50%|█████     | 30/60 [00:35<00:48,  1.61s/track]Loading Saraga:  52%|█████▏    | 31/60 [00:35<00:33,  1.16s/track]Loading Saraga:  53%|█████▎    | 32/60 [00:36<00:30,  1.10s/track]Loading Saraga:  55%|█████▌    | 33/60 [00:37<00:23,  1.15track/s]Loading Saraga:  57%|█████▋    | 34/60 [00:40<00:40,  1.54s/track]Loading Saraga:  58%|█████▊    | 35/60 [00:40<00:28,  1.12s/track]Loading Saraga:  60%|██████    | 36/60 [00:40<00:21,  1.13track/s]Loading Saraga:  62%|██████▏   | 37/60 [00:41<00:16,  1.37track/s]Loading Saraga:  63%|██████▎   | 38/60 [00:41<00:15,  1.39track/s]Loading Saraga:  65%|██████▌   | 39/60 [00:45<00:33,  1.58s/track]Loading Saraga:  68%|██████▊   | 41/60 [00:47<00:22,  1.20s/track]Loading Saraga:  70%|███████   | 42/60 [00:47<00:19,  1.07s/track]Loading Saraga:  72%|███████▏  | 43/60 [00:48<00:15,  1.12track/s]Loading Saraga:  73%|███████▎  | 44/60 [00:48<00:13,  1.15track/s]Loading Saraga:  75%|███████▌  | 45/60 [00:49<00:11,  1.27track/s]Loading Saraga:  77%|███████▋  | 46/60 [00:51<00:16,  1.18s/track]Loading Saraga:  78%|███████▊  | 47/60 [00:52<00:12,  1.04track/s]Loading Saraga:  80%|████████  | 48/60 [00:52<00:10,  1.13track/s]Loading Saraga:  82%|████████▏ | 49/60 [00:53<00:08,  1.37track/s]Loading Saraga:  83%|████████▎ | 50/60 [00:56<00:15,  1.59s/track]Loading Saraga:  85%|████████▌ | 51/60 [00:57<00:11,  1.25s/track]Loading Saraga:  87%|████████▋ | 52/60 [00:57<00:07,  1.09track/s]Loading Saraga:  88%|████████▊ | 53/60 [00:57<00:05,  1.27track/s]Loading Saraga:  90%|█████████ | 54/60 [00:58<00:05,  1.17track/s]Loading Saraga:  92%|█████████▏| 55/60 [00:59<00:03,  1.41track/s]Loading Saraga:  93%|█████████▎| 56/60 [00:59<00:02,  1.53track/s]Loading Saraga:  95%|█████████▌| 57/60 [00:59<00:01,  1.88track/s]Loading Saraga:  97%|█████████▋| 58/60 [01:00<00:01,  1.92track/s]Loading Saraga:  98%|█████████▊| 59/60 [01:00<00:00,  2.01track/s]Loading Saraga: 100%|██████████| 60/60 [01:01<00:00,  2.20track/s]Loading Saraga: 100%|██████████| 60/60 [01:01<00:00,  1.02s/track]
+Loading MAESTRO tracks...
+Loading MAESTRO:   0%|          | 0/60 [00:00<?, ?track/s]/home/louis/.ssh/musico/src/preprocessing/common.py:32: UserWarning: PySoundFile failed. Trying audioread instead.
+  audio, sr_loaded = librosa.load(path, sr=sr, mono=mono)
+/home/louis/miniforge3/envs/musico/lib/python3.11/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+                                                          Loading MAESTRO:   0%|          | 0/60 [00:00<?, ?track/s]                                                          Loading MAESTRO:   0%|          | 0/60 [00:00<?, ?track/s][2026-05-13 08:46:00,706] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:   5%|▌         | 3/60 [00:00<00:10,  5.52track/s][2026-05-13 08:46:01,207] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:   7%|▋         | 4/60 [00:01<00:15,  3.55track/s]                                                                  Loading MAESTRO:   7%|▋         | 4/60 [00:01<00:15,  3.55track/s]                                                                  Loading MAESTRO:   7%|▋         | 4/60 [00:01<00:15,  3.55track/s]                                                                  Loading MAESTRO:   7%|▋         | 4/60 [00:01<00:15,  3.55track/s]                                                                  Loading MAESTRO:   7%|▋         | 4/60 [00:01<00:15,  3.55track/s][2026-05-13 08:46:01,455] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  15%|█▌        | 9/60 [00:01<00:05,  9.31track/s][2026-05-13 08:46:01,675] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+                                                                  Loading MAESTRO:  15%|█▌        | 9/60 [00:01<00:05,  9.31track/s]Loading MAESTRO:  18%|█▊        | 11/60 [00:01<00:05,  8.92track/s][2026-05-13 08:46:02,364] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+                                                                   Loading MAESTRO:  18%|█▊        | 11/60 [00:02<00:05,  8.92track/s]Loading MAESTRO:  22%|██▏       | 13/60 [00:02<00:11,  4.13track/s][2026-05-13 08:46:03,657] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  23%|██▎       | 14/60 [00:03<00:18,  2.44track/s][2026-05-13 08:46:04,150] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+                                                                   Loading MAESTRO:  23%|██▎       | 14/60 [00:03<00:18,  2.44track/s]                                                                   Loading MAESTRO:  23%|██▎       | 14/60 [00:03<00:18,  2.44track/s]                                                                   Loading MAESTRO:  23%|██▎       | 14/60 [00:03<00:18,  2.44track/s]                                                                   Loading MAESTRO:  23%|██▎       | 14/60 [00:03<00:18,  2.44track/s][2026-05-13 08:46:04,284] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  33%|███▎      | 20/60 [00:04<00:07,  5.30track/s]                                                                   Loading MAESTRO:  33%|███▎      | 20/60 [00:04<00:07,  5.30track/s]                                                                   Loading MAESTRO:  33%|███▎      | 20/60 [00:04<00:07,  5.30track/s]                                                                   Loading MAESTRO:  33%|███▎      | 20/60 [00:04<00:07,  5.30track/s][2026-05-13 08:46:04,425] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  40%|████      | 24/60 [00:04<00:04,  7.61track/s]                                                                   Loading MAESTRO:  40%|████      | 24/60 [00:04<00:04,  7.61track/s][2026-05-13 08:46:04,610] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  43%|████▎     | 26/60 [00:04<00:04,  7.87track/s][2026-05-13 08:46:04,977] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+                                                                   Loading MAESTRO:  43%|████▎     | 26/60 [00:04<00:04,  7.87track/s]Loading MAESTRO:  47%|████▋     | 28/60 [00:04<00:04,  6.73track/s]                                                                   Loading MAESTRO:  47%|████▋     | 28/60 [00:04<00:04,  6.73track/s]                                                                   Loading MAESTRO:  47%|████▋     | 28/60 [00:04<00:04,  6.73track/s]                                                                   Loading MAESTRO:  47%|████▋     | 28/60 [00:04<00:04,  6.73track/s][2026-05-13 08:46:05,168] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  53%|█████▎    | 32/60 [00:04<00:02,  9.60track/s]                                                                   Loading MAESTRO:  53%|█████▎    | 32/60 [00:04<00:02,  9.60track/s]                                                                   Loading MAESTRO:  53%|█████▎    | 32/60 [00:04<00:02,  9.60track/s][2026-05-13 08:46:05,383] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  58%|█████▊    | 35/60 [00:05<00:02,  9.32track/s]                                                                   Loading MAESTRO:  58%|█████▊    | 35/60 [00:05<00:02,  9.32track/s][2026-05-13 08:46:06,136] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  62%|██████▏   | 37/60 [00:06<00:04,  5.49track/s][2026-05-13 08:46:07,324] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+                                                                   Loading MAESTRO:  62%|██████▏   | 37/60 [00:07<00:04,  5.49track/s]Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s]                                                                   Loading MAESTRO:  65%|██████▌   | 39/60 [00:07<00:07,  2.92track/s][2026-05-13 08:46:08,490] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s]                                                                   Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s]                                                                   Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s]                                                                   Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s]                                                                   Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s]                                                                   Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s]                                                                   [maestro] Skipping 2009/MIDI-Unprocessed_11_R1_2009_06-09_ORIG_MID--AUDIO_11_R1_2009_11_R1_2009_07_WAV: [Errno 2] No such file or directory: 'data/raw/maestro/2009/MIDI-Unprocessed_11_R1_2009_06-09_ORIG_MID--AUDIO_11_R1_2009_11_R1_2009_07_WAV.wav'
+[maestro] Skipping 2009/MIDI-Unprocessed_02_R1_2009_03-06_ORIG_MID--AUDIO_02_R1_2009_02_R1_2009_04_WAV: [Errno 2] No such file or directory: 'data/raw/maestro/2009/MIDI-Unprocessed_02_R1_2009_03-06_ORIG_MID--AUDIO_02_R1_2009_02_R1_2009_04_WAV.wav'
+[maestro] Skipping 2009/MIDI-Unprocessed_11_R1_2009_06-09_ORIG_MID--AUDIO_11_R1_2009_11_R1_2009_08_WAV: [Errno 2] No such file or directory: 'data/raw/maestro/2009/MIDI-Unprocessed_11_R1_2009_06-09_ORIG_MID--AUDIO_11_R1_2009_11_R1_2009_08_WAV.wav'
+[maestro] Skipping 2018/MIDI-Unprocessed_Recital13-15_MID--AUDIO_15_R1_2018_wav--1: [Errno 2] No such file or directory: 'data/raw/maestro/2018/MIDI-Unprocessed_Recital13-15_MID--AUDIO_15_R1_2018_wav--1.wav'
+[maestro] Skipping 2014/MIDI-UNPROCESSED_09-10_R1_2014_MID--AUDIO_09_R1_2014_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2014/MIDI-UNPROCESSED_09-10_R1_2014_MID--AUDIO_09_R1_2014_wav--4.wav'
+[maestro] Skipping 2009/MIDI-Unprocessed_11_R1_2009_01-05_ORIG_MID--AUDIO_11_R1_2009_11_R1_2009_04_WAV: [Errno 2] No such file or directory: 'data/raw/maestro/2009/MIDI-Unprocessed_11_R1_2009_01-05_ORIG_MID--AUDIO_11_R1_2009_11_R1_2009_04_WAV.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_05_R1_2008_01-04_ORIG_MID--AUDIO_05_R1_2008_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_05_R1_2008_01-04_ORIG_MID--AUDIO_05_R1_2008_wav--3.wav'
+[maestro] Skipping 2018/MIDI-Unprocessed_Recital16_MID--AUDIO_16_R1_2018_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2018/MIDI-Unprocessed_Recital16_MID--AUDIO_16_R1_2018_wav--3.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_09_R3_2008_01-07_ORIG_MID--AUDIO_09_R3_2008_wav--1: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_09_R3_2008_01-07_ORIG_MID--AUDIO_09_R3_2008_wav--1.wav'
+[maestro] Skipping 2014/MIDI-UNPROCESSED_01-03_R1_2014_MID--AUDIO_01_R1_2014_wav--2: [Errno 2] No such file or directory: 'data/raw/maestro/2014/MIDI-UNPROCESSED_01-03_R1_2014_MID--AUDIO_01_R1_2014_wav--2.wav'
+[maestro] Skipping 2014/MIDI-UNPROCESSED_19-21_R3_2014_MID--AUDIO_21_R3_2014_wav--1: [Errno 2] No such file or directory: 'data/raw/maestro/2014/MIDI-UNPROCESSED_19-21_R3_2014_MID--AUDIO_21_R3_2014_wav--1.wav'
+[maestro] Skipping 2014/MIDI-UNPROCESSED_01-03_R1_2014_MID--AUDIO_01_R1_2014_wav--1: [Errno 2] No such file or directory: 'data/raw/maestro/2014/MIDI-UNPROCESSED_01-03_R1_2014_MID--AUDIO_01_R1_2014_wav--1.wav'
+[maestro] Skipping 2018/MIDI-Unprocessed_Recital17-19_MID--AUDIO_18_R1_2018_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2018/MIDI-Unprocessed_Recital17-19_MID--AUDIO_18_R1_2018_wav--3.wav'
+[maestro] Skipping 2018/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--5: [Errno 2] No such file or directory: 'data/raw/maestro/2018/MIDI-Unprocessed_Recital9-11_MID--AUDIO_09_R1_2018_wav--5.wav'
+[maestro] Skipping 2014/MIDI-UNPROCESSED_11-13_R1_2014_MID--AUDIO_11_R1_2014_wav--1: [Errno 2] No such file or directory: 'data/raw/maestro/2014/MIDI-UNPROCESSED_11-13_R1_2014_MID--AUDIO_11_R1_2014_wav--1.wav'
+[maestro] Skipping 2017/MIDI-Unprocessed_083_PIANO083_MID--AUDIO-split_07-09-17_Piano-e_2_-06_wav--1: [Errno 2] No such file or directory: 'data/raw/maestro/2017/MIDI-Unprocessed_083_PIANO083_MID--AUDIO-split_07-09-17_Piano-e_2_-06_wav--1.wav'
+[maestro] Skipping 2017/MIDI-Unprocessed_059_PIANO059_MID--AUDIO-split_07-07-17_Piano-e_2-03_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2017/MIDI-Unprocessed_059_PIANO059_MID--AUDIO-split_07-07-17_Piano-e_2-03_wav--4.wav'
+[maestro] Skipping 2018/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--2: [Errno 2] No such file or directory: 'data/raw/maestro/2018/MIDI-Unprocessed_Chamber5_MID--AUDIO_18_R3_2018_wav--2.wav'
+[maestro] Skipping 2013/ORIG-MIDI_02_7_6_13_Group__MID--AUDIO_08_R1_2013_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2013/ORIG-MIDI_02_7_6_13_Group__MID--AUDIO_08_R1_2013_wav--4.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_14_R1_2008_01-05_ORIG_MID--AUDIO_14_R1_2008_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_14_R1_2008_01-05_ORIG_MID--AUDIO_14_R1_2008_wav--3.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_17_R1_2008_01-04_ORIG_MID--AUDIO_17_R1_2008_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_17_R1_2008_01-04_ORIG_MID--AUDIO_17_R1_2008_wav--3.wav'
+[maestro] Skipping 2013/ORIG-MIDI_02_7_6_13_Group__MID--AUDIO_08_R1_2013_wav--5: [Errno 2] No such file or directory: 'data/raw/maestro/2013/ORIG-MIDI_02_7_6_13_Group__MID--AUDIO_08_R1_2013_wav--5.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_04_R1_2008_01-04_ORIG_MID--AUDIO_04_R1_2008_wav--4.wav'
+[maestro] Skipping 2014/MIDI-UNPROCESSED_11-13_R1_2014_MID--AUDIO_13_R1_2014_wav--6: [Errno 2] No such file or directory: 'data/raw/maestro/2014/MIDI-UNPROCESSED_11-13_R1_2014_MID--AUDIO_13_R1_2014_wav--6.wav'
+[maestro] Skipping 2013/ORIG-MIDI_01_7_7_13_Group__MID--AUDIO_13_R1_2013_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2013/ORIG-MIDI_01_7_7_13_Group__MID--AUDIO_13_R1_2013_wav--3.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_04_R3_2008_01-07_ORIG_MID--AUDIO_04_R3_2008_wav--6: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_04_R3_2008_01-07_ORIG_MID--AUDIO_04_R3_2008_wav--6.wav'
+[maestro] Skipping 2018/MIDI-Unprocessed_Recital17-19_MID--AUDIO_19_R1_2018_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2018/MIDI-Unprocessed_Recital17-19_MID--AUDIO_19_R1_2018_wav--3.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_04_R3_2008_01-07_ORIG_MID--AUDIO_04_R3_2008_wav--7: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_04_R3_2008_01-07_ORIG_MID--AUDIO_04_R3_2008_wav--7.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_04_R3_2008_01-07_ORIG_MID--AUDIO_04_R3_2008_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_04_R3_2008_01-07_ORIG_MID--AUDIO_04_R3_2008_wav--3.wav'
+[maestro] Skipping 2013/ORIG-MIDI_01_7_6_13_Group__MID--AUDIO_01_R1_2013_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2013/ORIG-MIDI_01_7_6_13_Group__MID--AUDIO_01_R1_2013_wav--4.wav'
+[maestro] Skipping 2013/ORIG-MIDI_01_7_7_13_Group__MID--AUDIO_11_R1_2013_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2013/ORIG-MIDI_01_7_7_13_Group__MID--AUDIO_11_R1_2013_wav--4.wav'
+[maestro] Skipping 2017/MIDI-Unprocessed_075_PIANO075_MID--AUDIO-split_07-08-17_Piano-e_2-06_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2017/MIDI-Unprocessed_075_PIANO075_MID--AUDIO-split_07-08-17_Piano-e_2-06_wav--3.wav'
+[maestro] Skipping 2017/MIDI-Unprocessed_065_PIANO065_MID--AUDIO-split_07-07-17_Piano-e_3-01_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2017/MIDI-Unprocessed_065_PIANO065_MID--AUDIO-split_07-07-17_Piano-e_3-01_wav--3.wav'
+[maestro] Skipping 2009/MIDI-Unprocessed_08_R1_2009_01-04_ORIG_MID--AUDIO_08_R1_2009_08_R1_2009_04_WAV: [Errno 2] No such file or directory: 'data/raw/maestro/2009/MIDI-Unprocessed_08_R1_2009_01-04_ORIG_MID--AUDIO_08_R1_2009_08_R1_2009_04_WAV.wav'
+[maestro] Skipping 2009/MIDI-Unprocessed_08_R1_2009_01-04_ORIG_MID--AUDIO_08_R1_2009_08_R1_2009_03_WAV: [Errno 2] No such file or directory: 'data/raw/maestro/2009/MIDI-Unprocessed_08_R1_2009_01-04_ORIG_MID--AUDIO_08_R1_2009_08_R1_2009_03_WAV.wav'
+[maestro] Skipping 2017/MIDI-Unprocessed_080_PIANO080_MID--AUDIO-split_07-09-17_Piano-e_1-06_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2017/MIDI-Unprocessed_080_PIANO080_MID--AUDIO-split_07-09-17_Piano-e_1-06_wav--3.wav'
+[maestro] Skipping 2017/MIDI-Unprocessed_072_PIANO072_MID--AUDIO-split_07-08-17_Piano-e_1-06_wav--2: [Errno 2] No such file or directory: 'data/raw/maestro/2017/MIDI-Unprocessed_072_PIANO072_MID--AUDIO-split_07-08-17_Piano-e_1-06_wav--2.wav'Loading MAESTRO:  78%|███████▊  | 47/60 [00:08<00:02,  5.26track/s][2026-05-13 08:46:09,098] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  90%|█████████ | 54/60 [00:08<00:00,  7.40track/s]                                                                   Loading MAESTRO:  90%|█████████ | 54/60 [00:08<00:00,  7.40track/s]                                                                   Loading MAESTRO:  90%|█████████ | 54/60 [00:08<00:00,  7.40track/s][2026-05-13 08:46:09,333] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  95%|█████████▌| 57/60 [00:09<00:00,  8.61track/s][2026-05-13 08:46:09,655] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+[2026-05-13 08:46:10,113] WARNING [root.notes:152] The default unit for maestro pitch and velocity values have changed in mirdata >0.3.3 from hz/confidence to midi/velocity
+Loading MAESTRO:  98%|█████████▊| 59/60 [00:09<00:00,  5.86track/s]                                                                   Loading MAESTRO:  98%|█████████▊| 59/60 [00:09<00:00,  5.86track/s]Loading MAESTRO: 100%|██████████| 60/60 [00:09<00:00,  6.02track/s]
+
+[maestro] Skipping 2008/MIDI-Unprocessed_04_R2_2008_01-04_ORIG_MID--AUDIO_04_R2_2008_wav--3: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_04_R2_2008_01-04_ORIG_MID--AUDIO_04_R2_2008_wav--3.wav'
+[maestro] Skipping 2008/MIDI-Unprocessed_10_R2_2008_01-05_ORIG_MID--AUDIO_10_R2_2008_wav--4: [Errno 2] No such file or directory: 'data/raw/maestro/2008/MIDI-Unprocessed_10_R2_2008_01-05_ORIG_MID--AUDIO_10_R2_2008_wav--4.wav'
+[maestro] Skipping 2013/ORIG-MIDI_01_7_8_13_Group__MID--AUDIO_07_R2_2013_wav--2: [Errno 2] No such file or directory: 'data/raw/maestro/2013/ORIG-MIDI_01_7_8_13_Group__MID--AUDIO_07_R2_2013_wav--2.wav'
+Estimating pitch:   0%|          | 0/80 [00:00<?, ?track/s]                                                           Estimating pitch:   0%|          | 0/80 [00:00<?, ?track/s]Estimating pitch:   1%|▏         | 1/80 [01:54<2:30:43, 114.48s/track]                                                                      Estimating pitch:   1%|▏         | 1/80 [01:54<2:30:43, 114.48s/track]Estimating pitch:   2%|▎         | 2/80 [03:30<2:14:45, 103.66s/track]                                                                      Estimating pitch:   2%|▎         | 2/80 [03:30<2:14:45, 103.66s/track]Estimating pitch:   4%|▍         | 3/80 [04:09<1:35:18, 74.26s/track]                                                                      Estimating pitch:   4%|▍         | 3/80 [04:09<1:35:18, 74.26s/track]Estimating pitch:   5%|▌         | 4/80 [04:28<1:06:04, 52.17s/track]                                                                     Estimating pitch:   5%|▌         | 4/80 [04:28<1:06:04, 52.17s/track]Estimating pitch:   6%|▋         | 5/80 [04:51<52:06, 41.69s/track]                                                                     Estimating pitch:   6%|▋         | 5/80 [04:51<52:06, 41.69s/track]Estimating pitch:   8%|▊         | 6/80 [05:03<39:00, 31.62s/track]                                                                   Estimating pitch:   8%|▊         | 6/80 [05:03<39:00, 31.62s/track]Estimating pitch:   9%|▉         | 7/80 [05:46<43:08, 35.46s/track]                                                                   Estimating pitch:   9%|▉         | 7/80 [05:46<43:08, 35.46s/track]Estimating pitch:  10%|█         | 8/80 [07:02<58:02, 48.37s/track]                                                                   Estimating pitch:  10%|█         | 8/80 [07:02<58:02, 48.37s/track]Estimating pitch:  11%|█▏        | 9/80 [07:47<55:55, 47.27s/track]                                                                   Estimating pitch:  11%|█▏        | 9/80 [07:47<55:55, 47.27s/track]Estimating pitch:  12%|█▎        | 10/80 [08:03<43:56, 37.67s/track]                                                                    Estimating pitch:  12%|█▎        | 10/80 [08:03<43:56, 37.67s/track]Estimating pitch:  14%|█▍        | 11/80 [08:29<39:05, 34.00s/track]                                                                    Estimating pitch:  14%|█▍        | 11/80 [08:29<39:05, 34.00s/track]Estimating pitch:  15%|█▌        | 12/80 [08:39<30:18, 26.74s/track]                                                                    Estimating pitch:  15%|█▌        | 12/80 [08:39<30:18, 26.74s/track]Estimating pitch:  16%|█▋        | 13/80 [09:02<28:26, 25.46s/track]                                                                    Estimating pitch:  16%|█▋        | 13/80 [09:02<28:26, 25.46s/track]Estimating pitch:  18%|█▊        | 14/80 [09:08<21:36, 19.64s/track]                                                                    Estimating pitch:  18%|█▊        | 14/80 [09:08<21:36, 19.64s/track]Estimating pitch:  19%|█▉        | 15/80 [09:31<22:35, 20.86s/track]                                                                    Estimating pitch:  19%|█▉        | 15/80 [09:31<22:35, 20.86s/track]Estimating pitch:  20%|██        | 16/80 [09:46<20:20, 19.08s/track]                                                                    Estimating pitch:  20%|██        | 16/80 [09:46<20:20, 19.08s/track]Estimating pitch:  21%|██▏       | 17/80 [11:49<52:45, 50.25s/track]                                                                    Estimating pitch:  21%|██▏       | 17/80 [11:49<52:45, 50.25s/track]Estimating pitch:  22%|██▎       | 18/80 [12:01<40:00, 38.71s/track]                                                                    Estimating pitch:  22%|██▎       | 18/80 [12:01<40:00, 38.71s/track]Estimating pitch:  24%|██▍       | 19/80 [12:16<32:04, 31.55s/track]                                                                    Estimating pitch:  24%|██▍       | 19/80 [12:16<32:04, 31.55s/track]Estimating pitch:  25%|██▌       | 20/80 [12:32<26:47, 26.79s/track]                                                                    Estimating pitch:  25%|██▌       | 20/80 [12:32<26:47, 26.79s/track]Estimating pitch:  26%|██▋       | 21/80 [13:58<43:58, 44.72s/track]                                                                    Estimating pitch:  26%|██▋       | 21/80 [13:58<43:58, 44.72s/track]Estimating pitch:  28%|██▊       | 22/80 [14:03<31:41, 32.78s/track]                                                                    Estimating pitch:  28%|██▊       | 22/80 [14:03<31:41, 32.78s/track]Estimating pitch:  29%|██▉       | 23/80 [14:27<28:37, 30.12s/track]                                                                    Estimating pitch:  29%|██▉       | 23/80 [14:27<28:37, 30.12s/track]Estimating pitch:  30%|███       | 24/80 [14:31<20:57, 22.46s/track]                                                                    Estimating pitch:  30%|███       | 24/80 [14:31<20:57, 22.46s/track]Estimating pitch:  31%|███▏      | 25/80 [14:43<17:30, 19.10s/track]                                                                    Estimating pitch:  31%|███▏      | 25/80 [14:43<17:30, 19.10s/track]Estimating pitch:  32%|███▎      | 26/80 [15:02<17:18, 19.23s/track]                                                                    Estimating pitch:  32%|███▎      | 26/80 [15:02<17:18, 19.23s/track]Estimating pitch:  34%|███▍      | 27/80 [16:13<30:37, 34.67s/track]                                                                    Estimating pitch:  34%|███▍      | 27/80 [16:13<30:37, 34.67s/track]Estimating pitch:  35%|███▌      | 28/80 [16:31<25:49, 29.80s/track]                                                                    Estimating pitch:  35%|███▌      | 28/80 [16:31<25:49, 29.80s/track]Estimating pitch:  36%|███▋      | 29/80 [20:04<1:11:57, 84.67s/track]                                                                      Estimating pitch:  36%|███▋      | 29/80 [20:04<1:11:57, 84.67s/track]Estimating pitch:  38%|███▊      | 30/80 [20:18<52:53, 63.47s/track]                                                                      Estimating pitch:  38%|███▊      | 30/80 [20:18<52:53, 63.47s/track]Estimating pitch:  39%|███▉      | 31/80 [20:22<37:18, 45.69s/track]                                                                    Estimating pitch:  39%|███▉      | 31/80 [20:22<37:18, 45.69s/track]Estimating pitch:  40%|████      | 32/80 [21:01<34:56, 43.68s/track]                                                                    Estimating pitch:  40%|████      | 32/80 [21:01<34:56, 43.68s/track]Estimating pitch:  41%|████▏     | 33/80 [21:14<26:56, 34.39s/track]                                                                    Estimating pitch:  41%|████▏     | 33/80 [21:14<26:56, 34.39s/track]Estimating pitch:  42%|████▎     | 34/80 [23:36<51:00, 66.53s/track]                                                                    Estimating pitch:  42%|████▎     | 34/80 [23:36<51:00, 66.53s/track]Estimating pitch:  44%|████▍     | 35/80 [23:42<36:19, 48.43s/track]                                                                    Estimating pitch:  44%|████▍     | 35/80 [23:42<36:19, 48.43s/track]Estimating pitch:  45%|████▌     | 36/80 [23:56<27:53, 38.05s/track]                                                                    Estimating pitch:  45%|████▌     | 36/80 [23:56<27:53, 38.05s/track]Estimating pitch:  46%|████▋     | 37/80 [24:13<22:43, 31.72s/track]                                                                    Estimating pitch:  46%|████▋     | 37/80 [24:13<22:43, 31.72s/track]Estimating pitch:  48%|████▊     | 38/80 [24:42<21:43, 31.04s/track]                                                                    Estimating pitch:  48%|████▊     | 38/80 [24:42<21:43, 31.04s/track]Estimating pitch:  49%|████▉     | 39/80 [27:27<48:40, 71.22s/track]                                                                    Estimating pitch:  49%|████▉     | 39/80 [27:27<48:40, 71.22s/track]Estimating pitch:  50%|█████     | 40/80 [27:29<33:44, 50.60s/track]                                                                    Estimating pitch:  50%|█████     | 40/80 [27:29<33:44, 50.60s/track]Estimating pitch:  51%|█████▏    | 41/80 [28:36<35:54, 55.25s/track]                                                                    Estimating pitch:  51%|█████▏    | 41/80 [28:36<35:54, 55.25s/track]Estimating pitch:  52%|█████▎    | 42/80 [29:07<30:23, 47.98s/track]                                                                    Estimating pitch:  52%|█████▎    | 42/80 [29:07<30:23, 47.98s/track]Estimating pitch:  54%|█████▍    | 43/80 [29:23<23:44, 38.51s/track]                                                                    Estimating pitch:  54%|█████▍    | 43/80 [29:23<23:44, 38.51s/track]Estimating pitch:  55%|█████▌    | 44/80 [29:56<22:10, 36.96s/track]                                                                    Estimating pitch:  55%|█████▌    | 44/80 [29:56<22:10, 36.96s/track]Estimating pitch:  56%|█████▋    | 45/80 [30:21<19:21, 33.18s/track]                                                                    Estimating pitch:  56%|█████▋    | 45/80 [30:21<19:21, 33.18s/track]Estimating pitch:  57%|█████▊    | 46/80 [31:47<27:54, 49.26s/track]                                                                    Estimating pitch:  57%|█████▊    | 46/80 [31:47<27:54, 49.26s/track]Estimating pitch:  59%|█████▉    | 47/80 [32:05<21:51, 39.74s/track]                                                                    Estimating pitch:  59%|█████▉    | 47/80 [32:05<21:51, 39.74s/track]Estimating pitch:  60%|██████    | 48/80 [32:34<19:25, 36.43s/track]                                                                    Estimating pitch:  60%|██████    | 48/80 [32:34<19:25, 36.43s/track]Estimating pitch:  61%|██████▏   | 49/80 [32:48<15:22, 29.76s/track]                                                                    Estimating pitch:  61%|██████▏   | 49/80 [32:48<15:22, 29.76s/track]Estimating pitch:  62%|██████▎   | 50/80 [35:15<32:31, 65.05s/track]                                                                    Estimating pitch:  62%|██████▎   | 50/80 [35:15<32:31, 65.05s/track]Estimating pitch:  64%|██████▍   | 51/80 [35:34<24:42, 51.13s/track]                                                                    Estimating pitch:  64%|██████▍   | 51/80 [35:34<24:42, 51.13s/track]Estimating pitch:  65%|██████▌   | 52/80 [35:38<17:20, 37.16s/track]                                                                    Estimating pitch:  65%|██████▌   | 52/80 [35:38<17:20, 37.16s/track]Estimating pitch:  66%|██████▋   | 53/80 [35:59<14:27, 32.15s/track]                                                                    Estimating pitch:  66%|██████▋   | 53/80 [35:59<14:27, 32.15s/track]Estimating pitch:  68%|██████▊   | 54/80 [36:39<15:01, 34.66s/track]                                                                    Estimating pitch:  68%|██████▊   | 54/80 [36:39<15:01, 34.66s/track]Estimating pitch:  69%|██████▉   | 55/80 [36:55<11:59, 28.80s/track]                                                                    Estimating pitch:  69%|██████▉   | 55/80 [36:55<11:59, 28.80s/track]Estimating pitch:  70%|███████   | 56/80 [37:16<10:36, 26.53s/track]                                                                    Estimating pitch:  70%|███████   | 56/80 [37:16<10:36, 26.53s/track]Estimating pitch:  71%|███████▏  | 57/80 [37:26<08:18, 21.67s/track]                                                                    Estimating pitch:  71%|███████▏  | 57/80 [37:26<08:18, 21.67s/track]Estimating pitch:  72%|███████▎  | 58/80 [37:47<07:48, 21.32s/track]                                                                    Estimating pitch:  72%|███████▎  | 58/80 [37:47<07:48, 21.32s/track]Estimating pitch:  74%|███████▍  | 59/80 [38:06<07:15, 20.72s/track]                                                                    Estimating pitch:  74%|███████▍  | 59/80 [38:06<07:15, 20.72s/track]Estimating pitch:  75%|███████▌  | 60/80 [38:21<06:17, 18.89s/track]                                                                    Estimating pitch:  75%|███████▌  | 60/80 [38:21<06:17, 18.89s/track]Estimating pitch:  76%|███████▋  | 61/80 [38:46<06:38, 20.96s/track]                                                                    Estimating pitch:  76%|███████▋  | 61/80 [38:46<06:38, 20.96s/track]Estimating pitch:  78%|███████▊  | 62/80 [39:10<06:29, 21.61s/track]                                                                    Estimating pitch:  78%|███████▊  | 62/80 [39:10<06:29, 21.61s/track]Estimating pitch:  79%|███████▉  | 63/80 [39:17<04:54, 17.34s/track]                                                                    Estimating pitch:  79%|███████▉  | 63/80 [39:17<04:54, 17.34s/track]Estimating pitch:  80%|████████  | 64/80 [39:28<04:08, 15.55s/track]                                                                    Estimating pitch:  80%|████████  | 64/80 [39:28<04:08, 15.55s/track]Estimating pitch:  81%|████████▏ | 65/80 [40:09<05:47, 23.20s/track]                                                                    Estimating pitch:  81%|████████▏ | 65/80 [40:09<05:47, 23.20s/track]Estimating pitch:  82%|████████▎ | 66/80 [41:01<07:25, 31.84s/track]                                                                    Estimating pitch:  82%|████████▎ | 66/80 [41:01<07:25, 31.84s/track]Estimating pitch:  84%|████████▍ | 67/80 [41:05<05:04, 23.40s/track]                                                                    Estimating pitch:  84%|████████▍ | 67/80 [41:05<05:04, 23.40s/track]Estimating pitch:  85%|████████▌ | 68/80 [41:13<03:43, 18.66s/track]                                                                    Estimating pitch:  85%|████████▌ | 68/80 [41:13<03:43, 18.66s/track]Estimating pitch:  86%|████████▋ | 69/80 [41:18<02:41, 14.66s/track]                                                                    Estimating pitch:  86%|████████▋ | 69/80 [41:18<02:41, 14.66s/track]Estimating pitch:  88%|████████▊ | 70/80 [41:29<02:14, 13.47s/track]                                                                    Estimating pitch:  88%|████████▊ | 70/80 [41:29<02:14, 13.47s/track]Estimating pitch:  89%|████████▉ | 71/80 [41:49<02:19, 15.48s/track]                                                                    Estimating pitch:  89%|████████▉ | 71/80 [41:49<02:19, 15.48s/track]Estimating pitch:  90%|█████████ | 72/80 [41:53<01:36, 12.01s/track]                                                                    Estimating pitch:  90%|█████████ | 72/80 [41:53<01:36, 12.01s/track]Estimating pitch:  91%|█████████▏| 73/80 [42:01<01:16, 10.98s/track]                                                                    Estimating pitch:  91%|█████████▏| 73/80 [42:01<01:16, 10.98s/track]Estimating pitch:  92%|█████████▎| 74/80 [42:37<01:49, 18.33s/track]                                                                    Estimating pitch:  92%|█████████▎| 74/80 [42:37<01:49, 18.33s/track]Estimating pitch:  94%|█████████▍| 75/80 [43:31<02:26, 29.25s/track]                                                                    Estimating pitch:  94%|█████████▍| 75/80 [43:31<02:26, 29.25s/track]Estimating pitch:  95%|█████████▌| 76/80 [43:51<01:44, 26.19s/track]                                                                    Estimating pitch:  95%|█████████▌| 76/80 [43:51<01:44, 26.19s/track]Estimating pitch:  96%|█████████▋| 77/80 [44:08<01:10, 23.67s/track]                                                                    Estimating pitch:  96%|█████████▋| 77/80 [44:08<01:10, 23.67s/track]Estimating pitch:  98%|█████████▊| 78/80 [44:15<00:36, 18.48s/track]                                                                    Estimating pitch:  98%|█████████▊| 78/80 [44:15<00:36, 18.48s/track]Estimating pitch:  99%|█████████▉| 79/80 [44:34<00:18, 18.66s/track]                                                                    Estimating pitch:  99%|█████████▉| 79/80 [44:34<00:18, 18.66s/track]Estimating pitch: 100%|██████████| 80/80 [44:54<00:00, 19.04s/track]Estimating pitch: 100%|██████████| 80/80 [44:54<00:00, 33.68s/track]
+  [carnatic] 0_Dorakuna
+  [carnatic] 1_Ganamuda_Panam
+  [carnatic] 2_Chidambara_Natarajam
+  [carnatic] 3_Vandalum
+  [carnatic] 4_Thiruveragane_Saveri_Varnam
+  [carnatic] 5_Rama_Daya_Judave
+  [carnatic] 6_Neene_Ballideno
+  [carnatic] 7_Paragu_Matada
+  [carnatic] 8_Palisomma_Muddu_Sarade
+  [carnatic] 9_Ramakrishnaru_Manege
+  [carnatic] 10_Bandadella_Barali
+  [carnatic] 11_Tamburi_Mitidava
+  [carnatic] 12_Sharanu_Janakana
+  [carnatic] 13_Thillana_Purnachandrika
+    Gamaka MAE=358.2c  non-gamaka MAE=419.5c
+  [carnatic] 14_Angakaram
+    Gamaka MAE=373.8c  non-gamaka MAE=297.4c
+  [carnatic] 15_Samajavarada
+    Gamaka MAE=393.6c  non-gamaka MAE=286.8c
+  [carnatic] 16_Evarura
+    Gamaka MAE=547.7c  non-gamaka MAE=529.3c
+  [carnatic] 17_Eranapai
+    Gamaka MAE=364.4c  non-gamaka MAE=212.7c
+  [carnatic] 18_Parama_Purusham
+    Gamaka MAE=300.4c  non-gamaka MAE=211.8c
+  [carnatic] 19_Marubari
+    Gamaka MAE=343.2c  non-gamaka MAE=211.4c
+  [carnatic] 20_Aparadhamula
+    Gamaka MAE=456.8c  non-gamaka MAE=436.1c
+  [carnatic] 21_Sadabalarupapi_Shlokam
+    Gamaka MAE=274.1c  non-gamaka MAE=97.6c
+  [carnatic] 22_Hiranmayeem_Lakshmeem
+  [carnatic] 23_Niraimadi_Mugam_Thiruppugazh
+  [carnatic] 24_Evvari_Bodhana
+  [carnatic] 25_Sanchara_Dhadhara
+  [carnatic] 26_Lokavana_Chatura
+  [carnatic] 27_Idhuthaano_Thillai_Sthalam
+  [carnatic] 28_Amba_Kamakshi
+  [carnatic] 29_Vitthala_Salaho_Swamy
+  [carnatic] 30_Pavamana_Suthudu_Mangalam
+  [carnatic] 31_Karuna_Ela_Gante
+  [carnatic] 32_Gopanandana
+  [carnatic] 33_Entara_Nitana
+  [carnatic] 34_Teerthakarayinile
+  [carnatic] 35_Thillana_Dhanashri
+  [carnatic] 36_Ozhukkam_Uyirinum
+  [carnatic] 37_Undan_Paada_Pankayam
+  [carnatic] 38_Raagam_Thaanam_Pallavi
+  [carnatic] 39_Pavamana_Suthudu
+  [carnatic] 40_Kamakshi
+  [carnatic] 41_Soundararajam
+  [carnatic] 42_Payum_Oli_Nee_Yenakku
+  [carnatic] 43_Shatre_Vilagi_Irum
+  [carnatic] 44_Maname_Ramanai_Paada
+  [carnatic] 45_Apparama_Bhakti
+  [carnatic] 46_Manadirkkugandhadu
+  [carnatic] 47_Koti_Janmani
+  [carnatic] 48_Brova_Barama
+  [carnatic] 49_Shankari_Shankuru
+  [carnatic] 50_Karunimpa_Idi
+  [carnatic] 51_Pavamana_Suthudu_Mangalam
+  [carnatic] 52_Geeta_Nayakan
+  [carnatic] 53_Siddhi_Vinayakam
+  [carnatic] 54_Thillana_Pahadi
+  [carnatic] 55_Enadhu_Manam_Kavalai
+  [carnatic] 56_Purahara_Nandana
+  [carnatic] 57_Nannu_Brova_Neeku
+  [carnatic] 58_Nera_Nammiti
+  [carnatic] 59_Parvathi_Ninnu_Neranammiti
+  [western] 2006/MIDI-Unprocessed_01_R1_2006_01-09_ORIG_MID--AUDIO_01_R1_2006_04_Track04_wav
+  [western] 2006/MIDI-Unprocessed_24_R1_2006_01-05_ORIG_MID--AUDIO_24_R1_2006_03_Track03_wav
+  [western] 2004/MIDI-Unprocessed_SMF_17_R1_2004_03-06_ORIG_MID--AUDIO_20_R2_2004_12_Track12_wav--1
+  [western] 2011/MIDI-Unprocessed_04_R3_2011_MID--AUDIO_R3-D2_05_Track05_wav
+  [western] 2015/MIDI-Unprocessed_R2_D2-12-13-15_mid--AUDIO-from_mp3_12_R2_2015_wav--3
+  [western] 2006/MIDI-Unprocessed_03_R1_2006_01-05_ORIG_MID--AUDIO_03_R1_2006_04_Track04_wav
+  [western] 2008/MIDI-Unprocessed_09_R3_2008_01-07_ORIG_MID--AUDIO_09_R3_2008_wav--2
+  [western] 2008/MIDI-Unprocessed_10_R2_2008_01-05_ORIG_MID--AUDIO_10_R2_2008_wav--2
+  [western] 2008/MIDI-Unprocessed_10_R2_2008_01-05_ORIG_MID--AUDIO_10_R2_2008_wav--1
+  [western] 2004/MIDI-Unprocessed_XP_04_R1_2004_03-05_ORIG_MID--AUDIO_04_R1_2004_06_Track06_wav
+  [western] 2006/MIDI-Unprocessed_01_R1_2006_01-09_ORIG_MID--AUDIO_01_R1_2006_02_Track02_wav
+  [western] 2008/MIDI-Unprocessed_06_R1_2008_01-04_ORIG_MID--AUDIO_06_R1_2008_wav--3
+  [western] 2011/MIDI-Unprocessed_02_R1_2011_MID--AUDIO_R1-D1_10_Track10_wav
+  [western] 2015/MIDI-Unprocessed_R2_D2-12-13-15_mid--AUDIO-from_mp3_13_R2_2015_wav--4
+  [western] 2006/MIDI-Unprocessed_07_R1_2006_01-04_ORIG_MID--AUDIO_07_R1_2006_04_Track04_wav
+  [western] 2011/MIDI-Unprocessed_14_R1_2011_MID--AUDIO_R1-D6_04_Track04_wav
+  [western] 2011/MIDI-Unprocessed_02_R2_2011_MID--AUDIO_R2-D1_02_Track02_wav
+  [western] 2015/MIDI-Unprocessed_R2_D1-2-3-6-7-8-11_mid--AUDIO-from_mp3_03_R2_2015_wav--1
+  [western] 2015/MIDI-Unprocessed_R2_D1-2-3-6-7-8-11_mid--AUDIO-from_mp3_06_R2_2015_wav--1
+  [western] 2015/MIDI-Unprocessed_R2_D2-19-21-22_mid--AUDIO-from_mp3_19_R2_2015_wav--3
+
+=== Summary ===
+{
+  "voicing_recall": {
+    "mean": 0.2729575077316979,
+    "std": 0.2078211276927893,
+    "n": 29
+  },
+  "voicing_false_alarm": {
+    "mean": 0.24821198503556474,
+    "std": 0.17463918583218177,
+    "n": 29
+  },
+  "raw_pitch_accuracy": {
+    "mean": 0.0644436429517918,
+    "std": 0.10918853386587064,
+    "n": 29
+  },
+  "raw_chroma_accuracy": {
+    "mean": 0.08201933437556047,
+    "std": 0.10631808167797761,
+    "n": 29
+  },
+  "overall_accuracy": {
+    "mean": 0.22902360806327737,
+    "std": 0.08885182195432459,
+    "n": 29
+  },
+  "mean_abs_error_cents": {
+    "mean": 1094.9870471175077,
+    "std": 618.2015576309042,
+    "n": 29
+  },
+  "median_abs_error_cents": {
+    "mean": 895.1707440642097,
+    "std": 620.6431708847665,
+    "n": 29
+  },
+  "semitone_snap_ratio": {
+    "mean": 0.2694389901244745,
+    "std": 0.08151247957550763,
+    "n": 29
+  }
+}
+
+Results saved to results/pitch/A_crepe
+
+=== Condition B: Train from scratch on Carnatic (gives B-W and B-C) ===
+Loading Saraga tracks…
+Loading Saraga:   0%|          | 0/60 [00:00<?, ?track/s]Loading Saraga:   2%|▏         | 1/60 [00:03<03:00,  3.05s/track]Loading Saraga:   3%|▎         | 2/60 [00:05<02:33,  2.65s/track]Loading Saraga:   5%|▌         | 3/60 [00:06<01:47,  1.89s/track]Loading Saraga:   7%|▋         | 4/60 [00:06<01:13,  1.32s/track]Loading Saraga:   8%|▊         | 5/60 [00:07<00:57,  1.05s/track]Loading Saraga:  10%|█         | 6/60 [00:07<00:42,  1.27track/s]Loading Saraga:  12%|█▏        | 7/60 [00:08<00:46,  1.14track/s]Loading Saraga:  13%|█▎        | 8/60 [00:10<01:02,  1.19s/track]Loading Saraga:  15%|█▌        | 9/60 [00:11<00:59,  1.16s/track]Loading Saraga:  17%|█▋        | 10/60 [00:12<00:46,  1.08track/s]Loading Saraga:  18%|█▊        | 11/60 [00:12<00:40,  1.20track/s]Loading Saraga:  20%|██        | 12/60 [00:12<00:31,  1.52track/s]Loading Saraga:  22%|██▏       | 13/60 [00:13<00:29,  1.59track/s]Loading Saraga:  23%|██▎       | 14/60 [00:13<00:23,  1.93track/s]Loading Saraga:  25%|██▌       | 15/60 [00:14<00:30,  1.48track/s]Loading Saraga:  27%|██▋       | 16/60 [00:15<00:29,  1.50track/s]Loading Saraga:  28%|██▊       | 17/60 [00:20<01:29,  2.08s/track]Loading Saraga:  30%|███       | 18/60 [00:21<01:07,  1.60s/track]Loading Saraga:  32%|███▏      | 19/60 [00:22<00:53,  1.32s/track]Loading Saraga:  33%|███▎      | 20/60 [00:22<00:44,  1.12s/track]Loading Saraga:  35%|███▌      | 21/60 [00:26<01:14,  1.90s/track]Loading Saraga:  37%|███▋      | 22/60 [00:26<00:52,  1.39s/track]Loading Saraga:  38%|███▊      | 23/60 [00:27<00:42,  1.16s/track]Loading Saraga:  40%|████      | 24/60 [00:27<00:30,  1.19track/s]Loading Saraga:  42%|████▏     | 25/60 [00:27<00:23,  1.48track/s]Loading Saraga:  43%|████▎     | 26/60 [00:28<00:20,  1.62track/s]Loading Saraga:  45%|████▌     | 27/60 [00:29<00:31,  1.05track/s]Loading Saraga:  47%|████▋     | 28/60 [00:30<00:25,  1.25track/s]Loading Saraga:  48%|████▊     | 29/60 [00:35<01:06,  2.14s/track]Loading Saraga:  50%|█████     | 30/60 [00:35<00:48,  1.61s/track]Loading Saraga:  52%|█████▏    | 31/60 [00:35<00:33,  1.16s/track]Loading Saraga:  53%|█████▎    | 32/60 [00:36<00:30,  1.10s/track]Loading Saraga:  55%|█████▌    | 33/60 [00:37<00:23,  1.15track/s]Loading Saraga:  57%|█████▋    | 34/60 [00:40<00:40,  1.55s/track]Loading Saraga:  58%|█████▊    | 35/60 [00:40<00:28,  1.13s/track]Loading Saraga:  60%|██████    | 36/60 [00:40<00:21,  1.13track/s]Loading Saraga:  62%|██████▏   | 37/60 [00:41<00:16,  1.37track/s]Loading Saraga:  63%|██████▎   | 38/60 [00:41<00:15,  1.39track/s]Loading Saraga:  65%|██████▌   | 39/60 [00:45<00:33,  1.58s/track]Loading Saraga:  68%|██████▊   | 41/60 [00:47<00:22,  1.21s/track]Loading Saraga:  70%|███████   | 42/60 [00:47<00:19,  1.08s/track]Loading Saraga:  72%|███████▏  | 43/60 [00:48<00:15,  1.11track/s]Loading Saraga:  73%|███████▎  | 44/60 [00:48<00:13,  1.15track/s]Loading Saraga:  75%|███████▌  | 45/60 [00:49<00:11,  1.27track/s]Loading Saraga:  77%|███████▋  | 46/60 [00:51<00:16,  1.18s/track]Loading Saraga:  78%|███████▊  | 47/60 [00:52<00:12,  1.04track/s]Loading Saraga:  80%|████████  | 48/60 [00:52<00:10,  1.13track/s]Loading Saraga:  82%|████████▏ | 49/60 [00:53<00:08,  1.37track/s]Loading Saraga:  83%|████████▎ | 50/60 [00:56<00:15,  1.60s/track]Loading Saraga:  85%|████████▌ | 51/60 [00:57<00:11,  1.26s/track]Loading Saraga:  87%|████████▋ | 52/60 [00:57<00:07,  1.09track/s]Loading Saraga:  88%|████████▊ | 53/60 [00:57<00:05,  1.27track/s]Loading Saraga:  90%|█████████ | 54/60 [00:58<00:05,  1.17track/s]Loading Saraga:  92%|█████████▏| 55/60 [00:59<00:03,  1.41track/s]Loading Saraga:  93%|█████████▎| 56/60 [00:59<00:02,  1.53track/s]Loading Saraga:  95%|█████████▌| 57/60 [01:00<00:01,  1.88track/s]Loading Saraga:  97%|█████████▋| 58/60 [01:00<00:01,  1.93track/s]Loading Saraga:  98%|█████████▊| 59/60 [01:00<00:00,  2.02track/s]Loading Saraga: 100%|██████████| 60/60 [01:01<00:00,  2.21track/s]Loading Saraga: 100%|██████████| 60/60 [01:01<00:00,  1.02s/track]
+WARNING: Downloading ['index']. Index is being stored in /home/louis/miniforge3/lib/python3.13/site-packages/mirdata/datasets/indexes
+WARNING: [index] downloading saraga_carnatic_index_1.5.json
+WARNING: /home/louis/miniforge3/lib/python3.13/site-packages/mirdata/datasets/indexes/saraga_carnatic_index_1.5.json already exists and will not be downloaded. Rerun with force_overwrite=True to delete this file and force the download.
+Loading Saraga tracks…
+Loading Saraga:   0%|          | 0/60 [00:00<?, ?track/s]/home/louis/musico/src/preprocessing/common.py:32: UserWarning: PySoundFile failed. Trying audioread instead.
+  audio, sr_loaded = librosa.load(path, sr=sr, mono=mono)
+/home/louis/miniforge3/lib/python3.13/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+                                                         Loading Saraga:   0%|          | 0/60 [00:00<?, ?track/s]Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]                                                                 Loading Saraga:   2%|▏         | 1/60 [00:00<00:15,  3.78track/s]Loading Saraga:  23%|██▎       | 14/60 [00:00<00:02, 20.83track/s]Loading Saraga:  27%|██▋       | 16/60 [00:02<00:08,  5.33track/s]Loading Saraga:  30%|███       | 18/60 [00:08<00:31,  1.34track/s]Loading Saraga:  32%|███▏      | 19/60 [00:09<00:30,  1.36track/s]Loading Saraga:  33%|███▎      | 20/60 [00:09<00:28,  1.39track/s]Loading Saraga:  35%|███▌      | 21/60 [00:13<00:49,  1.28s/track]Loading Saraga:  37%|███▋      | 22/60 [00:13<00:40,  1.06s/track]Loading Saraga:  38%|███▊      | 23/60 [00:14<00:36,  1.01track/s]Loading Saraga:  40%|████      | 24/60 [00:14<00:28,  1.28track/s]Loading Saraga:  42%|████▏     | 25/60 [00:15<00:23,  1.52track/s]Loading Saraga:  43%|████▎     | 26/60 [00:15<00:21,  1.59track/s]Loading Saraga:  45%|████▌     | 27/60 [00:17<00:33,  1.02s/track]Loading Saraga:  47%|████▋     | 28/60 [00:18<00:27,  1.15track/s]Loading Saraga:  48%|████▊     | 29/60 [00:24<01:15,  2.42s/track]Loading Saraga:  50%|█████     | 30/60 [00:24<00:54,  1.83s/track]Loading Saraga:  52%|█████▏    | 31/60 [00:24<00:38,  1.32s/track]Loading Saraga:  53%|█████▎    | 32/60 [00:25<00:35,  1.27s/track]Loading Saraga:  55%|█████▌    | 33/60 [00:26<00:26,  1.01track/s]Loading Saraga:  57%|█████▋    | 34/60 [00:30<00:47,  1.82s/track]Loading Saraga:  58%|█████▊    | 35/60 [00:30<00:33,  1.32s/track]Loading Saraga:  60%|██████    | 36/60 [00:30<00:24,  1.04s/track]Loading Saraga:  62%|██████▏   | 37/60 [00:31<00:19,  1.18track/s]Loading Saraga:  63%|██████▎   | 38/60 [00:31<00:18,  1.19track/s]Loading Saraga:  65%|██████▌   | 39/60 [00:36<00:39,  1.87s/track]Loading Saraga:  68%|██████▊   | 41/60 [00:37<00:27,  1.43s/track]Loading Saraga:  70%|███████   | 42/60 [00:38<00:23,  1.28s/track]Loading Saraga:  72%|███████▏  | 43/60 [00:39<00:18,  1.06s/track]Loading Saraga:  73%|███████▎  | 44/60 [00:40<00:16,  1.03s/track]Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]/home/louis/musico/src/preprocessing/common.py:32: UserWarning: PySoundFile failed. Trying audioread instead.
+  audio, sr_loaded = librosa.load(path, sr=sr, mono=mono)
+/home/louis/miniforge3/lib/python3.13/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]                                                                  Loading Saraga:  75%|███████▌  | 45/60 [00:40<00:14,  1.07track/s]Loading Saraga: 100%|██████████| 60/60 [00:40<00:00,  1.47track/s]
+WARNING: Downloading ['index']. Index is being stored in /home/louis/miniforge3/lib/python3.13/site-packages/mirdata/datasets/indexes
+WARNING: [index] downloading guitarset_index_1.1.0.json
+WARNING: /home/louis/miniforge3/lib/python3.13/site-packages/mirdata/datasets/indexes/guitarset_index_1.1.0.json already exists and will not be downloaded. Rerun with force_overwrite=True to delete this file and force the download.
+[saraga] Skipping 0_Dorakuna: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Dorakuna/Dorakuna.mp3'
+[saraga] Skipping 1_Ganamuda_Panam: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Ganamuda Panam/Ganamuda Panam.mp3'
+[saraga] Skipping 2_Chidambara_Natarajam: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Chidambara Natarajam/Chidambara Natarajam.mp3'
+[saraga] Skipping 3_Vandalum: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Vandalum/Vandalum.mp3'
+[saraga] Skipping 4_Thiruveragane_Saveri_Varnam: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Thiruveragane Saveri Varnam/Thiruveragane Saveri Varnam.mp3'
+[saraga] Skipping 5_Rama_Daya_Judave: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Rama Daya Judave/Rama Daya Judave.mp3'
+[saraga] Skipping 6_Neene_Ballideno: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Neene Ballideno/Neene Ballideno.mp3'
+[saraga] Skipping 7_Paragu_Matada: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Paragu Matada/Paragu Matada.mp3'
+[saraga] Skipping 8_Palisomma_Muddu_Sarade: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Palisomma Muddu Sarade/Palisomma Muddu Sarade.mp3'
+[saraga] Skipping 9_Ramakrishnaru_Manege: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Ramakrishnaru Manege/Ramakrishnaru Manege.mp3'
+[saraga] Skipping 10_Bandadella_Barali: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Bandadella Barali/Bandadella Barali.mp3'
+[saraga] Skipping 11_Tamburi_Mitidava: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Tamburi Mitidava/Tamburi Mitidava.mp3'
+[saraga] Skipping 12_Sharanu_Janakana: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Salem Gayatri Venkatesan at Arkay by Salem Gayatri Venkatesan/Sharanu Janakana/Sharanu Janakana.mp3'
+[saraga] Skipping 45_Apparama_Bhakti: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Apparama Bhakti/Apparama Bhakti.mp3'
+[saraga] Skipping 46_Manadirkkugandhadu: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Manadirkkugandhadu/Manadirkkugandhadu.mp3'
+[saraga] Skipping 47_Koti_Janmani: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Koti Janmani/Koti Janmani.mp3'
+[saraga] Skipping 48_Brova_Barama: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Brova Barama/Brova Barama.mp3'
+[saraga] Skipping 49_Shankari_Shankuru: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Shankari Shankuru/Shankari Shankuru.mp3'
+[saraga] Skipping 50_Karunimpa_Idi: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Karunimpa Idi/Karunimpa Idi.mp3'
+[saraga] Skipping 51_Pavamana_Suthudu_Mangalam: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Pavamana Suthudu Mangalam/Pavamana Suthudu Mangalam.mp3'
+[saraga] Skipping 52_Geeta_Nayakan: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Geeta Nayakan/Geeta Nayakan.mp3'
+[saraga] Skipping 53_Siddhi_Vinayakam: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Siddhi Vinayakam/Siddhi Vinayakam.mp3'
+[saraga] Skipping 54_Thillana_Pahadi: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Thillana Pahadi/Thillana Pahadi.mp3'
+[saraga] Skipping 55_Enadhu_Manam_Kavalai: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.mp3'
+[saraga] Skipping 56_Purahara_Nandana: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Purahara Nandana/Purahara Nandana.mp3'
+[saraga] Skipping 57_Nannu_Brova_Neeku: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Nannu Brova Neeku/Nannu Brova Neeku.mp3'
+[saraga] Skipping 58_Nera_Nammiti: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Nera Nammiti/Nera Nammiti.mp3'
+[saraga] Skipping 59_Parvathi_Ninnu_Neranammiti: [Errno 2] No such file or directory: 'data/raw/saraga/saraga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Parvathi Ninnu Neranammiti/Parvathi Ninnu Neranammiti.mp3'
+  Loaded 32 Saraga tracks
+  Test split: 4 tracks
+
+Loading GuitarSet tracks…
+Loading GuitarSet:   0%|          | 0/60 [00:00<?, ?track/s]Loading GuitarSet:   2%|▏         | 1/60 [00:00<00:06,  9.50track/s]Loading GuitarSet:   5%|▌         | 3/60 [00:00<00:05, 10.18track/s]Loading GuitarSet:   8%|▊         | 5/60 [00:00<00:06,  8.06track/s]Loading GuitarSet:  10%|█         | 6/60 [00:00<00:06,  7.96track/s]Loading GuitarSet:  12%|█▏        | 7/60 [00:00<00:06,  8.18track/s]Loading GuitarSet:  13%|█▎        | 8/60 [00:00<00:06,  7.57track/s]Loading GuitarSet:  15%|█▌        | 9/60 [00:01<00:07,  7.17track/s]Loading GuitarSet:  17%|█▋        | 10/60 [00:01<00:09,  5.54track/s]Loading GuitarSet:  18%|█▊        | 11/60 [00:01<00:08,  5.67track/s]Loading GuitarSet:  20%|██        | 12/60 [00:01<00:09,  5.33track/s]Loading GuitarSet:  23%|██▎       | 14/60 [00:01<00:06,  7.18track/s]Loading GuitarSet:  25%|██▌       | 15/60 [00:02<00:06,  6.59track/s]Loading GuitarSet:  27%|██▋       | 16/60 [00:02<00:06,  7.15track/s]Loading GuitarSet:  28%|██▊       | 17/60 [00:02<00:06,  6.77track/s]Loading GuitarSet:  30%|███       | 18/60 [00:02<00:06,  6.54track/s]Loading GuitarSet:  32%|███▏      | 19/60 [00:02<00:05,  7.07track/s]Loading GuitarSet:  33%|███▎      | 20/60 [00:02<00:05,  6.69track/s]Loading GuitarSet:  35%|███▌      | 21/60 [00:03<00:05,  7.11track/s]Loading GuitarSet:  37%|███▋      | 22/60 [00:03<00:06,  5.97track/s]Loading GuitarSet:  38%|███▊      | 23/60 [00:03<00:06,  5.98track/s]Loading GuitarSet:  40%|████      | 24/60 [00:03<00:05,  6.45track/s]Loading GuitarSet:  42%|████▏     | 25/60 [00:03<00:05,  6.80track/s]Loading GuitarSet:  43%|████▎     | 26/60 [00:03<00:06,  5.65track/s]Loading GuitarSet:  45%|████▌     | 27/60 [00:04<00:05,  5.59track/s]Loading GuitarSet:  47%|████▋     | 28/60 [00:04<00:06,  5.29track/s]Loading GuitarSet:  48%|████▊     | 29/60 [00:04<00:06,  4.86track/s]Loading GuitarSet:  50%|█████     | 30/60 [00:04<00:06,  4.59track/s]Loading GuitarSet:  53%|█████▎    | 32/60 [00:04<00:04,  6.24track/s]Loading GuitarSet:  55%|█████▌    | 33/60 [00:05<00:04,  6.48track/s]Loading GuitarSet:  58%|█████▊    | 35/60 [00:05<00:03,  7.13track/s]Loading GuitarSet:  60%|██████    | 36/60 [00:05<00:03,  7.51track/s]Loading GuitarSet:  62%|██████▏   | 37/60 [00:05<00:02,  7.75track/s]Loading GuitarSet:  63%|██████▎   | 38/60 [00:05<00:02,  7.78track/s]Loading GuitarSet:  65%|██████▌   | 39/60 [00:05<00:02,  7.22track/s]Loading GuitarSet:  67%|██████▋   | 40/60 [00:06<00:02,  7.35track/s]Loading GuitarSet:  68%|██████▊   | 41/60 [00:06<00:02,  6.71track/s]Loading GuitarSet:  70%|███████   | 42/60 [00:06<00:02,  6.17track/s]Loading GuitarSet:  73%|███████▎  | 44/60 [00:06<00:01,  8.09track/s]Loading GuitarSet:  75%|███████▌  | 45/60 [00:06<00:01,  7.54track/s]Loading GuitarSet:  77%|███████▋  | 46/60 [00:06<00:01,  8.01track/s]Loading GuitarSet:  78%|███████▊  | 47/60 [00:06<00:01,  7.97track/s]Loading GuitarSet:  80%|████████  | 48/60 [00:07<00:01,  8.29track/s]Loading GuitarSet:  82%|████████▏ | 49/60 [00:07<00:01,  8.67track/s]Loading GuitarSet:  83%|████████▎ | 50/60 [00:07<00:01,  7.83track/s]Loading GuitarSet:  85%|████████▌ | 51/60 [00:07<00:01,  8.02track/s]Loading GuitarSet:  87%|████████▋ | 52/60 [00:07<00:01,  6.87track/s]Loading GuitarSet:  88%|████████▊ | 53/60 [00:07<00:01,  6.98track/s]Loading GuitarSet:  90%|█████████ | 54/60 [00:07<00:00,  7.24track/s]Loading GuitarSet:  92%|█████████▏| 55/60 [00:08<00:00,  7.29track/s]Loading GuitarSet:  93%|█████████▎| 56/60 [00:08<00:00,  6.07track/s]Loading GuitarSet:  95%|█████████▌| 57/60 [00:08<00:00,  5.97track/s]Loading GuitarSet:  97%|█████████▋| 58/60 [00:08<00:00,  5.81track/s]Loading GuitarSet:  98%|█████████▊| 59/60 [00:08<00:00,  5.14track/s]Loading GuitarSet: 100%|██████████| 60/60 [00:09<00:00,  5.36track/s]Loading GuitarSet: 100%|██████████| 60/60 [00:09<00:00,  6.66track/s]
+/home/louis/miniforge3/lib/python3.13/site-packages/mir_eval/melody.py:95: UserWarning: Estimated melody has no voiced frames.
+  warnings.warn("Estimated melody has no voiced frames.")
+  Loaded 296 GuitarSet string-tracks
+
+--- carnatic ---
+  [carnatic] 42_Payum_Oli_Nee_Yenakku  RPA=nan
+  [carnatic] 14_Angakaram  RPA=0.027
+  [carnatic] 26_Lokavana_Chatura  RPA=nan
+  [carnatic] 21_Sadabalarupapi_Shlokam  RPA=0.309
+  [western] 00_BN1-129-Eb_solo_E  RPA=0.000
+  [western] 00_BN1-129-Eb_solo_A  RPA=0.000
+  [western] 00_BN1-129-Eb_solo_D  RPA=0.009
+  [western] 00_BN1-129-Eb_solo_G  RPA=0.011
+  [western] 00_BN1-129-Eb_solo_B  RPA=0.004
+  [western] 00_BN1-129-Eb_solo_e  RPA=0.322
+  [western] 00_BN1-147-Gb_solo_E  RPA=0.002
+  [western] 00_BN1-147-Gb_solo_A  RPA=0.023
+  [western] 00_BN1-147-Gb_solo_D  RPA=0.016
+  [western] 00_BN2-131-B_solo_D  RPA=0.000
+  [western] 00_BN2-131-B_solo_G  RPA=0.000
+  [western] 00_BN2-131-B_solo_B  RPA=0.000
+  [western] 00_BN2-131-B_solo_e  RPA=0.000
+  [western] 00_BN2-166-Ab_solo_A  RPA=0.017
+  [western] 00_BN2-166-Ab_solo_D  RPA=0.000
+  [western] 00_BN2-166-Ab_solo_G  RPA=0.086
+  [western] 00_BN2-166-Ab_solo_B  RPA=0.040
+  [western] 00_BN2-166-Ab_solo_e  RPA=0.000
+  [western] 00_BN3-119-G_solo_E  RPA=0.000
+  [western] 00_BN3-119-G_solo_A  RPA=0.112
+  [western] 00_BN3-119-G_solo_D  RPA=0.001
+  [western] 00_BN3-119-G_solo_G  RPA=0.011
+  [western] 00_BN3-119-G_solo_B  RPA=0.000
+  [western] 00_BN3-119-G_solo_e  RPA=0.007
+  [western] 00_BN3-154-E_solo_E  RPA=0.000
+  [western] 00_BN3-154-E_solo_A  RPA=0.000
+  [western] 00_BN3-154-E_solo_D  RPA=0.018
+  [western] 00_BN3-154-E_solo_G  RPA=0.000
+  [western] 00_BN3-154-E_solo_B  RPA=0.000
+  [western] 00_Funk1-114-Ab_solo_E  RPA=0.000
+  [western] 00_Funk1-114-Ab_solo_A  RPA=0.015
+  [western] 00_Funk1-114-Ab_solo_D  RPA=0.000
+  [western] 00_Funk1-114-Ab_solo_G  RPA=0.000
+  [western] 00_Funk1-97-C_solo_A  RPA=0.061
+  [western] 00_Funk1-97-C_solo_D  RPA=0.000
+  [western] 00_Funk1-97-C_solo_G  RPA=0.078
+  [western] 00_Funk1-97-C_solo_B  RPA=0.000
+  [western] 00_Funk1-97-C_solo_e  RPA=0.000
+  [western] 00_Funk2-108-Eb_solo_E  RPA=0.000
+  [western] 00_Funk2-108-Eb_solo_A  RPA=0.056
+  [western] 00_Funk2-108-Eb_solo_D  RPA=0.020
+  [western] 00_Funk2-108-Eb_solo_G  RPA=0.000
+  [western] 00_Funk2-119-G_solo_E  RPA=0.000
+  [western] 00_Funk2-119-G_solo_A  RPA=0.014
+  [western] 00_Funk2-119-G_solo_D  RPA=0.000
+  [western] 00_Funk2-119-G_solo_G  RPA=0.002
+  [western] 00_Funk2-119-G_solo_B  RPA=0.000
+  [western] 00_Funk2-119-G_solo_e  RPA=0.225
+  [western] 00_Funk3-112-C#_solo_A  RPA=0.013
+  [western] 00_Funk3-112-C#_solo_D  RPA=0.021
+  [western] 00_Funk3-112-C#_solo_G  RPA=0.000
+  [western] 00_Funk3-112-C#_solo_B  RPA=0.006
+  [western] 00_Funk3-112-C#_solo_e  RPA=0.463
+  [western] 00_Funk3-98-A_solo_E  RPA=0.037
+  [western] 00_Funk3-98-A_solo_A  RPA=0.014
+  [western] 00_Funk3-98-A_solo_D  RPA=0.000
+  [western] 00_Funk3-98-A_solo_G  RPA=0.000
+  [western] 00_Funk3-98-A_solo_B  RPA=0.012
+  [western] 00_Funk3-98-A_solo_e  RPA=0.140
+  [western] 00_Jazz1-130-D_solo_E  RPA=0.000
+  [western] 00_Jazz1-130-D_solo_A  RPA=0.080
+  [western] 00_Jazz1-130-D_solo_D  RPA=0.000
+  [western] 00_Jazz1-130-D_solo_G  RPA=0.000
+  [western] 00_Jazz1-130-D_solo_B  RPA=0.000
+  [western] 00_Jazz1-130-D_solo_e  RPA=0.003
+  [western] 00_Jazz1-200-B_solo_E  RPA=0.044
+  [western] 00_Jazz1-200-B_solo_A  RPA=0.141
+  [western] 00_Jazz1-200-B_solo_D  RPA=0.000
+  [western] 00_Jazz1-200-B_solo_G  RPA=0.129
+  [western] 00_Jazz1-200-B_solo_B  RPA=0.000
+  [western] 00_Jazz2-110-Bb_solo_E  RPA=0.000
+  [western] 00_Jazz2-110-Bb_solo_A  RPA=0.015
+  [western] 00_Jazz2-110-Bb_solo_D  RPA=0.104
+  [western] 00_Jazz2-110-Bb_solo_G  RPA=0.024
+  [western] 00_Jazz2-110-Bb_solo_B  RPA=0.000
+  [western] 00_Jazz2-110-Bb_solo_e  RPA=0.227
+  [western] 00_Jazz2-187-F#_solo_A  RPA=0.037
+  [western] 00_Jazz2-187-F#_solo_D  RPA=0.000
+  [western] 00_Jazz2-187-F#_solo_G  RPA=0.020
+  [western] 00_Jazz2-187-F#_solo_B  RPA=0.002
+  [western] 00_Jazz2-187-F#_solo_e  RPA=0.000
+  [western] 00_Jazz3-137-Eb_solo_E  RPA=0.036
+  [western] 00_Jazz3-137-Eb_solo_A  RPA=0.014
+  [western] 00_Jazz3-137-Eb_solo_D  RPA=0.000
+  [western] 00_Jazz3-137-Eb_solo_G  RPA=0.053
+  [western] 00_Jazz3-137-Eb_solo_B  RPA=0.001
+  [western] 00_Jazz3-137-Eb_solo_e  RPA=0.041
+  [western] 00_Jazz3-150-C_solo_E  RPA=0.000
+  [western] 00_Jazz3-150-C_solo_A  RPA=0.016
+  [western] 00_Jazz3-150-C_solo_D  RPA=0.023
+  [western] 00_Jazz3-150-C_solo_G  RPA=0.106
+  [western] 00_Jazz3-150-C_solo_B  RPA=0.000
+  [western] 00_Jazz3-150-C_solo_e  RPA=0.111
+  [western] 00_Rock1-130-A_solo_E  RPA=0.022
+  [western] 00_Rock1-130-A_solo_A  RPA=0.005
+  [western] 00_Rock1-130-A_solo_D  RPA=0.000
+  [western] 00_Rock1-130-A_solo_G  RPA=0.004
+  [western] 00_Rock1-130-A_solo_B  RPA=0.000
+  [western] 00_Rock1-130-A_solo_e  RPA=0.000
+  [western] 00_Rock1-90-C#_solo_A  RPA=0.023
+  [western] 00_Rock1-90-C#_solo_D  RPA=0.007
+  [western] 00_Rock1-90-C#_solo_G  RPA=0.020
+  [western] 00_Rock1-90-C#_solo_B  RPA=0.032
+  [western] 00_Rock1-90-C#_solo_e  RPA=0.138
+  [western] 00_Rock2-142-D_solo_D  RPA=0.000
+  [western] 00_Rock2-142-D_solo_G  RPA=0.165
+  [western] 00_Rock2-142-D_solo_B  RPA=0.000
+  [western] 00_Rock2-142-D_solo_e  RPA=0.303
+  [western] 00_Rock2-85-F_solo_A  RPA=0.000
+  [western] 00_Rock2-85-F_solo_D  RPA=0.000
+  [western] 00_Rock2-85-F_solo_G  RPA=0.150
+  [western] 00_Rock2-85-F_solo_B  RPA=0.001
+  [western] 00_Rock2-85-F_solo_e  RPA=0.000
+  [western] 00_Rock3-117-Bb_solo_D  RPA=0.000
+  [western] 00_Rock3-117-Bb_solo_G  RPA=0.143
+  [western] 00_Rock3-117-Bb_solo_B  RPA=0.001
+  [western] 00_Rock3-117-Bb_solo_e  RPA=0.079
+  [western] 00_Rock3-148-C_solo_A  RPA=0.000
+  [western] 00_Rock3-148-C_solo_D  RPA=0.000
+  [western] 00_Rock3-148-C_solo_G  RPA=0.002
+  [western] 00_Rock3-148-C_solo_B  RPA=0.000
+  [western] 00_Rock3-148-C_solo_e  RPA=0.450
+  [western] 00_SS1-100-C#_solo_E  RPA=0.000
+  [western] 00_SS1-100-C#_solo_A  RPA=0.087
+  [western] 00_SS1-100-C#_solo_D  RPA=0.000
+  [western] 00_SS1-100-C#_solo_G  RPA=0.012
+  [western] 00_SS1-68-E_solo_A  RPA=0.008
+  [western] 00_SS1-68-E_solo_D  RPA=0.004
+  [western] 00_SS1-68-E_solo_G  RPA=0.008
+  [western] 00_SS1-68-E_solo_B  RPA=0.002
+  [western] 00_SS1-68-E_solo_e  RPA=0.131
+  [western] 00_SS2-107-Ab_solo_E  RPA=0.000
+  [western] 00_SS2-107-Ab_solo_A  RPA=0.034
+  [western] 00_SS2-107-Ab_solo_D  RPA=0.000
+  [western] 00_SS2-107-Ab_solo_G  RPA=0.000
+  [western] 00_SS2-107-Ab_solo_B  RPA=0.047
+  [western] 00_SS2-107-Ab_solo_e  RPA=0.538
+  [western] 00_SS2-88-F_solo_E  RPA=0.022
+  [western] 00_SS2-88-F_solo_A  RPA=0.000
+  [western] 00_SS2-88-F_solo_D  RPA=0.002
+  [western] 00_SS2-88-F_solo_G  RPA=0.000
+  [western] 00_SS2-88-F_solo_B  RPA=0.000
+  [western] 00_SS2-88-F_solo_e  RPA=0.161
+  [western] 00_SS3-84-Bb_solo_E  RPA=0.000
+  [western] 00_SS3-84-Bb_solo_A  RPA=0.007
+  [western] 00_SS3-84-Bb_solo_D  RPA=0.000
+  [western] 00_SS3-84-Bb_solo_G  RPA=0.011
+  [western] 00_SS3-84-Bb_solo_B  RPA=0.000
+  [western] 00_SS3-84-Bb_solo_e  RPA=0.109
+  [western] 00_SS3-98-C_solo_E  RPA=0.000
+  [western] 00_SS3-98-C_solo_A  RPA=0.001
+  [western] 00_SS3-98-C_solo_D  RPA=0.002
+  [western] 00_SS3-98-C_solo_G  RPA=0.012
+  [western] 00_SS3-98-C_solo_B  RPA=0.002
+  [western] 00_SS3-98-C_solo_e  RPA=0.116
+  [western] 01_BN1-129-Eb_solo_A  RPA=0.000
+  [western] 01_BN1-129-Eb_solo_D  RPA=0.000
+  [western] 01_BN1-129-Eb_solo_G  RPA=0.169
+  [western] 01_BN1-129-Eb_solo_B  RPA=0.000
+  [western] 01_BN1-129-Eb_solo_e  RPA=0.642
+  [western] 01_BN1-147-Gb_solo_D  RPA=0.000
+  [western] 01_BN1-147-Gb_solo_G  RPA=0.111
+  [western] 01_BN1-147-Gb_solo_B  RPA=0.001
+  [western] 01_BN1-147-Gb_solo_e  RPA=0.000
+  [western] 01_BN2-131-B_solo_A  RPA=0.000
+  [western] 01_BN2-131-B_solo_D  RPA=0.000
+  [western] 01_BN2-131-B_solo_G  RPA=0.005
+  [western] 01_BN2-131-B_solo_B  RPA=0.000
+  [western] 01_BN2-131-B_solo_e  RPA=0.000
+  [western] 01_BN2-166-Ab_solo_D  RPA=0.000
+  [western] 01_BN2-166-Ab_solo_G  RPA=0.051
+  [western] 01_BN2-166-Ab_solo_B  RPA=0.026
+  [western] 01_BN2-166-Ab_solo_e  RPA=0.275
+  [western] 01_BN3-119-G_solo_A  RPA=0.000
+  [western] 01_BN3-119-G_solo_D  RPA=0.000
+  [western] 01_BN3-119-G_solo_G  RPA=0.000
+  [western] 01_BN3-119-G_solo_B  RPA=0.001
+  [western] 01_BN3-119-G_solo_e  RPA=0.009
+  [western] 01_BN3-154-E_solo_D  RPA=0.000
+  [western] 01_BN3-154-E_solo_G  RPA=0.025
+  [western] 01_BN3-154-E_solo_B  RPA=0.066
+  [western] 01_BN3-154-E_solo_e  RPA=0.000
+  [western] 01_Funk1-114-Ab_solo_A  RPA=0.000
+  [western] 01_Funk1-114-Ab_solo_D  RPA=0.012
+  [western] 01_Funk1-114-Ab_solo_G  RPA=0.001
+  [western] 01_Funk1-114-Ab_solo_B  RPA=0.150
+  [western] 01_Funk1-114-Ab_solo_e  RPA=0.018
+  [western] 01_Funk1-97-C_solo_A  RPA=0.000
+  [western] 01_Funk1-97-C_solo_D  RPA=0.000
+  [western] 01_Funk1-97-C_solo_G  RPA=0.059
+  [western] 01_Funk1-97-C_solo_B  RPA=0.046
+  [western] 01_Funk1-97-C_solo_e  RPA=0.000
+  [western] 01_Funk2-108-Eb_solo_E  RPA=0.000
+  [western] 01_Funk2-108-Eb_solo_D  RPA=0.000
+  [western] 01_Funk2-108-Eb_solo_G  RPA=0.319
+  [western] 01_Funk2-108-Eb_solo_B  RPA=0.019
+  [western] 01_Funk2-108-Eb_solo_e  RPA=0.000
+  [western] 01_Funk2-119-G_solo_D  RPA=0.000
+  [western] 01_Funk2-119-G_solo_G  RPA=0.026
+  [western] 01_Funk2-119-G_solo_B  RPA=0.035
+  [western] 01_Funk2-119-G_solo_e  RPA=0.000
+  [western] 01_Funk3-112-C#_solo_E  RPA=0.000
+  [western] 01_Funk3-112-C#_solo_A  RPA=0.000
+  [western] 01_Funk3-112-C#_solo_D  RPA=0.000
+  [western] 01_Funk3-112-C#_solo_G  RPA=0.045
+  [western] 01_Funk3-112-C#_solo_B  RPA=0.035
+  [western] 01_Funk3-112-C#_solo_e  RPA=0.000
+  [western] 01_Funk3-98-A_solo_A  RPA=0.231
+  [western] 01_Funk3-98-A_solo_D  RPA=0.038
+  [western] 01_Funk3-98-A_solo_G  RPA=0.076
+  [western] 01_Funk3-98-A_solo_B  RPA=0.003
+  [western] 01_Funk3-98-A_solo_e  RPA=0.104
+  [western] 01_Jazz1-130-D_solo_D  RPA=0.059
+  [western] 01_Jazz1-130-D_solo_G  RPA=0.002
+  [western] 01_Jazz1-130-D_solo_B  RPA=0.000
+  [western] 01_Jazz1-130-D_solo_e  RPA=0.000
+  [western] 01_Jazz1-200-B_solo_D  RPA=0.000
+  [western] 01_Jazz1-200-B_solo_G  RPA=0.007
+  [western] 01_Jazz1-200-B_solo_B  RPA=0.001
+  [western] 01_Jazz1-200-B_solo_e  RPA=0.000
+  [western] 01_Jazz2-110-Bb_solo_A  RPA=0.000
+  [western] 01_Jazz2-110-Bb_solo_D  RPA=0.006
+  [western] 01_Jazz2-110-Bb_solo_G  RPA=0.101
+  [western] 01_Jazz2-110-Bb_solo_B  RPA=0.152
+  [western] 01_Jazz2-110-Bb_solo_e  RPA=0.169
+  [western] 01_Jazz2-187-F#_solo_A  RPA=0.000
+  [western] 01_Jazz2-187-F#_solo_D  RPA=0.072
+  [western] 01_Jazz2-187-F#_solo_G  RPA=0.129
+  [western] 01_Jazz2-187-F#_solo_B  RPA=0.000
+  [western] 01_Jazz2-187-F#_solo_e  RPA=0.033
+  [western] 01_Jazz3-137-Eb_solo_D  RPA=0.004
+  [western] 01_Jazz3-137-Eb_solo_G  RPA=0.168
+  [western] 01_Jazz3-137-Eb_solo_B  RPA=0.167
+  [western] 01_Jazz3-137-Eb_solo_e  RPA=0.252
+  [western] 01_Jazz3-150-C_solo_D  RPA=0.007
+  [western] 01_Jazz3-150-C_solo_G  RPA=0.018
+  [western] 01_Jazz3-150-C_solo_B  RPA=0.000
+  [western] 01_Jazz3-150-C_solo_e  RPA=0.234
+  [western] 01_Rock1-130-A_solo_E  RPA=0.000
+  [western] 01_Rock1-130-A_solo_A  RPA=0.224
+  [western] 01_Rock1-130-A_solo_D  RPA=0.024
+  [western] 01_Rock1-130-A_solo_G  RPA=0.041
+  [western] 01_Rock1-130-A_solo_B  RPA=0.000
+  [western] 01_Rock1-90-C#_solo_A  RPA=0.000
+  [western] 01_Rock1-90-C#_solo_D  RPA=0.000
+  [western] 01_Rock1-90-C#_solo_G  RPA=0.042
+  [western] 01_Rock1-90-C#_solo_B  RPA=0.177
+  [western] 01_Rock1-90-C#_solo_e  RPA=0.000
+  [western] 01_Rock2-142-D_solo_D  RPA=0.000
+  [western] 01_Rock2-142-D_solo_G  RPA=0.003
+  [western] 01_Rock2-142-D_solo_B  RPA=0.010
+  [western] 01_Rock2-142-D_solo_e  RPA=0.000
+  [western] 01_Rock2-85-F_solo_D  RPA=0.000
+  [western] 01_Rock2-85-F_solo_G  RPA=0.046
+  [western] 01_Rock2-85-F_solo_B  RPA=0.086
+  [western] 01_Rock2-85-F_solo_e  RPA=0.000
+  [western] 01_Rock3-117-Bb_solo_D  RPA=0.000
+  [western] 01_Rock3-117-Bb_solo_G  RPA=0.084
+  [western] 01_Rock3-117-Bb_solo_B  RPA=0.014
+  [western] 01_Rock3-117-Bb_solo_e  RPA=0.000
+  [western] 01_Rock3-148-C_solo_E  RPA=0.000
+  [western] 01_Rock3-148-C_solo_A  RPA=0.000
+  [western] 01_Rock3-148-C_solo_D  RPA=0.000
+  [western] 01_Rock3-148-C_solo_G  RPA=0.091
+  [western] 01_Rock3-148-C_solo_B  RPA=0.008
+  [western] 01_Rock3-148-C_solo_e  RPA=0.000
+  [western] 01_SS1-100-C#_solo_A  RPA=0.000
+  [western] 01_SS1-100-C#_solo_D  RPA=0.000
+  [western] 01_SS1-100-C#_solo_G  RPA=0.008
+  [western] 01_SS1-100-C#_solo_B  RPA=0.118
+  [western] 01_SS1-100-C#_solo_e  RPA=0.027
+  [western] 01_SS1-68-E_solo_E  RPA=0.000
+  [western] 01_SS1-68-E_solo_A  RPA=0.000
+  [western] 01_SS1-68-E_solo_D  RPA=0.006
+  [western] 01_SS1-68-E_solo_G  RPA=0.112
+  [western] 01_SS1-68-E_solo_B  RPA=0.001
+  [western] 01_SS1-68-E_solo_e  RPA=0.035
+  [western] 01_SS2-107-Ab_solo_A  RPA=0.000
+  [western] 01_SS2-107-Ab_solo_D  RPA=0.000
+  [western] 01_SS2-107-Ab_solo_G  RPA=0.114
+  [western] 01_SS2-107-Ab_solo_B  RPA=0.068
+  [western] 01_SS2-107-Ab_solo_e  RPA=0.000
+  [western] 01_SS2-88-F_solo_D  RPA=0.000
+  [western] 01_SS2-88-F_solo_G  RPA=0.118
+  [western] 01_SS2-88-F_solo_B  RPA=0.061
+  [western] 01_SS2-88-F_solo_e  RPA=0.006
+  [western] 01_SS3-84-Bb_solo_E  RPA=0.000
+  [western] 01_SS3-84-Bb_solo_A  RPA=0.000
+  [western] 01_SS3-84-Bb_solo_D  RPA=0.001
+  [western] 01_SS3-84-Bb_solo_G  RPA=0.074
+  [western] 01_SS3-84-Bb_solo_B  RPA=0.000
+  [western] 01_SS3-84-Bb_solo_e  RPA=0.000
+  [western] 01_SS3-98-C_solo_D  RPA=0.000
+  [western] 01_SS3-98-C_solo_G  RPA=0.001
+  [western] 01_SS3-98-C_solo_B  RPA=0.001
+  [western] 01_SS3-98-C_solo_e  RPA=0.604
+
+--- crepe ---
+  [carnatic] 42_Payum_Oli_Nee_Yenakku  RPA=nan
+  [carnatic] 14_Angakaram  RPA=0.125
+  [carnatic] 26_Lokavana_Chatura  RPA=nan
+  [carnatic] 21_Sadabalarupapi_Shlokam  RPA=0.570
+  [western] 00_BN1-129-Eb_solo_E  RPA=0.543
+  [western] 00_BN1-129-Eb_solo_A  RPA=0.882
+  [western] 00_BN1-129-Eb_solo_D  RPA=0.754
+  [western] 00_BN1-129-Eb_solo_G  RPA=0.835
+  [western] 00_BN1-129-Eb_solo_B  RPA=0.813
+  [western] 00_BN1-129-Eb_solo_e  RPA=0.879
+  [western] 00_BN1-147-Gb_solo_E  RPA=0.622
+  [western] 00_BN1-147-Gb_solo_A  RPA=0.668
+  [western] 00_BN1-147-Gb_solo_D  RPA=0.814
+  [western] 00_BN2-131-B_solo_D  RPA=0.550
+  [western] 00_BN2-131-B_solo_G  RPA=0.709
+  [western] 00_BN2-131-B_solo_B  RPA=0.649
+  [western] 00_BN2-131-B_solo_e  RPA=0.750
+  [western] 00_BN2-166-Ab_solo_A  RPA=0.543
+  [western] 00_BN2-166-Ab_solo_D  RPA=0.401
+  [western] 00_BN2-166-Ab_solo_G  RPA=0.741
+  [western] 00_BN2-166-Ab_solo_B  RPA=0.732
+  [western] 00_BN2-166-Ab_solo_e  RPA=0.911
+  [western] 00_BN3-119-G_solo_E  RPA=0.237
+  [western] 00_BN3-119-G_solo_A  RPA=0.344
+  [western] 00_BN3-119-G_solo_D  RPA=0.544
+  [western] 00_BN3-119-G_solo_G  RPA=0.921
+  [western] 00_BN3-119-G_solo_B  RPA=0.927
+  [western] 00_BN3-119-G_solo_e  RPA=0.910
+  [western] 00_BN3-154-E_solo_E  RPA=0.836
+  [western] 00_BN3-154-E_solo_A  RPA=0.821
+  [western] 00_BN3-154-E_solo_D  RPA=0.718
+  [western] 00_BN3-154-E_solo_G  RPA=0.671
+  [western] 00_BN3-154-E_solo_B  RPA=0.851
+  [western] 00_Funk1-114-Ab_solo_E  RPA=0.725
+  [western] 00_Funk1-114-Ab_solo_A  RPA=0.814
+  [western] 00_Funk1-114-Ab_solo_D  RPA=0.613
+  [western] 00_Funk1-114-Ab_solo_G  RPA=0.447
+  [western] 00_Funk1-97-C_solo_A  RPA=0.928
+  [western] 00_Funk1-97-C_solo_D  RPA=0.412
+  [western] 00_Funk1-97-C_solo_G  RPA=0.850
+  [western] 00_Funk1-97-C_solo_B  RPA=0.876
+  [western] 00_Funk1-97-C_solo_e  RPA=0.364
+  [western] 00_Funk2-108-Eb_solo_E  RPA=0.780
+  [western] 00_Funk2-108-Eb_solo_A  RPA=0.671
+  [western] 00_Funk2-108-Eb_solo_D  RPA=0.568
+  [western] 00_Funk2-108-Eb_solo_G  RPA=0.602
+  [western] 00_Funk2-119-G_solo_E  RPA=0.773
+  [western] 00_Funk2-119-G_solo_A  RPA=0.831
+  [western] 00_Funk2-119-G_solo_D  RPA=0.361
+  [western] 00_Funk2-119-G_solo_G  RPA=0.925
+  [western] 00_Funk2-119-G_solo_B  RPA=0.852
+  [western] 00_Funk2-119-G_solo_e  RPA=0.649
+  [western] 00_Funk3-112-C#_solo_A  RPA=0.666
+  [western] 00_Funk3-112-C#_solo_D  RPA=0.664
+  [western] 00_Funk3-112-C#_solo_G  RPA=0.629
+  [western] 00_Funk3-112-C#_solo_B  RPA=0.706
+  [western] 00_Funk3-112-C#_solo_e  RPA=0.730
+  [western] 00_Funk3-98-A_solo_E  RPA=0.611
+  [western] 00_Funk3-98-A_solo_A  RPA=0.792
+  [western] 00_Funk3-98-A_solo_D  RPA=0.809
+  [western] 00_Funk3-98-A_solo_G  RPA=0.837
+  [western] 00_Funk3-98-A_solo_B  RPA=0.798
+  [western] 00_Funk3-98-A_solo_e  RPA=0.537
+  [western] 00_Jazz1-130-D_solo_E  RPA=0.623
+  [western] 00_Jazz1-130-D_solo_A  RPA=0.770
+  [western] 00_Jazz1-130-D_solo_D  RPA=0.940
+  [western] 00_Jazz1-130-D_solo_G  RPA=0.887
+  [western] 00_Jazz1-130-D_solo_B  RPA=0.845/home/louis/miniforge3/lib/python3.13/site-packages/mir_eval/melody.py:95: UserWarning: Estimated melody has no voiced frames.
+  warnings.warn("Estimated melody has no voiced frames.")
+
+  [western] 00_Jazz1-130-D_solo_e  RPA=0.829
+  [western] 00_Jazz1-200-B_solo_E  RPA=0.753
+  [western] 00_Jazz1-200-B_solo_A  RPA=0.814
+  [western] 00_Jazz1-200-B_solo_D  RPA=0.900
+  [western] 00_Jazz1-200-B_solo_G  RPA=0.975
+  [western] 00_Jazz1-200-B_solo_B  RPA=0.958
+  [western] 00_Jazz2-110-Bb_solo_E  RPA=0.722
+  [western] 00_Jazz2-110-Bb_solo_A  RPA=0.610
+  [western] 00_Jazz2-110-Bb_solo_D  RPA=0.600
+  [western] 00_Jazz2-110-Bb_solo_G  RPA=0.906
+  [western] 00_Jazz2-110-Bb_solo_B  RPA=0.792
+  [western] 00_Jazz2-110-Bb_solo_e  RPA=0.925
+  [western] 00_Jazz2-187-F#_solo_A  RPA=0.936
+  [western] 00_Jazz2-187-F#_solo_D  RPA=0.690
+  [western] 00_Jazz2-187-F#_solo_G  RPA=0.872
+  [western] 00_Jazz2-187-F#_solo_B  RPA=0.806
+  [western] 00_Jazz2-187-F#_solo_e  RPA=0.812
+  [western] 00_Jazz3-137-Eb_solo_E  RPA=0.798
+  [western] 00_Jazz3-137-Eb_solo_A  RPA=0.908
+  [western] 00_Jazz3-137-Eb_solo_D  RPA=0.950
+  [western] 00_Jazz3-137-Eb_solo_G  RPA=0.961
+  [western] 00_Jazz3-137-Eb_solo_B  RPA=0.916
+  [western] 00_Jazz3-137-Eb_solo_e  RPA=0.836
+  [western] 00_Jazz3-150-C_solo_E  RPA=0.814
+  [western] 00_Jazz3-150-C_solo_A  RPA=0.857
+  [western] 00_Jazz3-150-C_solo_D  RPA=0.627
+  [western] 00_Jazz3-150-C_solo_G  RPA=0.906
+  [western] 00_Jazz3-150-C_solo_B  RPA=0.939
+  [western] 00_Jazz3-150-C_solo_e  RPA=0.895
+  [western] 00_Rock1-130-A_solo_E  RPA=0.708
+  [western] 00_Rock1-130-A_solo_A  RPA=0.619
+  [western] 00_Rock1-130-A_solo_D  RPA=0.732
+  [western] 00_Rock1-130-A_solo_G  RPA=0.777
+  [western] 00_Rock1-130-A_solo_B  RPA=0.839
+  [western] 00_Rock1-130-A_solo_e  RPA=0.733
+  [western] 00_Rock1-90-C#_solo_A  RPA=0.822
+  [western] 00_Rock1-90-C#_solo_D  RPA=0.762
+  [western] 00_Rock1-90-C#_solo_G  RPA=0.829
+  [western] 00_Rock1-90-C#_solo_B  RPA=0.797
+  [western] 00_Rock1-90-C#_solo_e  RPA=0.827
+  [western] 00_Rock2-142-D_solo_D  RPA=0.380
+  [western] 00_Rock2-142-D_solo_G  RPA=0.750
+  [western] 00_Rock2-142-D_solo_B  RPA=0.813
+  [western] 00_Rock2-142-D_solo_e  RPA=0.866
+  [western] 00_Rock2-85-F_solo_A  RPA=0.860
+  [western] 00_Rock2-85-F_solo_D  RPA=0.696
+  [western] 00_Rock2-85-F_solo_G  RPA=0.861
+  [western] 00_Rock2-85-F_solo_B  RPA=0.665
+  [western] 00_Rock2-85-F_solo_e  RPA=0.618
+  [western] 00_Rock3-117-Bb_solo_D  RPA=0.877
+  [western] 00_Rock3-117-Bb_solo_G  RPA=0.740
+  [western] 00_Rock3-117-Bb_solo_B  RPA=0.756
+  [western] 00_Rock3-117-Bb_solo_e  RPA=0.789
+  [western] 00_Rock3-148-C_solo_A  RPA=0.000
+  [western] 00_Rock3-148-C_solo_D  RPA=0.583
+  [western] 00_Rock3-148-C_solo_G  RPA=0.671
+  [western] 00_Rock3-148-C_solo_B  RPA=0.750
+  [western] 00_Rock3-148-C_solo_e  RPA=0.750
+  [western] 00_SS1-100-C#_solo_E  RPA=0.783
+  [western] 00_SS1-100-C#_solo_A  RPA=0.739
+  [western] 00_SS1-100-C#_solo_D  RPA=0.761
+  [western] 00_SS1-100-C#_solo_G  RPA=0.869
+  [western] 00_SS1-68-E_solo_A  RPA=0.562
+  [western] 00_SS1-68-E_solo_D  RPA=0.701
+  [western] 00_SS1-68-E_solo_G  RPA=0.770
+  [western] 00_SS1-68-E_solo_B  RPA=0.919
+  [western] 00_SS1-68-E_solo_e  RPA=0.829
+  [western] 00_SS2-107-Ab_solo_E  RPA=0.748
+  [western] 00_SS2-107-Ab_solo_A  RPA=0.844
+  [western] 00_SS2-107-Ab_solo_D  RPA=0.869
+  [western] 00_SS2-107-Ab_solo_G  RPA=0.656
+  [western] 00_SS2-107-Ab_solo_B  RPA=0.732
+  [western] 00_SS2-107-Ab_solo_e  RPA=0.777
+  [western] 00_SS2-88-F_solo_E  RPA=0.717
+  [western] 00_SS2-88-F_solo_A  RPA=0.668
+  [western] 00_SS2-88-F_solo_D  RPA=0.691
+  [western] 00_SS2-88-F_solo_G  RPA=0.670
+  [western] 00_SS2-88-F_solo_B  RPA=0.740
+  [western] 00_SS2-88-F_solo_e  RPA=0.730
+  [western] 00_SS3-84-Bb_solo_E  RPA=0.410
+  [western] 00_SS3-84-Bb_solo_A  RPA=0.448
+  [western] 00_SS3-84-Bb_solo_D  RPA=0.378
+  [western] 00_SS3-84-Bb_solo_G  RPA=0.713
+  [western] 00_SS3-84-Bb_solo_B  RPA=0.812
+  [western] 00_SS3-84-Bb_solo_e  RPA=0.907
+  [western] 00_SS3-98-C_solo_E  RPA=0.000
+  [western] 00_SS3-98-C_solo_A  RPA=0.342
+  [western] 00_SS3-98-C_solo_D  RPA=0.816
+  [western] 00_SS3-98-C_solo_G  RPA=0.751
+  [western] 00_SS3-98-C_solo_B  RPA=0.850
+  [western] 00_SS3-98-C_solo_e  RPA=0.909
+  [western] 01_BN1-129-Eb_solo_A  RPA=0.500
+  [western] 01_BN1-129-Eb_solo_D  RPA=0.703
+  [western] 01_BN1-129-Eb_solo_G  RPA=0.767
+  [western] 01_BN1-129-Eb_solo_B  RPA=0.743
+  [western] 01_BN1-129-Eb_solo_e  RPA=0.000
+  [western] 01_BN1-147-Gb_solo_D  RPA=0.641
+  [western] 01_BN1-147-Gb_solo_G  RPA=0.766
+  [western] 01_BN1-147-Gb_solo_B  RPA=0.782
+  [western] 01_BN1-147-Gb_solo_e  RPA=0.000
+  [western] 01_BN2-131-B_solo_A  RPA=0.610
+  [western] 01_BN2-131-B_solo_D  RPA=0.584
+  [western] 01_BN2-131-B_solo_G  RPA=0.676
+  [western] 01_BN2-131-B_solo_B  RPA=0.731
+  [western] 01_BN2-131-B_solo_e  RPA=0.715
+  [western] 01_BN2-166-Ab_solo_D  RPA=0.514
+  [western] 01_BN2-166-Ab_solo_G  RPA=0.587
+  [western] 01_BN2-166-Ab_solo_B  RPA=0.523
+  [western] 01_BN2-166-Ab_solo_e  RPA=0.705
+  [western] 01_BN3-119-G_solo_A  RPA=0.000
+  [western] 01_BN3-119-G_solo_D  RPA=0.787
+  [western] 01_BN3-119-G_solo_G  RPA=0.743
+  [western] 01_BN3-119-G_solo_B  RPA=0.740
+  [western] 01_BN3-119-G_solo_e  RPA=0.593
+  [western] 01_BN3-154-E_solo_D  RPA=0.730
+  [western] 01_BN3-154-E_solo_G  RPA=0.748
+  [western] 01_BN3-154-E_solo_B  RPA=0.692
+  [western] 01_BN3-154-E_solo_e  RPA=0.923
+  [western] 01_Funk1-114-Ab_solo_A  RPA=0.271
+  [western] 01_Funk1-114-Ab_solo_D  RPA=0.477
+  [western] 01_Funk1-114-Ab_solo_G  RPA=0.398
+  [western] 01_Funk1-114-Ab_solo_B  RPA=0.718
+  [western] 01_Funk1-114-Ab_solo_e  RPA=0.000
+  [western] 01_Funk1-97-C_solo_A  RPA=0.000
+  [western] 01_Funk1-97-C_solo_D  RPA=0.306
+  [western] 01_Funk1-97-C_solo_G  RPA=0.480
+  [western] 01_Funk1-97-C_solo_B  RPA=0.746
+  [western] 01_Funk1-97-C_solo_e  RPA=0.388
+  [western] 01_Funk2-108-Eb_solo_E  RPA=0.232
+  [western] 01_Funk2-108-Eb_solo_D  RPA=0.450
+  [western] 01_Funk2-108-Eb_solo_G  RPA=0.527
+  [western] 01_Funk2-108-Eb_solo_B  RPA=0.568
+  [western] 01_Funk2-108-Eb_solo_e  RPA=0.131
+  [western] 01_Funk2-119-G_solo_D  RPA=0.000
+  [western] 01_Funk2-119-G_solo_G  RPA=0.407
+  [western] 01_Funk2-119-G_solo_B  RPA=0.627
+  [western] 01_Funk2-119-G_solo_e  RPA=0.271
+  [western] 01_Funk3-112-C#_solo_E  RPA=0.000
+  [western] 01_Funk3-112-C#_solo_A  RPA=0.122
+  [western] 01_Funk3-112-C#_solo_D  RPA=0.233
+  [western] 01_Funk3-112-C#_solo_G  RPA=0.453
+  [western] 01_Funk3-112-C#_solo_B  RPA=0.534
+  [western] 01_Funk3-112-C#_solo_e  RPA=0.028
+  [western] 01_Funk3-98-A_solo_A  RPA=0.000
+  [western] 01_Funk3-98-A_solo_D  RPA=0.436
+  [western] 01_Funk3-98-A_solo_G  RPA=0.357
+  [western] 01_Funk3-98-A_solo_B  RPA=0.521
+  [western] 01_Funk3-98-A_solo_e  RPA=0.420
+  [western] 01_Jazz1-130-D_solo_D  RPA=0.453
+  [western] 01_Jazz1-130-D_solo_G  RPA=0.776
+  [western] 01_Jazz1-130-D_solo_B  RPA=0.585
+  [western] 01_Jazz1-130-D_solo_e  RPA=0.691
+  [western] 01_Jazz1-200-B_solo_D  RPA=0.191
+  [western] 01_Jazz1-200-B_solo_G  RPA=0.654
+  [western] 01_Jazz1-200-B_solo_B  RPA=0.722
+  [western] 01_Jazz1-200-B_solo_e  RPA=0.604
+  [western] 01_Jazz2-110-Bb_solo_A  RPA=0.433
+  [western] 01_Jazz2-110-Bb_solo_D  RPA=0.529
+  [western] 01_Jazz2-110-Bb_solo_G  RPA=0.566
+  [western] 01_Jazz2-110-Bb_solo_B  RPA=0.634
+  [western] 01_Jazz2-110-Bb_solo_e  RPA=0.589
+  [western] 01_Jazz2-187-F#_solo_A  RPA=0.216
+  [western] 01_Jazz2-187-F#_solo_D  RPA=0.654
+  [western] 01_Jazz2-187-F#_solo_G  RPA=0.694
+  [western] 01_Jazz2-187-F#_solo_B  RPA=0.601
+  [western] 01_Jazz2-187-F#_solo_e  RPA=0.675
+  [western] 01_Jazz3-137-Eb_solo_D  RPA=0.561
+  [western] 01_Jazz3-137-Eb_solo_G  RPA=0.688
+  [western] 01_Jazz3-137-Eb_solo_B  RPA=0.777
+  [western] 01_Jazz3-137-Eb_solo_e  RPA=0.759
+  [western] 01_Jazz3-150-C_solo_D  RPA=0.326
+  [western] 01_Jazz3-150-C_solo_G  RPA=0.591
+  [western] 01_Jazz3-150-C_solo_B  RPA=0.705
+  [western] 01_Jazz3-150-C_solo_e  RPA=0.449
+  [western] 01_Rock1-130-A_solo_E  RPA=0.000
+  [western] 01_Rock1-130-A_solo_A  RPA=0.313
+  [western] 01_Rock1-130-A_solo_D  RPA=0.540
+  [western] 01_Rock1-130-A_solo_G  RPA=0.653
+  [western] 01_Rock1-130-A_solo_B  RPA=0.677
+  [western] 01_Rock1-90-C#_solo_A  RPA=0.029
+  [western] 01_Rock1-90-C#_solo_D  RPA=0.261
+  [western] 01_Rock1-90-C#_solo_G  RPA=0.656
+  [western] 01_Rock1-90-C#_solo_B  RPA=0.492
+  [western] 01_Rock1-90-C#_solo_e  RPA=0.444

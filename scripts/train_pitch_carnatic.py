@@ -5,11 +5,11 @@ on the same test tracks — measuring all three on both Carnatic and Western dat
 
 Usage:
     python scripts/train_pitch_carnatic.py \
-        --saraga-home  data/raw/saraga \
-        --maestro-home data/raw/maestro \
-        --output-dir   results/pitch/carnatic_model \
-        --epochs       30 \
-        --max-tracks   60 \
+        --saraga-home     data/raw/saraga \
+        --guitarset-home  data/raw/guitarset \
+        --output-dir      results/pitch/carnatic_model \
+        --epochs          30 \
+        --max-tracks      60 \
         --compare-all
 """
 
@@ -21,7 +21,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from src.preprocessing.saraga import get_saraga_split
-from src.preprocessing.maestro import get_maestro_split
+from src.preprocessing.guitarset import get_guitarset_tracks
 from src.pitch.dataset import make_splits, SaragaPitchDataset
 from src.pitch.model import CREPELike
 from src.pitch.train import train, load_model
@@ -33,7 +33,7 @@ from src.pitch.analysis import results_to_dataframe, plot_metric_by_domain
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--saraga-home", default="data/raw/saraga")
-    parser.add_argument("--maestro-home", default="data/raw/maestro")
+    parser.add_argument("--guitarset-home", default="data/raw/guitarset")
     parser.add_argument("--output-dir", default="results/pitch/carnatic_model")
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch-size", type=int, default=128)
@@ -154,9 +154,9 @@ def main():
         return
 
     # ── Full comparison: 3 models × 2 domains ─────────────────────────────────
-    print("\nLoading MAESTRO test tracks for Western evaluation…")
-    western_tracks = get_maestro_split(
-        args.maestro_home, split="test", max_tracks=args.max_tracks
+    print("\nLoading GuitarSet tracks for Western evaluation…")
+    western_tracks = get_guitarset_tracks(
+        args.guitarset_home, mode="solo", max_tracks=args.max_tracks
     )
 
     methods = [

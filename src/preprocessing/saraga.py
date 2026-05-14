@@ -19,7 +19,9 @@ from .common import AudioTrack, load_audio, normalize
 
 def load_saraga_track(track, data_home: str, sr: int = 22050) -> AudioTrack:
     """Load a single Saraga track into an AudioTrack object."""
-    audio_path = track.audio_path
+    audio_path = str(track.audio_path)
+    if audio_path.endswith(".mp3.mp3"):
+        audio_path = audio_path[:-4]
     audio, _ = load_audio(audio_path, sr=sr)
     audio = normalize(audio)
 
@@ -83,6 +85,7 @@ def get_saraga_split(
         raise ImportError("mirdata is required: pip install mirdata")
 
     dataset = mirdata.initialize("saraga_carnatic", data_home=data_home)
+    dataset.download(partial_download=["index"])
     # mirdata provides a splits dict if the dataset defines one
     if hasattr(dataset, "get_track_ids_for_split"):
         ids = dataset.get_track_ids_for_split(split)
@@ -92,11 +95,21 @@ def get_saraga_split(
     if max_tracks:
         ids = ids[:max_tracks]
 
+    try:
+        from tqdm import tqdm as _tqdm
+    except ImportError:
+        _tqdm = None
+
     tracks = []
-    for tid in ids:
+    it = _tqdm(ids, desc="Loading Saraga", unit="track") if _tqdm else ids
+    for tid in it:
         track = dataset.track(tid)
         try:
             tracks.append(load_saraga_track(track, data_home=data_home, sr=sr))
         except Exception as exc:
-            print(f"[saraga] Skipping {tid}: {exc}")
+            msg = f"[saraga] Skipping {tid}: {exc}"
+            if _tqdm:
+                _tqdm.write(msg)
+            else:
+                print(msg)
     return tracks

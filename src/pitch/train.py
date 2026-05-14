@@ -8,6 +8,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 import mir_eval
+from tqdm import tqdm
 
 from .model import CREPELike, activation_to_hz
 from .dataset import SaragaPitchDataset, TARGET_SR, HOP_SAMPLES, FRAME_LEN
@@ -55,9 +56,8 @@ def validate(
         pred_np = pred.cpu().numpy()
         for i in range(frames.shape[0]):
             est_hz = activation_to_hz(pred_np[i])
-            ref_hz = float((labels[i] * torch.tensor(
+            ref_hz = float((labels[i].cpu() * torch.tensor(
                 __import__('src.pitch.dataset', fromlist=['PITCH_BINS_HZ']).PITCH_BINS_HZ,
-                device='cpu'
             )).sum())
             is_voiced = voiced[i].item() > 0.5
 
@@ -113,7 +113,7 @@ def train(
 
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode="max", factor=0.5, patience=3, verbose=True
+        optimizer, mode="max", factor=0.5, patience=3
     )
 
     history = {"train_loss": [], "val_loss": [], "val_rpa": [], "val_oa": []}
@@ -123,7 +123,8 @@ def train(
     for epoch in range(1, epochs + 1):
         model.train()
         epoch_loss = 0.0
-        for frames, labels, voiced in train_loader:
+        pbar = tqdm(train_loader, desc=f"Epoch {epoch:3d}/{epochs}", unit="batch", leave=False)
+        for frames, labels, voiced in pbar:
             frames = frames.to(device)
             labels = labels.to(device)
             voiced = voiced.to(device)
@@ -135,6 +136,7 @@ def train(
             nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
             epoch_loss += loss.item()
+            pbar.set_postfix(loss=f"{loss.item():.4f}")
 
         train_loss = epoch_loss / len(train_loader)
         val_metrics = validate(model, val_loader, device)

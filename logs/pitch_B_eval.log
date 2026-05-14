@@ -1,0 +1,1126 @@
+WARNING: Downloading ['index']. Index is being stored in /home/louis/miniforge3/lib/python3.13/site-packages/mirdata/datasets/indexes
+WARNING: [index] downloading guitarset_index_1.1.0.json
+WARNING: /home/louis/miniforge3/lib/python3.13/site-packages/mirdata/datasets/indexes/guitarset_index_1.1.0.json already exists and will not be downloaded. Rerun with force_overwrite=True to delete this file and force the download.
+Loading Saraga tracks…
+  Loaded 249 Saraga tracks
+  Evaluating on all 249 tracks
+
+Loading GuitarSet tracks…
+Loading GuitarSet:   0%|          | 0/180 [00:00<?, ?track/s]Loading GuitarSet:   1%|          | 2/180 [00:00<00:12, 13.77track/s]Loading GuitarSet:   2%|▏         | 4/180 [00:00<00:13, 12.76track/s]Loading GuitarSet:   3%|▎         | 6/180 [00:00<00:17,  9.71track/s]Loading GuitarSet:   4%|▍         | 8/180 [00:00<00:18,  9.55track/s]Loading GuitarSet:   5%|▌         | 9/180 [00:00<00:18,  9.35track/s]Loading GuitarSet:   6%|▌         | 10/180 [00:01<00:24,  7.04track/s]Loading GuitarSet:   6%|▌         | 11/180 [00:01<00:23,  7.12track/s]Loading GuitarSet:   7%|▋         | 12/180 [00:01<00:25,  6.64track/s]Loading GuitarSet:   8%|▊         | 14/180 [00:01<00:19,  8.71track/s]Loading GuitarSet:   8%|▊         | 15/180 [00:01<00:20,  7.90track/s]Loading GuitarSet:   9%|▉         | 17/180 [00:02<00:19,  8.20track/s]Loading GuitarSet:  10%|█         | 18/180 [00:02<00:20,  7.93track/s]Loading GuitarSet:  11%|█         | 20/180 [00:02<00:19,  8.15track/s]Loading GuitarSet:  12%|█▏        | 22/180 [00:02<00:20,  7.68track/s]Loading GuitarSet:  13%|█▎        | 23/180 [00:02<00:20,  7.60track/s]Loading GuitarSet:  13%|█▎        | 24/180 [00:02<00:19,  7.99track/s]Loading GuitarSet:  14%|█▍        | 25/180 [00:03<00:18,  8.36track/s]Loading GuitarSet:  14%|█▍        | 26/180 [00:03<00:21,  7.07track/s]Loading GuitarSet:  15%|█▌        | 27/180 [00:03<00:22,  6.93track/s]Loading GuitarSet:  16%|█▌        | 28/180 [00:03<00:23,  6.57track/s]Loading GuitarSet:  16%|█▌        | 29/180 [00:03<00:25,  6.04track/s]Loading GuitarSet:  17%|█▋        | 30/180 [00:03<00:27,  5.55track/s]Loading GuitarSet:  18%|█▊        | 32/180 [00:04<00:19,  7.59track/s]Loading GuitarSet:  18%|█▊        | 33/180 [00:04<00:18,  7.90track/s]Loading GuitarSet:  19%|█▉        | 35/180 [00:04<00:16,  8.75track/s]Loading GuitarSet:  21%|██        | 37/180 [00:04<00:15,  9.47track/s]Loading GuitarSet:  21%|██        | 38/180 [00:04<00:14,  9.54track/s]Loading GuitarSet:  22%|██▏       | 39/180 [00:04<00:15,  8.92track/s]Loading GuitarSet:  22%|██▏       | 40/180 [00:04<00:15,  9.09track/s]Loading GuitarSet:  23%|██▎       | 41/180 [00:05<00:16,  8.45track/s]Loading GuitarSet:  23%|██▎       | 42/180 [00:05<00:17,  7.74track/s]Loading GuitarSet:  24%|██▍       | 44/180 [00:05<00:13, 10.02track/s]Loading GuitarSet:  26%|██▌       | 46/180 [00:05<00:13,  9.94track/s]Loading GuitarSet:  27%|██▋       | 48/180 [00:05<00:12, 10.26track/s]Loading GuitarSet:  28%|██▊       | 50/180 [00:05<00:13,  9.93track/s]Loading GuitarSet:  29%|██▉       | 52/180 [00:06<00:13,  9.31track/s]Loading GuitarSet:  29%|██▉       | 53/180 [00:06<00:13,  9.31track/s]Loading GuitarSet:  30%|███       | 54/180 [00:06<00:13,  9.42track/s]Loading GuitarSet:  31%|███       | 55/180 [00:06<00:13,  9.33track/s]Loading GuitarSet:  31%|███       | 56/180 [00:06<00:15,  7.79track/s]Loading GuitarSet:  32%|███▏      | 57/180 [00:06<00:16,  7.66track/s]Loading GuitarSet:  32%|███▏      | 58/180 [00:06<00:16,  7.41track/s]Loading GuitarSet:  33%|███▎      | 59/180 [00:07<00:18,  6.48track/s]Loading GuitarSet:  33%|███▎      | 60/180 [00:07<00:17,  6.74track/s]Loading GuitarSet:  34%|███▍      | 62/180 [00:07<00:12,  9.31track/s]Loading GuitarSet:  36%|███▌      | 64/180 [00:07<00:10, 10.84track/s]Loading GuitarSet:  37%|███▋      | 66/180 [00:07<00:10, 10.83track/s]Loading GuitarSet:  38%|███▊      | 68/180 [00:07<00:09, 11.28track/s]Loading GuitarSet:  39%|███▉      | 70/180 [00:08<00:09, 11.23track/s]Loading GuitarSet:  40%|████      | 72/180 [00:08<00:11,  9.67track/s]Loading GuitarSet:  41%|████      | 74/180 [00:08<00:09, 10.97track/s]Loading GuitarSet:  42%|████▏     | 76/180 [00:08<00:09, 11.42track/s]Loading GuitarSet:  43%|████▎     | 78/180 [00:08<00:08, 11.56track/s]Loading GuitarSet:  44%|████▍     | 80/180 [00:09<00:09, 10.92track/s]Loading GuitarSet:  46%|████▌     | 82/180 [00:09<00:09, 10.08track/s]Loading GuitarSet:  47%|████▋     | 84/180 [00:09<00:09, 10.27track/s]Loading GuitarSet:  48%|████▊     | 86/180 [00:09<00:10,  9.30track/s]Loading GuitarSet:  49%|████▉     | 88/180 [00:09<00:10,  8.96track/s]Loading GuitarSet:  49%|████▉     | 89/180 [00:10<00:11,  8.12track/s]Loading GuitarSet:  50%|█████     | 90/180 [00:10<00:11,  7.95track/s]Loading GuitarSet:  51%|█████     | 92/180 [00:10<00:09,  9.10track/s]Loading GuitarSet:  52%|█████▏    | 93/180 [00:10<00:09,  8.80track/s]Loading GuitarSet:  53%|█████▎    | 95/180 [00:10<00:09,  8.91track/s]Loading GuitarSet:  54%|█████▍    | 97/180 [00:10<00:08,  9.36track/s]Loading GuitarSet:  54%|█████▍    | 98/180 [00:11<00:09,  8.93track/s]Loading GuitarSet:  55%|█████▌    | 99/180 [00:11<00:09,  8.22track/s]Loading GuitarSet:  56%|█████▌    | 100/180 [00:11<00:09,  8.20track/s]Loading GuitarSet:  56%|█████▌    | 101/180 [00:11<00:09,  7.98track/s]Loading GuitarSet:  57%|█████▋    | 102/180 [00:11<00:10,  7.48track/s]Loading GuitarSet:  58%|█████▊    | 104/180 [00:11<00:07,  9.70track/s]Loading GuitarSet:  58%|█████▊    | 105/180 [00:11<00:08,  8.72track/s]Loading GuitarSet:  59%|█████▉    | 107/180 [00:12<00:07,  9.14track/s]Loading GuitarSet:  61%|██████    | 109/180 [00:12<00:07, 10.01track/s]Loading GuitarSet:  62%|██████▏   | 111/180 [00:12<00:07,  9.45track/s]Loading GuitarSet:  62%|██████▏   | 112/180 [00:12<00:08,  8.23track/s]Loading GuitarSet:  63%|██████▎   | 113/180 [00:12<00:08,  8.32track/s]Loading GuitarSet:  64%|██████▍   | 115/180 [00:13<00:07,  8.98track/s]Loading GuitarSet:  64%|██████▍   | 116/180 [00:13<00:07,  8.37track/s]Loading GuitarSet:  65%|██████▌   | 117/180 [00:13<00:08,  7.75track/s]Loading GuitarSet:  66%|██████▌   | 118/180 [00:13<00:08,  7.44track/s]Loading GuitarSet:  66%|██████▌   | 119/180 [00:13<00:08,  6.92track/s]Loading GuitarSet:  67%|██████▋   | 120/180 [00:13<00:08,  6.72track/s]Loading GuitarSet:  68%|██████▊   | 122/180 [00:13<00:06,  8.85track/s]Loading GuitarSet:  69%|██████▉   | 124/180 [00:14<00:05,  9.86track/s]Loading GuitarSet:  70%|███████   | 126/180 [00:14<00:05,  9.67track/s]Loading GuitarSet:  71%|███████   | 127/180 [00:14<00:05,  9.70track/s]Loading GuitarSet:  71%|███████   | 128/180 [00:14<00:05,  9.35track/s]Loading GuitarSet:  72%|███████▏  | 129/180 [00:14<00:05,  8.69track/s]Loading GuitarSet:  73%|███████▎  | 131/180 [00:14<00:05,  8.88track/s]Loading GuitarSet:  73%|███████▎  | 132/180 [00:15<00:05,  8.41track/s]Loading GuitarSet:  74%|███████▍  | 134/180 [00:15<00:04,  9.96track/s]Loading GuitarSet:  76%|███████▌  | 136/180 [00:15<00:04, 10.43track/s]Loading GuitarSet:  77%|███████▋  | 138/180 [00:15<00:04, 10.10track/s]Loading GuitarSet:  78%|███████▊  | 140/180 [00:15<00:04,  9.98track/s]Loading GuitarSet:  79%|███████▉  | 142/180 [00:16<00:04,  9.14track/s]Loading GuitarSet:  79%|███████▉  | 143/180 [00:16<00:04,  8.76track/s]Loading GuitarSet:  81%|████████  | 145/180 [00:16<00:03,  9.51track/s]Loading GuitarSet:  81%|████████  | 146/180 [00:16<00:03,  9.20track/s]Loading GuitarSet:  82%|████████▏ | 147/180 [00:16<00:03,  9.18track/s]Loading GuitarSet:  82%|████████▏ | 148/180 [00:16<00:03,  8.37track/s]Loading GuitarSet:  83%|████████▎ | 149/180 [00:16<00:03,  8.06track/s]Loading GuitarSet:  83%|████████▎ | 150/180 [00:17<00:03,  8.00track/s]Loading GuitarSet:  84%|████████▍ | 152/180 [00:17<00:02,  9.88track/s]Loading GuitarSet:  86%|████████▌ | 154/180 [00:17<00:02, 10.00track/s]Loading GuitarSet:  87%|████████▋ | 156/180 [00:17<00:02, 10.20track/s]Loading GuitarSet:  88%|████████▊ | 158/180 [00:17<00:02, 10.30track/s]Loading GuitarSet:  89%|████████▉ | 160/180 [00:18<00:02,  9.06track/s]Loading GuitarSet:  89%|████████▉ | 161/180 [00:18<00:02,  9.03track/s]Loading GuitarSet:  90%|█████████ | 162/180 [00:18<00:02,  8.36track/s]Loading GuitarSet:  91%|█████████ | 164/180 [00:18<00:01,  9.97track/s]Loading GuitarSet:  92%|█████████▏| 166/180 [00:18<00:01,  9.90track/s]Loading GuitarSet:  93%|█████████▎| 168/180 [00:18<00:01,  9.69track/s]Loading GuitarSet:  94%|█████████▍| 170/180 [00:19<00:01,  9.61track/s]Loading GuitarSet:  95%|█████████▌| 171/180 [00:19<00:00,  9.32track/s]Loading GuitarSet:  96%|█████████▌| 172/180 [00:19<00:00,  8.13track/s]Loading GuitarSet:  96%|█████████▌| 173/180 [00:19<00:00,  7.98track/s]Loading GuitarSet:  97%|█████████▋| 175/180 [00:19<00:00,  8.58track/s]Loading GuitarSet:  98%|█████████▊| 176/180 [00:19<00:00,  7.52track/s]Loading GuitarSet:  98%|█████████▊| 177/180 [00:20<00:00,  7.13track/s]Loading GuitarSet:  99%|█████████▉| 178/180 [00:20<00:00,  6.67track/s]Loading GuitarSet:  99%|█████████▉| 179/180 [00:20<00:00,  6.30track/s]Loading GuitarSet: 100%|██████████| 180/180 [00:20<00:00,  6.36track/s]Loading GuitarSet: 100%|██████████| 180/180 [00:20<00:00,  8.75track/s]
+  Loaded 817 GuitarSet string-tracks
+
+--- carnatic ---
+  [carnatic] 0_Dorakuna  RPA=nan
+  [carnatic] 1_Ganamuda_Panam  RPA=nan
+  [carnatic] 2_Chidambara_Natarajam  RPA=nan
+  [carnatic] 3_Vandalum  RPA=nan
+  [carnatic] 4_Thiruveragane_Saveri_Varnam  RPA=nan
+  [carnatic] 5_Rama_Daya_Judave  RPA=nan
+  [carnatic] 6_Neene_Ballideno  RPA=nan
+  [carnatic] 7_Paragu_Matada  RPA=nan
+  [carnatic] 8_Palisomma_Muddu_Sarade  RPA=nan
+  [carnatic] 9_Ramakrishnaru_Manege  RPA=nan
+  [carnatic] 10_Bandadella_Barali  RPA=nan
+  [carnatic] 11_Tamburi_Mitidava  RPA=nan
+  [carnatic] 12_Sharanu_Janakana  RPA=nan
+  [carnatic] 13_Thillana_Purnachandrika  RPA=0.522
+  [carnatic] 14_Angakaram  RPA=0.813
+  [carnatic] 15_Samajavarada  RPA=0.608
+  [carnatic] 16_Evarura  RPA=0.636
+  [carnatic] 17_Eranapai  RPA=0.675
+  [carnatic] 18_Parama_Purusham  RPA=0.807
+  [carnatic] 19_Marubari  RPA=0.775
+  [carnatic] 20_Aparadhamula  RPA=0.698
+  [carnatic] 21_Sadabalarupapi_Shlokam  RPA=0.940
+  [carnatic] 22_Hiranmayeem_Lakshmeem  RPA=nan
+  [carnatic] 23_Niraimadi_Mugam_Thiruppugazh  RPA=nan
+  [carnatic] 24_Evvari_Bodhana  RPA=nan
+  [carnatic] 25_Sanchara_Dhadhara  RPA=nan
+  [carnatic] 26_Lokavana_Chatura  RPA=nan
+  [carnatic] 27_Idhuthaano_Thillai_Sthalam  RPA=nan
+  [carnatic] 28_Amba_Kamakshi  RPA=nan
+  [carnatic] 29_Vitthala_Salaho_Swamy  RPA=nan
+  [carnatic] 30_Pavamana_Suthudu_Mangalam  RPA=nan
+  [carnatic] 31_Karuna_Ela_Gante  RPA=nan
+  [carnatic] 32_Gopanandana  RPA=nan
+  [carnatic] 33_Entara_Nitana  RPA=nan
+  [carnatic] 34_Teerthakarayinile  RPA=nan
+  [carnatic] 35_Thillana_Dhanashri  RPA=nan
+  [carnatic] 36_Ozhukkam_Uyirinum  RPA=nan
+  [carnatic] 37_Undan_Paada_Pankayam  RPA=nan
+  [carnatic] 38_Raagam_Thaanam_Pallavi  RPA=nan
+  [carnatic] 39_Pavamana_Suthudu  RPA=nan
+  [carnatic] 40_Kamakshi  RPA=nan
+  [carnatic] 41_Soundararajam  RPA=nan
+  [carnatic] 42_Payum_Oli_Nee_Yenakku  RPA=nan
+  [carnatic] 43_Shatre_Vilagi_Irum  RPA=nan
+  [carnatic] 44_Maname_Ramanai_Paada  RPA=nan
+  [carnatic] 45_Apparama_Bhakti  RPA=nan
+  [carnatic] 46_Manadirkkugandhadu  RPA=nan
+  [carnatic] 47_Koti_Janmani  RPA=nan
+  [carnatic] 48_Brova_Barama  RPA=nan
+  [carnatic] 49_Shankari_Shankuru  RPA=nan
+  [carnatic] 50_Karunimpa_Idi  RPA=nan
+  [carnatic] 51_Pavamana_Suthudu_Mangalam  RPA=nan
+  [carnatic] 52_Geeta_Nayakan  RPA=nan
+  [carnatic] 53_Siddhi_Vinayakam  RPA=nan
+  [carnatic] 54_Thillana_Pahadi  RPA=nan
+  [carnatic] 55_Enadhu_Manam_Kavalai  RPA=nan
+  [carnatic] 56_Purahara_Nandana  RPA=nan
+  [carnatic] 57_Nannu_Brova_Neeku  RPA=nan
+  [carnatic] 58_Nera_Nammiti  RPA=nan
+  [carnatic] 59_Parvathi_Ninnu_Neranammiti  RPA=nan
+  [carnatic] 60_Geetha_Vaadya_Natana  RPA=nan
+  [carnatic] 61_Sudhaamayee  RPA=nan
+  [carnatic] 62_Shloka_Namaste_Sarvalokaanam  RPA=nan
+  [carnatic] 63_Vanajaksha_Ninne_Nammiti  RPA=nan
+  [carnatic] 64_Jaya_Jaya_Padmanabhanujese  RPA=nan
+  [carnatic] 65_Devadi_Devanukku_Jaya_Mangalam  RPA=nan
+  [carnatic] 66_Kannanai_Paadu_Maname  RPA=nan
+  [carnatic] 67_Paahi_Maam_Sri  RPA=nan
+  [carnatic] 68_Eppadi_Manam_Thunindhadho  RPA=nan
+  [carnatic] 69_Munnu_Ravana  RPA=nan
+  [carnatic] 70_Shlokham  RPA=nan
+  [carnatic] 71_Pranamamyaham_Sri_Prananatham  RPA=nan
+  [carnatic] 72_Ni_Ninaindhal_Aagadhadhu  RPA=nan
+  [carnatic] 73_Chandrashekharam_Sada_Bhajeham  RPA=nan
+  [carnatic] 74_Sri_Jalandara  RPA=nan
+  [carnatic] 75_Amba_Nilambari  RPA=nan
+  [carnatic] 76_Ninnuvina_Marigalada  RPA=nan
+  [carnatic] 77_Avani_Sutha  RPA=nan
+  [carnatic] 78_Rama_Neepai  RPA=nan
+  [carnatic] 79_Etulabrotuva  RPA=nan
+  [carnatic] 80_Lokavana_Chatura  RPA=nan
+  [carnatic] 81_Enthavedukonthu_Raghava  RPA=nan
+  [carnatic] 82_Koluvamaregatha  RPA=nan
+  [carnatic] 83_Neevada_Negana  RPA=nan
+  [carnatic] 84_Vara_Leela_Gana_Lola  RPA=nan
+  [carnatic] 85_Chinnanchiru_Kiliye  RPA=nan
+  [carnatic] 86_Gopi_Gopala_Bala  RPA=nan
+  [carnatic] 87_Pavamana_Suttudu_Pattu  RPA=nan
+  [carnatic] 88_Kannallavo_Swami  RPA=nan
+  [carnatic] 89_Padavini  RPA=nan
+  [carnatic] 90_Vandu_Ketpaar_Illayo  RPA=nan
+  [carnatic] 91_Ragam_Tanam_Pallavi  RPA=nan
+  [carnatic] 92_Tillana  RPA=nan
+  [carnatic] 93_Sharanagatha_Vatsale  RPA=nan
+  [carnatic] 94_Hiranmayeem  RPA=nan
+  [carnatic] 95_Sogasuga  RPA=nan
+  [carnatic] 96_Dharini_Telusukonti  RPA=nan
+  [carnatic] 97_Merusamana  RPA=nan
+  [carnatic] 98_Marugelara  RPA=nan
+  [carnatic] 99_Karuna_Ela_Gante  RPA=nan
+  [carnatic] 100_Pavamaana_Suthudu_Pattu  RPA=nan
+  [carnatic] 101_Maname_Kanamum  RPA=nan
+  [carnatic] 102_Ennadu_Jootuno  RPA=nan
+  [carnatic] 103_Paarengum  RPA=nan
+  [carnatic] 104_Saravanabhava_Enum  RPA=nan
+  [carnatic] 105_Karuvutranaal_Mudalaaga  RPA=nan
+  [carnatic] 106_Aru_marundu  RPA=nan
+  [carnatic] 107_Eranapai  RPA=nan
+  [carnatic] 108_Pullum_Silambena_Kan  RPA=nan
+  [carnatic] 109_Sri_Raghuvara_Sugunaalaya  RPA=nan
+  [carnatic] 110_Ragam_Thanam_Pallavi_-_Shanmukhapriya  RPA=nan
+  [carnatic] 111_Sarasadalanayana  RPA=nan
+  [carnatic] 112_Rama_Rama_Guna_Seema  RPA=0.059
+  [carnatic] 113_Prathi_Vaaram_Vaaram  RPA=0.532
+  [carnatic] 114_Varashiki_Vahana  RPA=0.089
+  [carnatic] 115_Idhu_Thaano_Thillai_Sthalam  RPA=0.677
+  [carnatic] 116_Bhuvini_Dasudane  RPA=0.037
+  [carnatic] 117_Karuna_Nidhi_Illalo  RPA=0.052
+  [carnatic] 118_Tulasi_Bilva  RPA=0.118
+  [carnatic] 119_Shlokam_-_Shivah_Shaktyayukto  RPA=0.524
+  [carnatic] 120_Velum_Mayilume  RPA=0.069
+  [carnatic] 121_Tolinenu_Jesina  RPA=nan
+  [carnatic] 122_Kailasapathe  RPA=nan
+  [carnatic] 123_Shri_Kamakshi_Shritajana  RPA=nan
+  [carnatic] 124_Thillana_Vasanta  RPA=nan
+  [carnatic] 125_Nera_Nammiti  RPA=nan
+  [carnatic] 126_Lalitha_Lavanga  RPA=nan
+  [carnatic] 127_Thamarai_Kangal  RPA=nan
+  [carnatic] 128_Gam_Ganapate  RPA=nan
+  [carnatic] 129_Karunajaladhe  RPA=nan
+  [carnatic] 130_Ghandhamu_Poyyaruga  RPA=nan
+  [carnatic] 131_Koluvaiyunnade  RPA=nan
+  [carnatic] 132_Entha_Muddo  RPA=nan
+  [carnatic] 133_Paramatmudu  RPA=nan
+  [carnatic] 134_Giriraja_Suta  RPA=nan
+  [carnatic] 135_Paraloka_Bhaya  RPA=nan
+  [carnatic] 136_Dudukugala  RPA=nan
+  [carnatic] 137_Telisi_Rama  RPA=nan
+  [carnatic] 138_Eramuni  RPA=nan
+  [carnatic] 139_Mangalam_Avanisutanatha  RPA=nan
+  [carnatic] 140_Edari_Sancharintura  RPA=nan
+  [carnatic] 141_Rama_Namam_Bhajare  RPA=nan
+  [carnatic] 142_Shobillu_Saptasvara  RPA=nan
+  [carnatic] 143_Sundari_Nee_Divya  RPA=nan
+  [carnatic] 144_Vinakayunna_Della  RPA=nan
+  [carnatic] 145_Janakipathe  RPA=nan
+  [carnatic] 146_Shri_Guruguhasya  RPA=nan
+  [carnatic] 147_Jootamu_Rare  RPA=nan
+  [carnatic] 148_Thanaithilam_Kattrerumai  RPA=nan
+  [carnatic] 149_Kanakangaka_Guha  RPA=nan
+  [carnatic] 150_Shloka  RPA=nan
+  [carnatic] 151_Thillana_Hameerkalyani  RPA=nan
+  [carnatic] 152_Vanajakshi_-_Varnam  RPA=nan
+  [carnatic] 153_Teerthakarayinile  RPA=nan
+  [carnatic] 154_Innamum_Oru_thalam  RPA=nan
+  [carnatic] 155_Nadopasana  RPA=nan
+  [carnatic] 156_Ganta_mani_aadudhu  RPA=nan
+  [carnatic] 157_Janani  RPA=nan
+  [carnatic] 158_Oorilen_Kaani_Illai  RPA=nan
+  [carnatic] 159_Ramakrishnaru_Manaegae  RPA=nan
+  [carnatic] 160_Uppum_karpuramum  RPA=nan
+  [carnatic] 161_Chalamelara_Saketha_Rama  RPA=nan
+  [carnatic] 162_Kalilo_Hari_Smrana  RPA=nan
+  [carnatic] 163_Ninnaiye_rathi  RPA=nan
+  [carnatic] 164_Mangalam  RPA=nan
+  [carnatic] 165_Deenarakshaka  RPA=nan
+  [carnatic] 166_O_Rangashayee  RPA=nan
+  [carnatic] 167_Sama_geeta_priyan  RPA=nan
+  [carnatic] 168_Karupuram_Naarumo  RPA=nan
+  [carnatic] 169_Va_vela_va  RPA=nan
+  [carnatic] 170_Gange_Maam_Pahi  RPA=nan
+  [carnatic] 171_Arul_Seya_Vendum_Ayya  RPA=nan
+  [carnatic] 172_Kaalaharanamelara  RPA=nan
+  [carnatic] 173_Vasudeva_Sutam_Devam  RPA=nan
+  [carnatic] 174_Brochevarevarura  RPA=nan
+  [carnatic] 175_Thappi_Bratikipova  RPA=nan
+  [carnatic] 176_Krishna_Nee_Begane_Baaro  RPA=nan
+  [carnatic] 177_Kari_Kalabha_Mukham  RPA=nan
+  [carnatic] 178_Muruga_Muruga_Muruga  RPA=0.697
+  [carnatic] 179_Chenduril_Nindradum_Kanda  RPA=0.756
+  [carnatic] 180_Ninne_Bhajana  RPA=0.679
+  [carnatic] 181_Nera_Nammiti  RPA=0.651
+  [carnatic] 182_Dinamani_Vamsa  RPA=0.653
+  [carnatic] 183_Chakkani_Raja  RPA=0.455
+  [carnatic] 184_Ardhanareeshwaram  RPA=0.629
+  [carnatic] 185_Pavamana_Suthudu_Pattu  RPA=0.442
+  [carnatic] 186_Shloka  RPA=0.699
+  [carnatic] 187_Aaniraimekkani  RPA=0.776
+  [carnatic] 188_Vanajaksha_Ninne_Kori  RPA=0.585
+  [carnatic] 189_Karuninchutakidi  RPA=0.320
+  [carnatic] 190_Va_Va_Brindavana  RPA=0.460
+  [carnatic] 191_Mati_Matiki  RPA=0.397
+  [carnatic] 192_Sri_Guru_Na_Palitosmi  RPA=0.557
+  [carnatic] 193_Thoomani_Madatthu  RPA=0.621
+  [carnatic] 194_Ramabhi_Rama_Manasu  RPA=0.397
+  [carnatic] 195_Mangalam_Kosalendraya  RPA=0.754
+  [carnatic] 196_Sri_Vidhya_Rajagopala  RPA=0.556
+  [carnatic] 197_Shloka_Sri_Ramachandra_Shrita_Parijata  RPA=nan
+  [carnatic] 198_Nera_Nammiti  RPA=nan
+  [carnatic] 199_Sri_Kantimatim  RPA=nan
+  [carnatic] 200_Athirum_Kazhal  RPA=nan
+  [carnatic] 201_Siva_Siva_Siva_Yenarada  RPA=nan
+  [carnatic] 202_Kanukontini  RPA=nan
+  [carnatic] 203_Sami_Dayajuda  RPA=nan
+  [carnatic] 204_Giriraja_Suta  RPA=nan
+  [carnatic] 205_Ananda_Sagara  RPA=nan
+  [carnatic] 206_Bayarani_Bhalite  RPA=nan
+  [carnatic] 207_Enta_Bhagyamu  RPA=nan
+  [carnatic] 208_Budham_Aashrayami  RPA=nan
+  [carnatic] 209_Parama_Pavana_Rama  RPA=nan
+  [carnatic] 210_Pavamana_Suthudu_Mangalam  RPA=nan
+  [carnatic] 211_Thillana_Rageshri  RPA=nan
+  [carnatic] 212_RTP_Andholika  RPA=nan
+  [carnatic] 213_Sarasamukhi_Sakala  RPA=nan
+  [carnatic] 214_Parvathi_Ninu_Ne_Nera_Nammithi  RPA=nan
+  [carnatic] 215_Nee_Sari_evvaramma  RPA=nan
+  [carnatic] 216_Jaya_Jaya_Janaki_Kantha  RPA=nan
+  [carnatic] 217_Santhamu_leka_Sowkyamu_ledu  RPA=nan
+  [carnatic] 218_Sarasuda_Ninne_Kori  RPA=nan
+  [carnatic] 219_Gnanamosaga_Rada  RPA=nan
+  [carnatic] 220_Nenindal_Agaadadu_undo  RPA=nan
+  [carnatic] 221_Sri_Dundurge_Siva_Samsaare  RPA=nan
+  [carnatic] 222_Madhava_Mamava  RPA=0.575
+  [carnatic] 223_Ramachandraya_Mangalam  RPA=0.519
+  [carnatic] 224_Sapasyat_Kausalya  RPA=0.685
+  [carnatic] 225_Seetapati_Namanasuna  RPA=0.591
+  [carnatic] 226_Karunimpa_Idi  RPA=0.578
+  [carnatic] 227_Endaro_Mahanubhavulu  RPA=0.618
+  [carnatic] 228_Bhogeendra_Shayinam  RPA=0.683
+  [carnatic] 229_Thillana_Senchurutti  RPA=0.479
+  [carnatic] 230_Chintayama_Kanda  RPA=0.489
+  [carnatic] 231_Emani_Migula  RPA=0.501
+  [carnatic] 232_Saraguna_Palimpa  RPA=0.474
+  [carnatic] 233_Nadatanum_Anisham  RPA=0.453
+  [carnatic] 234_Seethamma  RPA=0.389
+  [carnatic] 235_Janakipathe_Jaya_Karunya_Jaladhe  RPA=0.363
+  [carnatic] 236_Eppadi_Padinaro  RPA=0.289
+  [carnatic] 237_Manasaramathi  RPA=0.423
+  [carnatic] 238_Tillana  RPA=0.366
+  [carnatic] 239_Bhavamulona  RPA=0.410
+  [carnatic] 240_Ardhanarishwaram  RPA=0.575
+  [carnatic] 241_Shri_Subramanyaya_Namaste  RPA=nan
+  [carnatic] 242_Mamava_Pattabhi_Rama  RPA=nan
+  [carnatic] 243_Kamalamba_Samrakshatu  RPA=nan
+  [carnatic] 244_Govardhana_Girisham  RPA=nan
+  [carnatic] 245_Ardhanareeshwaram  RPA=nan
+  [carnatic] 246_Anandaamrutakarshini  RPA=nan
+  [carnatic] 247_Rakta_Ganapatim  RPA=nan
+  [carnatic] 248_Gange_Maampahi  RPA=nan
+  [western] 00_BN1-129-Eb_solo_E  RPA=0.657
+  [western] 00_BN1-129-Eb_solo_A  RPA=0.927
+  [western] 00_BN1-129-Eb_solo_D  RPA=0.792
+  [western] 00_BN1-129-Eb_solo_G  RPA=0.862
+  [western] 00_BN1-129-Eb_solo_B  RPA=0.949
+  [western] 00_BN1-129-Eb_solo_e  RPA=0.958
+  [western] 00_BN1-147-Gb_solo_E  RPA=0.783
+  [western] 00_BN1-147-Gb_solo_A  RPA=0.798
+  [western] 00_BN1-147-Gb_solo_D  RPA=0.932
+  [western] 00_BN2-131-B_solo_D  RPA=0.927
+  [western] 00_BN2-131-B_solo_G  RPA=0.933
+  [western] 00_BN2-131-B_solo_B  RPA=0.262
+  [western] 00_BN2-131-B_solo_e  RPA=0.000
+  [western] 00_BN2-166-Ab_solo_A  RPA=0.967
+  [western] 00_BN2-166-Ab_solo_D  RPA=0.708
+  [western] 00_BN2-166-Ab_solo_G  RPA=0.933
+  [western] 00_BN2-166-Ab_solo_B  RPA=0.714
+  [western] 00_BN2-166-Ab_solo_e  RPA=0.000
+  [western] 00_BN3-119-G_solo_E  RPA=0.924
+  [western] 00_BN3-119-G_solo_A  RPA=0.909
+  [western] 00_BN3-119-G_solo_D  RPA=0.233
+  [western] 00_BN3-119-G_solo_G  RPA=0.983
+  [western] 00_BN3-119-G_solo_B  RPA=0.994
+  [western] 00_BN3-119-G_solo_e  RPA=0.986
+  [western] 00_BN3-154-E_solo_E  RPA=0.467
+  [western] 00_BN3-154-E_solo_A  RPA=0.966
+  [western] 00_BN3-154-E_solo_D  RPA=0.881
+  [western] 00_BN3-154-E_solo_G  RPA=0.921
+  [western] 00_BN3-154-E_solo_B  RPA=0.992
+  [western] 00_Funk1-114-Ab_solo_E  RPA=0.407
+  [western] 00_Funk1-114-Ab_solo_A  RPA=0.962
+  [western] 00_Funk1-114-Ab_solo_D  RPA=0.470
+  [western] 00_Funk1-114-Ab_solo_G  RPA=0.851
+  [western] 00_Funk1-97-C_solo_A  RPA=0.965
+  [western] 00_Funk1-97-C_solo_D  RPA=0.964
+  [western] 00_Funk1-97-C_solo_G  RPA=0.913
+  [western] 00_Funk1-97-C_solo_B  RPA=0.983
+  [western] 00_Funk1-97-C_solo_e  RPA=1.000
+  [western] 00_Funk2-108-Eb_solo_E  RPA=0.893
+  [western] 00_Funk2-108-Eb_solo_A  RPA=0.926
+  [western] 00_Funk2-108-Eb_solo_D  RPA=0.880
+  [western] 00_Funk2-108-Eb_solo_G  RPA=0.928
+  [western] 00_Funk2-119-G_solo_E  RPA=0.901
+  [western] 00_Funk2-119-G_solo_A  RPA=0.842
+  [western] 00_Funk2-119-G_solo_D  RPA=0.493
+  [western] 00_Funk2-119-G_solo_G  RPA=0.987
+  [western] 00_Funk2-119-G_solo_B  RPA=0.963
+  [western] 00_Funk2-119-G_solo_e  RPA=0.815
+  [western] 00_Funk3-112-C#_solo_A  RPA=0.918
+  [western] 00_Funk3-112-C#_solo_D  RPA=0.941
+  [western] 00_Funk3-112-C#_solo_G  RPA=0.910
+  [western] 00_Funk3-112-C#_solo_B  RPA=0.957
+  [western] 00_Funk3-112-C#_solo_e  RPA=0.969
+  [western] 00_Funk3-98-A_solo_E  RPA=0.852
+  [western] 00_Funk3-98-A_solo_A  RPA=0.939
+  [western] 00_Funk3-98-A_solo_D  RPA=0.957
+  [western] 00_Funk3-98-A_solo_G  RPA=0.968
+  [western] 00_Funk3-98-A_solo_B  RPA=0.966
+  [western] 00_Funk3-98-A_solo_e  RPA=0.737
+  [western] 00_Jazz1-130-D_solo_E  RPA=0.838
+  [western] 00_Jazz1-130-D_solo_A  RPA=0.892
+  [western] 00_Jazz1-130-D_solo_D  RPA=0.974
+  [western] 00_Jazz1-130-D_solo_G  RPA=0.987
+  [western] 00_Jazz1-130-D_solo_B  RPA=0.955
+  [western] 00_Jazz1-130-D_solo_e  RPA=0.781
+  [western] 00_Jazz1-200-B_solo_E  RPA=0.895
+  [western] 00_Jazz1-200-B_solo_A  RPA=0.930
+  [western] 00_Jazz1-200-B_solo_D  RPA=0.908
+  [western] 00_Jazz1-200-B_solo_G  RPA=0.994
+  [western] 00_Jazz1-200-B_solo_B  RPA=0.949
+  [western] 00_Jazz2-110-Bb_solo_E  RPA=0.968
+  [western] 00_Jazz2-110-Bb_solo_A  RPA=0.955
+  [western] 00_Jazz2-110-Bb_solo_D  RPA=0.776
+  [western] 00_Jazz2-110-Bb_solo_G  RPA=0.986
+  [western] 00_Jazz2-110-Bb_solo_B  RPA=0.963
+  [western] 00_Jazz2-110-Bb_solo_e  RPA=0.311
+  [western] 00_Jazz2-187-F#_solo_A  RPA=0.984
+  [western] 00_Jazz2-187-F#_solo_D  RPA=0.676
+  [western] 00_Jazz2-187-F#_solo_G  RPA=0.960
+  [western] 00_Jazz2-187-F#_solo_B  RPA=0.900
+  [western] 00_Jazz2-187-F#_solo_e  RPA=0.011
+  [western] 00_Jazz3-137-Eb_solo_E  RPA=0.941
+  [western] 00_Jazz3-137-Eb_solo_A  RPA=0.971
+  [western] 00_Jazz3-137-Eb_solo_D  RPA=0.982
+  [western] 00_Jazz3-137-Eb_solo_G  RPA=0.990
+  [western] 00_Jazz3-137-Eb_solo_B  RPA=0.977
+  [western] 00_Jazz3-137-Eb_solo_e  RPA=0.108
+  [western] 00_Jazz3-150-C_solo_E  RPA=0.779
+  [western] 00_Jazz3-150-C_solo_A  RPA=0.967
+  [western] 00_Jazz3-150-C_solo_D  RPA=0.631
+  [western] 00_Jazz3-150-C_solo_G  RPA=0.909
+  [western] 00_Jazz3-150-C_solo_B  RPA=0.987
+  [western] 00_Jazz3-150-C_solo_e  RPA=0.948
+  [western] 00_Rock1-130-A_solo_E  RPA=0.847
+  [western] 00_Rock1-130-A_solo_A  RPA=0.939
+  [western] 00_Rock1-130-A_solo_D  RPA=0.930
+  [western] 00_Rock1-130-A_solo_G  RPA=0.965
+  [western] 00_Rock1-130-A_solo_B  RPA=0.957
+  [western] 00_Rock1-130-A_solo_e  RPA=0.851
+  [western] 00_Rock1-90-C#_solo_A  RPA=0.966
+  [western] 00_Rock1-90-C#_solo_D  RPA=0.970
+  [western] 00_Rock1-90-C#_solo_G  RPA=0.973
+  [western] 00_Rock1-90-C#_solo_B  RPA=0.963
+  [western] 00_Rock1-90-C#_solo_e  RPA=0.422
+  [western] 00_Rock2-142-D_solo_D  RPA=0.891
+  [western] 00_Rock2-142-D_solo_G  RPA=0.969
+  [western] 00_Rock2-142-D_solo_B  RPA=0.938
+  [western] 00_Rock2-142-D_solo_e  RPA=0.944
+  [western] 00_Rock2-85-F_solo_A  RPA=0.972
+  [western] 00_Rock2-85-F_solo_D  RPA=0.916
+  [western] 00_Rock2-85-F_solo_G  RPA=0.978
+  [western] 00_Rock2-85-F_solo_B  RPA=0.044
+  [western] 00_Rock2-85-F_solo_e  RPA=0.000
+  [western] 00_Rock3-117-Bb_solo_D  RPA=1.000
+  [western] 00_Rock3-117-Bb_solo_G  RPA=0.982
+  [western] 00_Rock3-117-Bb_solo_B  RPA=0.959
+  [western] 00_Rock3-117-Bb_solo_e  RPA=0.853
+  [western] 00_Rock3-148-C_solo_A  RPA=0.831
+  [western] 00_Rock3-148-C_solo_D  RPA=0.910
+  [western] 00_Rock3-148-C_solo_G  RPA=0.940
+  [western] 00_Rock3-148-C_solo_B  RPA=0.872
+  [western] 00_Rock3-148-C_solo_e  RPA=0.653
+  [western] 00_SS1-100-C#_solo_E  RPA=0.705
+  [western] 00_SS1-100-C#_solo_A  RPA=0.954
+  [western] 00_SS1-100-C#_solo_D  RPA=0.899
+  [western] 00_SS1-100-C#_solo_G  RPA=0.964
+  [western] 00_SS1-68-E_solo_A  RPA=0.847
+  [western] 00_SS1-68-E_solo_D  RPA=0.928
+  [western] 00_SS1-68-E_solo_G  RPA=0.945
+  [western] 00_SS1-68-E_solo_B  RPA=0.986
+  [western] 00_SS1-68-E_solo_e  RPA=0.694
+  [western] 00_SS2-107-Ab_solo_E  RPA=0.865
+  [western] 00_SS2-107-Ab_solo_A  RPA=0.919
+  [western] 00_SS2-107-Ab_solo_D  RPA=0.949
+  [western] 00_SS2-107-Ab_solo_G  RPA=0.972
+  [western] 00_SS2-107-Ab_solo_B  RPA=0.977
+  [western] 00_SS2-107-Ab_solo_e  RPA=0.935
+  [western] 00_SS2-88-F_solo_E  RPA=0.865
+  [western] 00_SS2-88-F_solo_A  RPA=0.941
+  [western] 00_SS2-88-F_solo_D  RPA=0.885
+  [western] 00_SS2-88-F_solo_G  RPA=0.965
+  [western] 00_SS2-88-F_solo_B  RPA=0.978
+  [western] 00_SS2-88-F_solo_e  RPA=0.972
+  [western] 00_SS3-84-Bb_solo_E  RPA=0.907
+  [western] 00_SS3-84-Bb_solo_A  RPA=0.915
+  [western] 00_SS3-84-Bb_solo_D  RPA=0.731
+  [western] 00_SS3-84-Bb_solo_G  RPA=0.972
+  [western] 00_SS3-84-Bb_solo_B  RPA=0.972
+  [western] 00_SS3-84-Bb_solo_e  RPA=0.917
+  [western] 00_SS3-98-C_solo_E  RPA=0.614
+  [western] 00_SS3-98-C_solo_A  RPA=0.860
+  [western] 00_SS3-98-C_solo_D  RPA=0.974
+  [western] 00_SS3-98-C_solo_G  RPA=0.820
+  [western] 00_SS3-98-C_solo_B  RPA=0.977
+  [western] 00_SS3-98-C_solo_e  RPA=0.896
+  [western] 01_BN1-129-Eb_solo_A  RPA=1.000
+  [western] 01_BN1-129-Eb_solo_D  RPA=0.869
+  [western] 01_BN1-129-Eb_solo_G  RPA=0.938
+  [western] 01_BN1-129-Eb_solo_B  RPA=0.910
+  [western] 01_BN1-129-Eb_solo_e  RPA=0.642
+  [western] 01_BN1-147-Gb_solo_D  RPA=0.914
+  [western] 01_BN1-147-Gb_solo_G  RPA=0.926
+  [western] 01_BN1-147-Gb_solo_B  RPA=0.752
+  [western] 01_BN1-147-Gb_solo_e  RPA=0.000
+  [western] 01_BN2-131-B_solo_A  RPA=0.539
+  [western] 01_BN2-131-B_solo_D  RPA=0.846
+  [western] 01_BN2-131-B_solo_G  RPA=0.906
+  [western] 01_BN2-131-B_solo_B  RPA=0.856
+  [western] 01_BN2-131-B_solo_e  RPA=0.281
+  [western] 01_BN2-166-Ab_solo_D  RPA=0.909
+  [western] 01_BN2-166-Ab_solo_G  RPA=0.901
+  [western] 01_BN2-166-Ab_solo_B  RPA=0.890
+  [western] 01_BN2-166-Ab_solo_e  RPA=0.834
+  [western] 01_BN3-119-G_solo_A  RPA=0.632
+  [western] 01_BN3-119-G_solo_D  RPA=0.993
+  [western] 01_BN3-119-G_solo_G  RPA=0.957
+  [western] 01_BN3-119-G_solo_B  RPA=0.881
+  [western] 01_BN3-119-G_solo_e  RPA=0.367
+  [western] 01_BN3-154-E_solo_D  RPA=0.864
+  [western] 01_BN3-154-E_solo_G  RPA=0.913
+  [western] 01_BN3-154-E_solo_B  RPA=0.878
+  [western] 01_BN3-154-E_solo_e  RPA=0.000
+  [western] 01_Funk1-114-Ab_solo_A  RPA=0.723
+  [western] 01_Funk1-114-Ab_solo_D  RPA=0.914
+  [western] 01_Funk1-114-Ab_solo_G  RPA=0.890
+  [western] 01_Funk1-114-Ab_solo_B  RPA=0.939
+  [western] 01_Funk1-114-Ab_solo_e  RPA=0.380
+  [western] 01_Funk1-97-C_solo_A  RPA=0.721
+  [western] 01_Funk1-97-C_solo_D  RPA=0.814
+  [western] 01_Funk1-97-C_solo_G  RPA=0.896
+  [western] 01_Funk1-97-C_solo_B  RPA=0.680
+  [western] 01_Funk1-97-C_solo_e  RPA=0.000
+  [western] 01_Funk2-108-Eb_solo_E  RPA=0.982
+  [western] 01_Funk2-108-Eb_solo_D  RPA=0.895
+  [western] 01_Funk2-108-Eb_solo_G  RPA=0.897
+  [western] 01_Funk2-108-Eb_solo_B  RPA=0.435
+  [western] 01_Funk2-108-Eb_solo_e  RPA=0.000
+  [western] 01_Funk2-119-G_solo_D  RPA=0.770
+  [western] 01_Funk2-119-G_solo_G  RPA=0.835
+  [western] 01_Funk2-119-G_solo_B  RPA=0.477
+  [western] 01_Funk2-119-G_solo_e  RPA=0.000
+  [western] 01_Funk3-112-C#_solo_E  RPA=0.333
+  [western] 01_Funk3-112-C#_solo_A  RPA=0.470
+  [western] 01_Funk3-112-C#_solo_D  RPA=0.827
+  [western] 01_Funk3-112-C#_solo_G  RPA=0.884
+  [western] 01_Funk3-112-C#_solo_B  RPA=0.758
+  [western] 01_Funk3-112-C#_solo_e  RPA=0.184
+  [western] 01_Funk3-98-A_solo_A  RPA=0.676
+  [western] 01_Funk3-98-A_solo_D  RPA=0.809
+  [western] 01_Funk3-98-A_solo_G  RPA=0.890
+  [western] 01_Funk3-98-A_solo_B  RPA=0.875
+  [western] 01_Funk3-98-A_solo_e  RPA=0.836
+  [western] 01_Jazz1-130-D_solo_D  RPA=0.812
+  [western] 01_Jazz1-130-D_solo_G  RPA=0.950
+  [western] 01_Jazz1-130-D_solo_B  RPA=0.896
+  [western] 01_Jazz1-130-D_solo_e  RPA=0.000
+  [western] 01_Jazz1-200-B_solo_D  RPA=0.744
+  [western] 01_Jazz1-200-B_solo_G  RPA=0.798
+  [western] 01_Jazz1-200-B_solo_B  RPA=0.798
+  [western] 01_Jazz1-200-B_solo_e  RPA=0.060
+  [western] 01_Jazz2-110-Bb_solo_A  RPA=1.000
+  [western] 01_Jazz2-110-Bb_solo_D  RPA=0.836
+  [western] 01_Jazz2-110-Bb_solo_G  RPA=0.924
+  [western] 01_Jazz2-110-Bb_solo_B  RPA=0.902
+  [western] 01_Jazz2-110-Bb_solo_e  RPA=0.379
+  [western] 01_Jazz2-187-F#_solo_A  RPA=0.312
+  [western] 01_Jazz2-187-F#_solo_D  RPA=0.874
+  [western] 01_Jazz2-187-F#_solo_G  RPA=0.906
+  [western] 01_Jazz2-187-F#_solo_B  RPA=0.905
+  [western] 01_Jazz2-187-F#_solo_e  RPA=0.769
+  [western] 01_Jazz3-137-Eb_solo_D  RPA=0.912
+  [western] 01_Jazz3-137-Eb_solo_G  RPA=0.924
+  [western] 01_Jazz3-137-Eb_solo_B  RPA=0.951
+  [western] 01_Jazz3-137-Eb_solo_e  RPA=0.257
+  [western] 01_Jazz3-150-C_solo_D  RPA=0.783
+  [western] 01_Jazz3-150-C_solo_G  RPA=0.926
+  [western] 01_Jazz3-150-C_solo_B  RPA=0.920
+  [western] 01_Jazz3-150-C_solo_e  RPA=0.398
+  [western] 01_Rock1-130-A_solo_E  RPA=0.947
+  [western] 01_Rock1-130-A_solo_A  RPA=0.853
+  [western] 01_Rock1-130-A_solo_D  RPA=0.859
+  [western] 01_Rock1-130-A_solo_G  RPA=0.905
+  [western] 01_Rock1-130-A_solo_B  RPA=0.910
+  [western] 01_Rock1-90-C#_solo_A  RPA=0.794
+  [western] 01_Rock1-90-C#_solo_D  RPA=0.844
+  [western] 01_Rock1-90-C#_solo_G  RPA=0.909
+  [western] 01_Rock1-90-C#_solo_B  RPA=0.913
+  [western] 01_Rock1-90-C#_solo_e  RPA=0.000
+  [western] 01_Rock2-142-D_solo_D  RPA=0.898
+  [western] 01_Rock2-142-D_solo_G  RPA=0.916
+  [western] 01_Rock2-142-D_solo_B  RPA=0.928
+  [western] 01_Rock2-142-D_solo_e  RPA=0.884
+  [western] 01_Rock2-85-F_solo_D  RPA=0.750
+  [western] 01_Rock2-85-F_solo_G  RPA=0.936
+  [western] 01_Rock2-85-F_solo_B  RPA=0.768
+  [western] 01_Rock2-85-F_solo_e  RPA=0.514
+  [western] 01_Rock3-117-Bb_solo_D  RPA=0.792
+  [western] 01_Rock3-117-Bb_solo_G  RPA=0.933
+  [western] 01_Rock3-117-Bb_solo_B  RPA=0.530
+  [western] 01_Rock3-117-Bb_solo_e  RPA=0.000
+  [western] 01_Rock3-148-C_solo_E  RPA=0.000
+  [western] 01_Rock3-148-C_solo_A  RPA=0.508
+  [western] 01_Rock3-148-C_solo_D  RPA=0.840
+  [western] 01_Rock3-148-C_solo_G  RPA=0.844
+  [western] 01_Rock3-148-C_solo_B  RPA=0.501
+  [western] 01_Rock3-148-C_solo_e  RPA=0.000
+  [western] 01_SS1-100-C#_solo_A  RPA=0.950
+  [western] 01_SS1-100-C#_solo_D  RPA=0.628
+  [western] 01_SS1-100-C#_solo_G  RPA=0.900
+  [western] 01_SS1-100-C#_solo_B  RPA=0.804
+  [western] 01_SS1-100-C#_solo_e  RPA=0.027
+  [western] 01_SS1-68-E_solo_E  RPA=0.194
+  [western] 01_SS1-68-E_solo_A  RPA=0.869
+  [western] 01_SS1-68-E_solo_D  RPA=0.925
+  [western] 01_SS1-68-E_solo_G  RPA=0.833
+  [western] 01_SS1-68-E_solo_B  RPA=0.889
+  [western] 01_SS1-68-E_solo_e  RPA=0.804
+  [western] 01_SS2-107-Ab_solo_A  RPA=0.667
+  [western] 01_SS2-107-Ab_solo_D  RPA=0.896
+  [western] 01_SS2-107-Ab_solo_G  RPA=0.912
+  [western] 01_SS2-107-Ab_solo_B  RPA=0.845
+  [western] 01_SS2-107-Ab_solo_e  RPA=0.000
+  [western] 01_SS2-88-F_solo_D  RPA=0.887
+  [western] 01_SS2-88-F_solo_G  RPA=0.951
+  [western] 01_SS2-88-F_solo_B  RPA=0.961
+  [western] 01_SS2-88-F_solo_e  RPA=0.939
+  [western] 01_SS3-84-Bb_solo_E  RPA=0.000
+  [western] 01_SS3-84-Bb_solo_A  RPA=0.598
+  [western] 01_SS3-84-Bb_solo_D  RPA=0.931
+  [western] 01_SS3-84-Bb_solo_G  RPA=0.917
+  [western] 01_SS3-84-Bb_solo_B  RPA=0.645
+  [western] 01_SS3-84-Bb_solo_e  RPA=0.000
+  [western] 01_SS3-98-C_solo_D  RPA=0.902
+  [western] 01_SS3-98-C_solo_G  RPA=0.901
+  [western] 01_SS3-98-C_solo_B  RPA=0.862
+  [western] 01_SS3-98-C_solo_e  RPA=0.754
+  [western] 02_BN1-129-Eb_solo_A  RPA=0.914
+  [western] 02_BN1-129-Eb_solo_D  RPA=0.838
+  [western] 02_BN1-129-Eb_solo_G  RPA=0.964
+  [western] 02_BN1-147-Gb_solo_D  RPA=0.957
+  [western] 02_BN1-147-Gb_solo_G  RPA=0.909
+  [western] 02_BN2-131-B_solo_D  RPA=0.944
+  [western] 02_BN2-131-B_solo_G  RPA=0.948
+  [western] 02_BN2-166-Ab_solo_D  RPA=0.875
+  [western] 02_BN2-166-Ab_solo_G  RPA=0.868
+  [western] 02_BN2-166-Ab_solo_B  RPA=1.000
+  [western] 02_BN3-119-G_solo_D  RPA=0.731
+  [western] 02_BN3-119-G_solo_G  RPA=0.913
+  [western] 02_BN3-119-G_solo_B  RPA=0.939
+  [western] 02_BN3-154-E_solo_D  RPA=0.871
+  [western] 02_BN3-154-E_solo_G  RPA=0.851
+  [western] 02_BN3-154-E_solo_B  RPA=0.883
+  [western] 02_BN3-154-E_solo_e  RPA=0.000
+  [western] 02_Funk1-114-Ab_solo_D  RPA=0.897
+  [western] 02_Funk1-114-Ab_solo_G  RPA=0.891
+  [western] 02_Funk1-97-C_solo_A  RPA=0.954
+  [western] 02_Funk1-97-C_solo_D  RPA=0.926
+  [western] 02_Funk1-97-C_solo_G  RPA=0.941
+  [western] 02_Funk1-97-C_solo_B  RPA=0.918
+  [western] 02_Funk2-108-Eb_solo_D  RPA=0.859
+  [western] 02_Funk2-108-Eb_solo_G  RPA=0.883
+  [western] 02_Funk2-108-Eb_solo_B  RPA=0.882
+  [western] 02_Funk2-119-G_solo_D  RPA=0.899
+  [western] 02_Funk2-119-G_solo_G  RPA=0.898
+  [western] 02_Funk3-112-C#_solo_E  RPA=0.826
+  [western] 02_Funk3-112-C#_solo_A  RPA=0.899
+  [western] 02_Funk3-112-C#_solo_D  RPA=0.959
+  [western] 02_Funk3-112-C#_solo_G  RPA=0.941
+  [western] 02_Funk3-112-C#_solo_B  RPA=1.000
+  [western] 02_Funk3-98-A_solo_D  RPA=0.941
+  [western] 02_Funk3-98-A_solo_G  RPA=0.898
+  [western] 02_Funk3-98-A_solo_B  RPA=0.925
+  [western] 02_Jazz1-130-D_solo_G  RPA=0.744
+  [western] 02_Jazz1-130-D_solo_B  RPA=0.969
+  [western] 02_Jazz1-130-D_solo_e  RPA=0.807
+  [western] 02_Jazz1-200-B_solo_D  RPA=0.890
+  [western] 02_Jazz1-200-B_solo_G  RPA=0.930
+  [western] 02_Jazz1-200-B_solo_B  RPA=0.891
+  [western] 02_Jazz2-110-Bb_solo_D  RPA=0.979
+  [western] 02_Jazz2-110-Bb_solo_G  RPA=0.975
+  [western] 02_Jazz2-187-F#_solo_D  RPA=0.927
+  [western] 02_Jazz2-187-F#_solo_G  RPA=0.904
+  [western] 02_Jazz2-187-F#_solo_B  RPA=0.958
+  [western] 02_Jazz3-137-Eb_solo_A  RPA=0.957
+  [western] 02_Jazz3-137-Eb_solo_D  RPA=0.888
+  [western] 02_Jazz3-137-Eb_solo_G  RPA=0.911
+  [western] 02_Jazz3-137-Eb_solo_B  RPA=0.933
+  [western] 02_Jazz3-150-C_solo_D  RPA=0.895
+  [western] 02_Jazz3-150-C_solo_G  RPA=0.918
+  [western] 02_Jazz3-150-C_solo_B  RPA=0.898
+  [western] 02_Rock1-130-A_solo_A  RPA=0.782
+  [western] 02_Rock1-130-A_solo_D  RPA=0.932
+  [western] 02_Rock1-130-A_solo_G  RPA=0.930
+  [western] 02_Rock1-130-A_solo_B  RPA=0.920
+  [western] 02_Rock1-90-C#_solo_A  RPA=0.899
+  [western] 02_Rock1-90-C#_solo_D  RPA=0.775
+  [western] 02_Rock1-90-C#_solo_G  RPA=0.951
+  [western] 02_Rock1-90-C#_solo_B  RPA=0.953
+  [western] 02_Rock2-142-D_solo_A  RPA=0.949
+  [western] 02_Rock2-142-D_solo_D  RPA=0.901
+  [western] 02_Rock2-142-D_solo_G  RPA=0.909
+  [western] 02_Rock2-85-F_solo_A  RPA=0.889
+  [western] 02_Rock2-85-F_solo_D  RPA=0.799
+  [western] 02_Rock2-85-F_solo_G  RPA=0.923
+  [western] 02_Rock3-117-Bb_solo_A  RPA=0.852
+  [western] 02_Rock3-117-Bb_solo_D  RPA=0.933
+  [western] 02_Rock3-117-Bb_solo_G  RPA=0.960
+  [western] 02_Rock3-148-C_solo_A  RPA=0.907
+  [western] 02_Rock3-148-C_solo_D  RPA=0.819
+  [western] 02_Rock3-148-C_solo_G  RPA=0.949
+  [western] 02_Rock3-148-C_solo_B  RPA=0.922
+  [western] 02_SS1-100-C#_solo_A  RPA=0.961
+  [western] 02_SS1-100-C#_solo_D  RPA=0.964
+  [western] 02_SS1-100-C#_solo_G  RPA=0.966
+  [western] 02_SS1-100-C#_solo_B  RPA=0.960
+  [western] 02_SS1-68-E_solo_E  RPA=0.000
+  [western] 02_SS1-68-E_solo_A  RPA=0.902
+  [western] 02_SS1-68-E_solo_D  RPA=0.892
+  [western] 02_SS1-68-E_solo_G  RPA=0.898
+  [western] 02_SS2-107-Ab_solo_A  RPA=0.874
+  [western] 02_SS2-107-Ab_solo_D  RPA=0.942
+  [western] 02_SS2-88-F_solo_A  RPA=0.950
+  [western] 02_SS2-88-F_solo_D  RPA=0.826
+  [western] 02_SS2-88-F_solo_G  RPA=0.988
+  [western] 02_SS3-84-Bb_solo_A  RPA=0.955
+  [western] 02_SS3-84-Bb_solo_D  RPA=0.948
+  [western] 02_SS3-84-Bb_solo_G  RPA=0.958
+  [western] 02_SS3-84-Bb_solo_B  RPA=0.795
+  [western] 02_SS3-98-C_solo_A  RPA=0.828
+  [western] 02_SS3-98-C_solo_D  RPA=0.809
+  [western] 02_SS3-98-C_solo_G  RPA=0.908
+  [western] 02_SS3-98-C_solo_B  RPA=0.899
+  [western] 03_BN1-129-Eb_solo_D  RPA=0.951
+  [western] 03_BN1-129-Eb_solo_G  RPA=0.964
+  [western] 03_BN1-129-Eb_solo_B  RPA=0.917
+  [western] 03_BN1-129-Eb_solo_e  RPA=0.685
+  [western] 03_BN1-147-Gb_solo_E  RPA=0.000
+  [western] 03_BN1-147-Gb_solo_A  RPA=0.915
+  [western] 03_BN1-147-Gb_solo_D  RPA=0.927
+  [western] 03_BN1-147-Gb_solo_G  RPA=0.839
+  [western] 03_BN1-147-Gb_solo_B  RPA=0.922
+  [western] 03_BN1-147-Gb_solo_e  RPA=0.923
+  [western] 03_BN2-131-B_solo_A  RPA=0.806
+  [western] 03_BN2-131-B_solo_D  RPA=0.942
+  [western] 03_BN2-131-B_solo_G  RPA=0.931
+  [western] 03_BN2-131-B_solo_B  RPA=0.947
+  [western] 03_BN2-131-B_solo_e  RPA=0.394
+  [western] 03_BN2-166-Ab_solo_E  RPA=0.684
+  [western] 03_BN2-166-Ab_solo_A  RPA=0.848
+  [western] 03_BN2-166-Ab_solo_D  RPA=0.945
+  [western] 03_BN2-166-Ab_solo_G  RPA=0.855
+  [western] 03_BN2-166-Ab_solo_B  RPA=0.884
+  [western] 03_BN2-166-Ab_solo_e  RPA=0.545
+  [western] 03_BN3-119-G_solo_D  RPA=0.928
+  [western] 03_BN3-119-G_solo_G  RPA=0.960
+  [western] 03_BN3-119-G_solo_B  RPA=0.804
+  [western] 03_BN3-119-G_solo_e  RPA=0.446
+  [western] 03_BN3-154-E_solo_A  RPA=0.400
+  [western] 03_BN3-154-E_solo_D  RPA=0.924
+  [western] 03_BN3-154-E_solo_G  RPA=0.982
+  [western] 03_BN3-154-E_solo_B  RPA=0.886
+  [western] 03_BN3-154-E_solo_e  RPA=0.608
+  [western] 03_Funk1-114-Ab_solo_A  RPA=0.904
+  [western] 03_Funk1-114-Ab_solo_D  RPA=0.950
+  [western] 03_Funk1-114-Ab_solo_G  RPA=0.888
+  [western] 03_Funk1-114-Ab_solo_B  RPA=0.916
+  [western] 03_Funk1-114-Ab_solo_e  RPA=1.000
+  [western] 03_Funk1-97-C_solo_A  RPA=0.874
+  [western] 03_Funk1-97-C_solo_D  RPA=0.724
+  [western] 03_Funk1-97-C_solo_G  RPA=0.852
+  [western] 03_Funk1-97-C_solo_B  RPA=0.687
+  [western] 03_Funk1-97-C_solo_e  RPA=0.433
+  [western] 03_Funk2-108-Eb_solo_A  RPA=1.000
+  [western] 03_Funk2-108-Eb_solo_D  RPA=0.940
+  [western] 03_Funk2-108-Eb_solo_G  RPA=0.893
+  [western] 03_Funk2-108-Eb_solo_B  RPA=0.935
+  [western] 03_Funk2-108-Eb_solo_e  RPA=0.797
+  [western] 03_Funk2-119-G_solo_D  RPA=0.829
+  [western] 03_Funk2-119-G_solo_G  RPA=0.928
+  [western] 03_Funk2-119-G_solo_B  RPA=0.907
+  [western] 03_Funk2-119-G_solo_e  RPA=0.914
+  [western] 03_Funk3-112-C#_solo_A  RPA=0.370
+  [western] 03_Funk3-112-C#_solo_D  RPA=0.853
+  [western] 03_Funk3-112-C#_solo_G  RPA=0.907
+  [western] 03_Funk3-112-C#_solo_B  RPA=0.873
+  [western] 03_Funk3-112-C#_solo_e  RPA=0.833
+  [western] 03_Funk3-98-A_solo_A  RPA=0.662
+  [western] 03_Funk3-98-A_solo_D  RPA=0.689
+  [western] 03_Funk3-98-A_solo_G  RPA=0.903
+  [western] 03_Funk3-98-A_solo_B  RPA=0.742
+  [western] 03_Funk3-98-A_solo_e  RPA=0.539
+  [western] 03_Jazz1-130-D_solo_D  RPA=0.965
+  [western] 03_Jazz1-130-D_solo_G  RPA=0.965
+  [western] 03_Jazz1-130-D_solo_B  RPA=0.865
+  [western] 03_Jazz1-130-D_solo_e  RPA=0.913
+  [western] 03_Jazz1-200-B_solo_D  RPA=0.923
+  [western] 03_Jazz1-200-B_solo_G  RPA=0.930
+  [western] 03_Jazz1-200-B_solo_B  RPA=0.947
+  [western] 03_Jazz1-200-B_solo_e  RPA=0.488
+  [western] 03_Jazz2-110-Bb_solo_E  RPA=0.917
+  [western] 03_Jazz2-110-Bb_solo_A  RPA=0.896
+  [western] 03_Jazz2-110-Bb_solo_D  RPA=0.948
+  [western] 03_Jazz2-110-Bb_solo_G  RPA=0.914
+  [western] 03_Jazz2-110-Bb_solo_B  RPA=0.816
+  [western] 03_Jazz2-110-Bb_solo_e  RPA=0.352
+  [western] 03_Jazz2-187-F#_solo_D  RPA=0.841
+  [western] 03_Jazz2-187-F#_solo_G  RPA=0.865
+  [western] 03_Jazz2-187-F#_solo_B  RPA=0.908
+  [western] 03_Jazz2-187-F#_solo_e  RPA=0.755
+  [western] 03_Jazz3-137-Eb_solo_E  RPA=0.806
+  [western] 03_Jazz3-137-Eb_solo_A  RPA=0.846
+  [western] 03_Jazz3-137-Eb_solo_D  RPA=0.813
+  [western] 03_Jazz3-137-Eb_solo_G  RPA=0.927
+  [western] 03_Jazz3-137-Eb_solo_B  RPA=0.902
+  [western] 03_Jazz3-137-Eb_solo_e  RPA=0.847
+  [western] 03_Jazz3-150-C_solo_D  RPA=0.842
+  [western] 03_Jazz3-150-C_solo_G  RPA=0.931
+  [western] 03_Jazz3-150-C_solo_B  RPA=0.782
+  [western] 03_Jazz3-150-C_solo_e  RPA=0.538
+  [western] 03_Rock1-130-A_solo_D  RPA=0.850
+  [western] 03_Rock1-130-A_solo_G  RPA=0.937
+  [western] 03_Rock1-130-A_solo_B  RPA=0.925
+  [western] 03_Rock1-130-A_solo_e  RPA=0.931
+  [western] 03_Rock1-90-C#_solo_A  RPA=0.966
+  [western] 03_Rock1-90-C#_solo_D  RPA=0.769
+  [western] 03_Rock1-90-C#_solo_G  RPA=0.746
+  [western] 03_Rock1-90-C#_solo_B  RPA=0.676
+  [western] 03_Rock1-90-C#_solo_e  RPA=0.000
+  [western] 03_Rock2-142-D_solo_A  RPA=0.957
+  [western] 03_Rock2-142-D_solo_D  RPA=0.859
+  [western] 03_Rock2-142-D_solo_G  RPA=0.886
+  [western] 03_Rock2-142-D_solo_B  RPA=0.870
+  [western] 03_Rock2-142-D_solo_e  RPA=0.637
+  [western] 03_Rock2-85-F_solo_A  RPA=0.849
+  [western] 03_Rock2-85-F_solo_D  RPA=0.884
+  [western] 03_Rock2-85-F_solo_G  RPA=0.954
+  [western] 03_Rock2-85-F_solo_B  RPA=0.927
+  [western] 03_Rock2-85-F_solo_e  RPA=0.894
+  [western] 03_Rock3-117-Bb_solo_D  RPA=0.914
+  [western] 03_Rock3-117-Bb_solo_G  RPA=0.937
+  [western] 03_Rock3-117-Bb_solo_B  RPA=0.943
+  [western] 03_Rock3-117-Bb_solo_e  RPA=0.750
+  [western] 03_Rock3-148-C_solo_G  RPA=0.870
+  [western] 03_Rock3-148-C_solo_B  RPA=0.654
+  [western] 03_Rock3-148-C_solo_e  RPA=0.054
+  [western] 03_SS1-100-C#_solo_A  RPA=0.886
+  [western] 03_SS1-100-C#_solo_G  RPA=0.950
+  [western] 03_SS1-100-C#_solo_B  RPA=0.843
+  [western] 03_SS1-100-C#_solo_e  RPA=0.246
+  [western] 03_SS1-68-E_solo_D  RPA=0.918
+  [western] 03_SS1-68-E_solo_G  RPA=0.953
+  [western] 03_SS1-68-E_solo_B  RPA=0.933
+  [western] 03_SS1-68-E_solo_e  RPA=0.646
+  [western] 03_SS2-107-Ab_solo_E  RPA=0.414
+  [western] 03_SS2-107-Ab_solo_A  RPA=0.776
+  [western] 03_SS2-107-Ab_solo_D  RPA=0.836
+  [western] 03_SS2-107-Ab_solo_G  RPA=0.906
+  [western] 03_SS2-107-Ab_solo_B  RPA=0.933
+  [western] 03_SS2-107-Ab_solo_e  RPA=0.507
+  [western] 03_SS2-88-F_solo_D  RPA=0.979
+  [western] 03_SS2-88-F_solo_G  RPA=0.935
+  [western] 03_SS2-88-F_solo_B  RPA=0.940
+  [western] 03_SS2-88-F_solo_e  RPA=0.760
+  [western] 03_SS3-84-Bb_solo_A  RPA=0.776
+  [western] 03_SS3-84-Bb_solo_D  RPA=0.977
+  [western] 03_SS3-84-Bb_solo_G  RPA=0.904
+  [western] 03_SS3-84-Bb_solo_B  RPA=0.871
+  [western] 03_SS3-84-Bb_solo_e  RPA=0.489
+  [western] 03_SS3-98-C_solo_A  RPA=0.738
+  [western] 03_SS3-98-C_solo_D  RPA=0.627
+  [western] 03_SS3-98-C_solo_G  RPA=0.941
+  [western] 03_SS3-98-C_solo_B  RPA=0.866
+  [western] 03_SS3-98-C_solo_e  RPA=0.624
+  [western] 04_BN1-129-Eb_solo_A  RPA=0.961
+  [western] 04_BN1-129-Eb_solo_D  RPA=0.673
+  [western] 04_BN1-129-Eb_solo_G  RPA=0.943
+  [western] 04_BN1-147-Gb_solo_D  RPA=0.789
+  [western] 04_BN1-147-Gb_solo_G  RPA=0.966
+  [western] 04_BN1-147-Gb_solo_B  RPA=0.905
+  [western] 04_BN1-147-Gb_solo_e  RPA=0.951
+  [western] 04_BN2-131-B_solo_D  RPA=0.949
+  [western] 04_BN2-131-B_solo_G  RPA=0.931
+  [western] 04_BN2-131-B_solo_B  RPA=0.929
+  [western] 04_BN2-166-Ab_solo_D  RPA=0.954
+  [western] 04_BN2-166-Ab_solo_G  RPA=0.944
+  [western] 04_BN2-166-Ab_solo_B  RPA=0.951
+  [western] 04_BN2-166-Ab_solo_e  RPA=0.952
+  [western] 04_BN3-119-G_solo_E  RPA=0.933
+  [western] 04_BN3-119-G_solo_A  RPA=0.942
+  [western] 04_BN3-119-G_solo_D  RPA=0.830
+  [western] 04_BN3-119-G_solo_G  RPA=0.979
+  [western] 04_BN3-119-G_solo_B  RPA=0.861
+  [western] 04_BN3-119-G_solo_e  RPA=0.124
+  [western] 04_BN3-154-E_solo_D  RPA=0.831
+  [western] 04_BN3-154-E_solo_G  RPA=0.928
+  [western] 04_BN3-154-E_solo_B  RPA=0.909
+  [western] 04_BN3-154-E_solo_e  RPA=0.876
+  [western] 04_Funk1-114-Ab_solo_E  RPA=0.345
+  [western] 04_Funk1-114-Ab_solo_A  RPA=0.888
+  [western] 04_Funk1-114-Ab_solo_D  RPA=0.894
+  [western] 04_Funk1-114-Ab_solo_G  RPA=0.901
+  [western] 04_Funk1-114-Ab_solo_B  RPA=0.910
+  [western] 04_Funk1-114-Ab_solo_e  RPA=0.817
+  [western] 04_Funk1-97-C_solo_A  RPA=0.838
+  [western] 04_Funk1-97-C_solo_D  RPA=0.879
+  [western] 04_Funk1-97-C_solo_G  RPA=0.901
+  [western] 04_Funk1-97-C_solo_B  RPA=0.813
+  [western] 04_Funk1-97-C_solo_e  RPA=0.523
+  [western] 04_Funk2-108-Eb_solo_A  RPA=0.974
+  [western] 04_Funk2-108-Eb_solo_D  RPA=0.978
+  [western] 04_Funk2-108-Eb_solo_G  RPA=0.972
+  [western] 04_Funk2-108-Eb_solo_B  RPA=0.974
+  [western] 04_Funk2-108-Eb_solo_e  RPA=0.925
+  [western] 04_Funk2-119-G_solo_D  RPA=0.917
+  [western] 04_Funk2-119-G_solo_G  RPA=0.914
+  [western] 04_Funk2-119-G_solo_B  RPA=0.958
+  [western] 04_Funk2-119-G_solo_e  RPA=0.862
+  [western] 04_Funk3-112-C#_solo_A  RPA=0.972
+  [western] 04_Funk3-112-C#_solo_D  RPA=0.951
+  [western] 04_Funk3-112-C#_solo_G  RPA=0.959
+  [western] 04_Funk3-112-C#_solo_B  RPA=0.950
+  [western] 04_Funk3-112-C#_solo_e  RPA=0.945
+  [western] 04_Funk3-98-A_solo_A  RPA=0.657
+  [western] 04_Funk3-98-A_solo_D  RPA=0.952
+  [western] 04_Funk3-98-A_solo_G  RPA=0.893
+  [western] 04_Funk3-98-A_solo_B  RPA=0.934
+  [western] 04_Funk3-98-A_solo_e  RPA=0.796
+  [western] 04_Jazz1-130-D_solo_A  RPA=1.000
+  [western] 04_Jazz1-130-D_solo_D  RPA=0.951
+  [western] 04_Jazz1-130-D_solo_G  RPA=0.906
+  [western] 04_Jazz1-130-D_solo_B  RPA=0.924
+  [western] 04_Jazz1-130-D_solo_e  RPA=0.893
+  [western] 04_Jazz1-200-B_solo_A  RPA=0.886
+  [western] 04_Jazz1-200-B_solo_D  RPA=0.563
+  [western] 04_Jazz1-200-B_solo_G  RPA=0.900
+  [western] 04_Jazz1-200-B_solo_B  RPA=0.884
+  [western] 04_Jazz1-200-B_solo_e  RPA=0.478
+  [western] 04_Jazz2-110-Bb_solo_A  RPA=0.354
+  [western] 04_Jazz2-110-Bb_solo_D  RPA=0.945
+  [western] 04_Jazz2-110-Bb_solo_G  RPA=0.941
+  [western] 04_Jazz2-110-Bb_solo_B  RPA=0.935
+  [western] 04_Jazz2-110-Bb_solo_e  RPA=0.963
+  [western] 04_Jazz2-187-F#_solo_G  RPA=0.677
+  [western] 04_Jazz2-187-F#_solo_B  RPA=0.921
+  [western] 04_Jazz2-187-F#_solo_e  RPA=0.624
+  [western] 04_Jazz3-137-Eb_solo_D  RPA=0.920
+  [western] 04_Jazz3-137-Eb_solo_G  RPA=0.921
+  [western] 04_Jazz3-137-Eb_solo_B  RPA=0.902
+  [western] 04_Jazz3-137-Eb_solo_e  RPA=0.884
+  [western] 04_Jazz3-150-C_solo_E  RPA=0.000
+  [western] 04_Jazz3-150-C_solo_A  RPA=0.892
+  [western] 04_Jazz3-150-C_solo_D  RPA=0.863
+  [western] 04_Jazz3-150-C_solo_G  RPA=0.903
+  [western] 04_Jazz3-150-C_solo_B  RPA=0.786
+  [western] 04_Jazz3-150-C_solo_e  RPA=0.730
+  [western] 04_Rock1-130-A_solo_A  RPA=0.345
+  [western] 04_Rock1-130-A_solo_D  RPA=0.822
+  [western] 04_Rock1-130-A_solo_G  RPA=0.851
+  [western] 04_Rock1-130-A_solo_B  RPA=0.876
+  [western] 04_Rock1-130-A_solo_e  RPA=0.891
+  [western] 04_Rock1-90-C#_solo_A  RPA=1.000
+  [western] 04_Rock1-90-C#_solo_D  RPA=0.922
+  [western] 04_Rock1-90-C#_solo_G  RPA=0.938
+  [western] 04_Rock1-90-C#_solo_B  RPA=0.910
+  [western] 04_Rock1-90-C#_solo_e  RPA=0.930
+  [western] 04_Rock2-142-D_solo_D  RPA=0.871
+  [western] 04_Rock2-142-D_solo_G  RPA=0.957
+  [western] 04_Rock2-142-D_solo_B  RPA=0.939
+  [western] 04_Rock2-142-D_solo_e  RPA=0.937
+  [western] 04_Rock2-85-F_solo_A  RPA=1.000
+  [western] 04_Rock2-85-F_solo_D  RPA=0.535
+  [western] 04_Rock2-85-F_solo_G  RPA=0.911
+  [western] 04_Rock2-85-F_solo_B  RPA=0.943
+  [western] 04_Rock2-85-F_solo_e  RPA=0.897
+  [western] 04_Rock3-117-Bb_solo_A  RPA=0.949
+  [western] 04_Rock3-117-Bb_solo_D  RPA=0.927
+  [western] 04_Rock3-117-Bb_solo_G  RPA=0.885
+  [western] 04_Rock3-117-Bb_solo_B  RPA=0.921
+  [western] 04_Rock3-117-Bb_solo_e  RPA=0.691
+  [western] 04_Rock3-148-C_solo_G  RPA=0.901
+  [western] 04_Rock3-148-C_solo_B  RPA=0.907
+  [western] 04_Rock3-148-C_solo_e  RPA=0.811
+  [western] 04_SS1-100-C#_solo_A  RPA=0.994
+  [western] 04_SS1-100-C#_solo_D  RPA=0.938
+  [western] 04_SS1-100-C#_solo_G  RPA=0.951
+  [western] 04_SS1-100-C#_solo_B  RPA=0.893
+  [western] 04_SS1-100-C#_solo_e  RPA=0.925
+  [western] 04_SS1-68-E_solo_G  RPA=0.925
+  [western] 04_SS1-68-E_solo_B  RPA=0.945
+  [western] 04_SS1-68-E_solo_e  RPA=0.725
+  [western] 04_SS2-107-Ab_solo_A  RPA=0.900
+  [western] 04_SS2-107-Ab_solo_D  RPA=0.338
+  [western] 04_SS2-107-Ab_solo_G  RPA=0.940
+  [western] 04_SS2-107-Ab_solo_B  RPA=0.936
+  [western] 04_SS2-88-F_solo_A  RPA=0.950
+  [western] 04_SS2-88-F_solo_D  RPA=0.659
+  [western] 04_SS2-88-F_solo_G  RPA=0.963
+  [western] 04_SS2-88-F_solo_B  RPA=0.956
+  [western] 04_SS2-88-F_solo_e  RPA=0.826
+  [western] 04_SS3-84-Bb_solo_D  RPA=0.909
+  [western] 04_SS3-84-Bb_solo_G  RPA=0.931
+  [western] 04_SS3-84-Bb_solo_B  RPA=0.933
+  [western] 04_SS3-84-Bb_solo_e  RPA=0.497
+  [western] 04_SS3-98-C_solo_D  RPA=0.864
+  [western] 04_SS3-98-C_solo_G  RPA=0.916
+  [western] 04_SS3-98-C_solo_B  RPA=0.873
+  [western] 04_SS3-98-C_solo_e  RPA=0.493
+  [western] 05_BN1-129-Eb_solo_A  RPA=0.907
+  [western] 05_BN1-129-Eb_solo_D  RPA=0.876
+  [western] 05_BN1-129-Eb_solo_G  RPA=0.943
+  [western] 05_BN1-129-Eb_solo_B  RPA=0.937
+  [western] 05_BN1-129-Eb_solo_e  RPA=0.093
+  [western] 05_BN1-147-Gb_solo_D  RPA=0.797
+  [western] 05_BN1-147-Gb_solo_G  RPA=0.952
+  [western] 05_BN1-147-Gb_solo_B  RPA=0.944
+  [western] 05_BN2-131-B_solo_D  RPA=0.885
+  [western] 05_BN2-131-B_solo_G  RPA=0.916
+  [western] 05_BN2-131-B_solo_B  RPA=0.866
+  [western] 05_BN2-131-B_solo_e  RPA=0.163
+  [western] 05_BN2-166-Ab_solo_E  RPA=0.804
+  [western] 05_BN2-166-Ab_solo_A  RPA=0.925
+  [western] 05_BN2-166-Ab_solo_D  RPA=0.892
+  [western] 05_BN2-166-Ab_solo_G  RPA=0.918
+  [western] 05_BN2-166-Ab_solo_B  RPA=0.931
+  [western] 05_BN2-166-Ab_solo_e  RPA=0.721
+  [western] 05_BN3-119-G_solo_D  RPA=0.933
+  [western] 05_BN3-119-G_solo_G  RPA=0.952
+  [western] 05_BN3-119-G_solo_B  RPA=0.936
+  [western] 05_BN3-154-E_solo_A  RPA=0.960
+  [western] 05_BN3-154-E_solo_D  RPA=0.835
+  [western] 05_BN3-154-E_solo_G  RPA=0.930
+  [western] 05_BN3-154-E_solo_B  RPA=0.911
+  [western] 05_BN3-154-E_solo_e  RPA=0.000
+  [western] 05_Funk1-114-Ab_solo_E  RPA=0.841
+  [western] 05_Funk1-114-Ab_solo_A  RPA=0.789
+  [western] 05_Funk1-114-Ab_solo_D  RPA=0.946
+  [western] 05_Funk1-114-Ab_solo_G  RPA=0.887
+  [western] 05_Funk1-114-Ab_solo_B  RPA=0.991
+  [western] 05_Funk1-114-Ab_solo_e  RPA=0.728
+  [western] 05_Funk1-97-C_solo_D  RPA=0.763
+  [western] 05_Funk1-97-C_solo_G  RPA=0.904
+  [western] 05_Funk1-97-C_solo_B  RPA=0.279
+  [western] 05_Funk1-97-C_solo_e  RPA=0.657
+  [western] 05_Funk2-108-Eb_solo_D  RPA=0.866
+  [western] 05_Funk2-108-Eb_solo_G  RPA=0.961
+  [western] 05_Funk2-108-Eb_solo_B  RPA=0.924
+  [western] 05_Funk2-108-Eb_solo_e  RPA=0.932
+  [western] 05_Funk2-119-G_solo_E  RPA=0.737
+  [western] 05_Funk2-119-G_solo_A  RPA=0.873
+  [western] 05_Funk2-119-G_solo_D  RPA=0.932
+  [western] 05_Funk2-119-G_solo_G  RPA=0.917
+  [western] 05_Funk2-119-G_solo_B  RPA=0.790
+  [western] 05_Funk2-119-G_solo_e  RPA=0.117
+  [western] 05_Funk3-112-C#_solo_D  RPA=0.938
+  [western] 05_Funk3-112-C#_solo_G  RPA=0.967
+  [western] 05_Funk3-112-C#_solo_B  RPA=0.918
+  [western] 05_Funk3-112-C#_solo_e  RPA=0.669
+  [western] 05_Funk3-98-A_solo_A  RPA=0.884
+  [western] 05_Funk3-98-A_solo_D  RPA=0.922
+  [western] 05_Funk3-98-A_solo_G  RPA=0.961
+  [western] 05_Funk3-98-A_solo_B  RPA=0.890
+  [western] 05_Funk3-98-A_solo_e  RPA=0.330
+  [western] 05_Jazz1-130-D_solo_A  RPA=0.822
+  [western] 05_Jazz1-130-D_solo_D  RPA=0.921
+  [western] 05_Jazz1-130-D_solo_G  RPA=0.940
+  [western] 05_Jazz1-130-D_solo_B  RPA=0.934
+  [western] 05_Jazz1-130-D_solo_e  RPA=0.317
+  [western] 05_Jazz1-200-B_solo_E  RPA=0.780
+  [western] 05_Jazz1-200-B_solo_A  RPA=0.907
+  [western] 05_Jazz1-200-B_solo_D  RPA=0.914
+  [western] 05_Jazz1-200-B_solo_G  RPA=0.918
+  [western] 05_Jazz1-200-B_solo_B  RPA=0.922
+  [western] 05_Jazz1-200-B_solo_e  RPA=0.508
+  [western] 05_Jazz2-110-Bb_solo_A  RPA=0.925
+  [western] 05_Jazz2-110-Bb_solo_D  RPA=0.871
+  [western] 05_Jazz2-110-Bb_solo_G  RPA=0.945
+  [western] 05_Jazz2-110-Bb_solo_B  RPA=0.911
+  [western] 05_Jazz2-110-Bb_solo_e  RPA=0.771
+  [western] 05_Jazz2-187-F#_solo_A  RPA=0.951
+  [western] 05_Jazz2-187-F#_solo_D  RPA=0.913
+  [western] 05_Jazz2-187-F#_solo_G  RPA=0.937
+  [western] 05_Jazz2-187-F#_solo_B  RPA=0.901
+  [western] 05_Jazz2-187-F#_solo_e  RPA=0.477
+  [western] 05_Jazz3-137-Eb_solo_A  RPA=0.968
+  [western] 05_Jazz3-137-Eb_solo_D  RPA=0.890
+  [western] 05_Jazz3-137-Eb_solo_G  RPA=0.941
+  [western] 05_Jazz3-137-Eb_solo_B  RPA=0.947
+  [western] 05_Jazz3-137-Eb_solo_e  RPA=0.301
+  [western] 05_Jazz3-150-C_solo_A  RPA=0.930
+  [western] 05_Jazz3-150-C_solo_D  RPA=0.837
+  [western] 05_Jazz3-150-C_solo_G  RPA=0.955
+  [western] 05_Jazz3-150-C_solo_B  RPA=0.926
+  [western] 05_Jazz3-150-C_solo_e  RPA=0.718
+  [western] 05_Rock1-130-A_solo_A  RPA=0.971
+  [western] 05_Rock1-130-A_solo_D  RPA=0.941
+  [western] 05_Rock1-130-A_solo_G  RPA=0.916
+  [western] 05_Rock1-130-A_solo_B  RPA=0.934
+  [western] 05_Rock1-130-A_solo_e  RPA=1.000
+  [western] 05_Rock1-90-C#_solo_E  RPA=0.789
+  [western] 05_Rock1-90-C#_solo_A  RPA=0.832
+  [western] 05_Rock1-90-C#_solo_D  RPA=0.900
+  [western] 05_Rock1-90-C#_solo_G  RPA=0.928
+  [western] 05_Rock1-90-C#_solo_B  RPA=0.946
+  [western] 05_Rock1-90-C#_solo_e  RPA=0.540
+  [western] 05_Rock2-142-D_solo_E  RPA=0.979
+  [western] 05_Rock2-142-D_solo_A  RPA=0.917
+  [western] 05_Rock2-142-D_solo_D  RPA=0.872
+  [western] 05_Rock2-142-D_solo_G  RPA=0.937
+  [western] 05_Rock2-142-D_solo_B  RPA=0.914
+  [western] 05_Rock2-142-D_solo_e  RPA=0.371
+  [western] 05_Rock2-85-F_solo_A  RPA=0.936
+  [western] 05_Rock2-85-F_solo_D  RPA=0.948
+  [western] 05_Rock2-85-F_solo_G  RPA=0.933
+  [western] 05_Rock2-85-F_solo_B  RPA=0.854
+  [western] 05_Rock2-85-F_solo_e  RPA=0.465
+  [western] 05_Rock3-117-Bb_solo_A  RPA=0.938
+  [western] 05_Rock3-117-Bb_solo_D  RPA=0.923
+  [western] 05_Rock3-117-Bb_solo_G  RPA=0.933
+  [western] 05_Rock3-117-Bb_solo_B  RPA=0.838
+  [western] 05_Rock3-117-Bb_solo_e  RPA=0.661
+  [western] 05_Rock3-148-C_solo_D  RPA=0.839
+  [western] 05_Rock3-148-C_solo_G  RPA=0.939
+  [western] 05_Rock3-148-C_solo_B  RPA=0.948
+  [western] 05_Rock3-148-C_solo_e  RPA=0.788
+  [western] 05_SS1-100-C#_solo_E  RPA=0.553
+  [western] 05_SS1-100-C#_solo_A  RPA=0.926
+  [western] 05_SS1-100-C#_solo_D  RPA=0.965
+  [western] 05_SS1-100-C#_solo_G  RPA=0.967
+  [western] 05_SS1-100-C#_solo_B  RPA=0.961
+  [western] 05_SS1-100-C#_solo_e  RPA=0.977
+  [western] 05_SS1-68-E_solo_E  RPA=0.614
+  [western] 05_SS1-68-E_solo_A  RPA=0.837
+  [western] 05_SS1-68-E_solo_D  RPA=0.843
+  [western] 05_SS1-68-E_solo_G  RPA=0.954
+  [western] 05_SS1-68-E_solo_B  RPA=0.941
+  [western] 05_SS1-68-E_solo_e  RPA=0.673
+  [western] 05_SS2-107-Ab_solo_E  RPA=1.000
+  [western] 05_SS2-107-Ab_solo_A  RPA=0.925
+  [western] 05_SS2-107-Ab_solo_D  RPA=0.891
+  [western] 05_SS2-107-Ab_solo_G  RPA=0.958
+  [western] 05_SS2-107-Ab_solo_B  RPA=0.908
+  [western] 05_SS2-107-Ab_solo_e  RPA=0.977
+  [western] 05_SS2-88-F_solo_A  RPA=0.834
+  [western] 05_SS2-88-F_solo_D  RPA=0.935
+  [western] 05_SS2-88-F_solo_G  RPA=0.956
+  [western] 05_SS2-88-F_solo_B  RPA=0.945
+  [western] 05_SS2-88-F_solo_e  RPA=0.786
+  [western] 05_SS3-84-Bb_solo_A  RPA=0.942
+  [western] 05_SS3-84-Bb_solo_D  RPA=0.906
+  [western] 05_SS3-84-Bb_solo_G  RPA=0.919
+  [western] 05_SS3-84-Bb_solo_B  RPA=0.848
+  [western] 05_SS3-84-Bb_solo_e  RPA=0.380
+  [western] 05_SS3-98-C_solo_A  RPA=0.863
+  [western] 05_SS3-98-C_solo_D  RPA=0.967
+  [western] 05_SS3-98-C_solo_G  RPA=0.940
+  [western] 05_SS3-98-C_solo_B  RPA=0.690
+  [western] 05_SS3-98-C_solo_e  RPA=0.709
+
+--- crepe ---
+  [carnatic] 0_Dorakuna  RPA=nan
+  [carnatic] 1_Ganamuda_Panam  RPA=nan
+  [carnatic] 2_Chidambara_Natarajam  RPA=nan
+  [carnatic] 3_Vandalum  RPA=nan
+  [carnatic] 4_Thiruveragane_Saveri_Varnam  RPA=nan
+  [carnatic] 5_Rama_Daya_Judave  RPA=nan
+  [carnatic] 6_Neene_Ballideno  RPA=nan
+  [carnatic] 7_Paragu_Matada  RPA=nan
+  [carnatic] 8_Palisomma_Muddu_Sarade  RPA=nan
+  [carnatic] 9_Ramakrishnaru_Manege  RPA=nan
+  [carnatic] 10_Bandadella_Barali  RPA=nan
+  [carnatic] 11_Tamburi_Mitidava  RPA=nan
+  [carnatic] 12_Sharanu_Janakana  RPA=nan
+  [carnatic] 13_Thillana_Purnachandrika  RPA=0.034
+  [carnatic] 14_Angakaram  RPA=0.125
+  [carnatic] 15_Samajavarada  RPA=0.110
+  [carnatic] 16_Evarura  RPA=0.087
+  [carnatic] 17_Eranapai  RPA=0.123
+  [carnatic] 18_Parama_Purusham  RPA=0.171
+  [carnatic] 19_Marubari  RPA=0.195
+  [carnatic] 20_Aparadhamula  RPA=0.117
+  [carnatic] 21_Sadabalarupapi_Shlokam  RPA=0.570
+  [carnatic] 22_Hiranmayeem_Lakshmeem  RPA=nan
+  [carnatic] 23_Niraimadi_Mugam_Thiruppugazh  RPA=nan
+  [carnatic] 24_Evvari_Bodhana  RPA=nan
+  [carnatic] 25_Sanchara_Dhadhara  RPA=nan
+  [carnatic] 26_Lokavana_Chatura  RPA=nan
+  [carnatic] 27_Idhuthaano_Thillai_Sthalam  RPA=nan
+  [carnatic] 28_Amba_Kamakshi  RPA=nan
+  [carnatic] 29_Vitthala_Salaho_Swamy  RPA=nan
+  [carnatic] 30_Pavamana_Suthudu_Mangalam  RPA=nan
+  [carnatic] 31_Karuna_Ela_Gante  RPA=nan
+  [carnatic] 32_Gopanandana  RPA=nan
+  [carnatic] 33_Entara_Nitana  RPA=nan
+  [carnatic] 34_Teerthakarayinile  RPA=nan
+  [carnatic] 35_Thillana_Dhanashri  RPA=nan
+  [carnatic] 36_Ozhukkam_Uyirinum  RPA=nan
+  [carnatic] 37_Undan_Paada_Pankayam  RPA=nan
+  [carnatic] 38_Raagam_Thaanam_Pallavi  RPA=nan
+  [carnatic] 39_Pavamana_Suthudu  RPA=nan
+  [carnatic] 40_Kamakshi  RPA=nan
+  [carnatic] 41_Soundararajam  RPA=nan
+  [carnatic] 42_Payum_Oli_Nee_Yenakku  RPA=nan
+  [carnatic] 43_Shatre_Vilagi_Irum  RPA=nan
+  [carnatic] 44_Maname_Ramanai_Paada  RPA=nan
+  [carnatic] 45_Apparama_Bhakti  RPA=nan
