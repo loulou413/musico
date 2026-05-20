@@ -1,4 +1,4 @@
-"""Cross-domain aggregation: read Clara's and Louis's per-condition result
+"""Cross-domain aggregation: read per-condition rhythm and pitch result
 files from disk and stitch them into one unified table.
 
 This module does NOT retrain or re-run any model. Its job is purely to:

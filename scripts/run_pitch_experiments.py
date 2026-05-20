@@ -1,4 +1,4 @@
-"""Pitch estimation experiments — Louis's task.
+"""Pitch estimation experiments.
 
 Evaluates CREPE (and pyin baseline) on Saraga (Carnatic) and GuitarSet (Western).
 GuitarSet provides truly monophonic per-string recordings — the right test bed for

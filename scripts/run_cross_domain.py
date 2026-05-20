@@ -1,7 +1,7 @@
-"""Cross-domain aggregation — Cassio's task.
+"""Cross-domain aggregation.
 
-Reads the per-condition result files produced by Clara (rhythm) and Louis
-(pitch) and stitches them into a single unified summary table covering
+Reads the per-condition result files produced by the rhythm and pitch
+pipelines and stitches them into a single unified summary table covering
 all 3 conditions (A / B / C) × 2 domains (Western / Carnatic) for each
 task.
 

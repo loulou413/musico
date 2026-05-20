@@ -1,4 +1,4 @@
-"""Beat tracking experiments — Clara's task.
+"""Beat tracking experiments.
 
 Evaluates madmom DBNBeatTracker on Saraga (Carnatic) and GTZAN (Western).
 Produces per-track results CSVs and summary plots.

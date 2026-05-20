@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pitch estimation experiments — Louis's task (Conditions A, B, C)
+# Pitch estimation experiments (Conditions A, B, C)
 # Run from the project root: ./run_pitch.sh
 set -euo pipefail
 cd "$(dirname "$0")"
