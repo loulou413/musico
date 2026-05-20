@@ -42,7 +42,7 @@ def estimate_pitch_crepe(
     import torch
     device = "cuda" if torch.cuda.is_available() else "cpu"
     audio_tensor = torch.tensor(audio, dtype=torch.float32).unsqueeze(0)
-    hop_length = int(sr * 0.01)  # 10 ms hops to match original CREPE
+    hop_length = int(sr * 0.01)
     freqs, conf = torchcrepe.predict(
         audio_tensor,
         sr,
@@ -100,12 +100,10 @@ def estimate_pitch_carnatic_model(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 
-    # Resample to 16 kHz
     audio16 = _resample(audio, sr)
     half = FRAME_LEN // 2
     audio_padded = np.pad(audio16, (half, half))
 
-    # Frame the signal
     starts = np.arange(0, len(audio16), HOP_SAMPLES)
     times = starts / TARGET_SR
 
@@ -126,15 +124,14 @@ def estimate_pitch_carnatic_model(
     if frames_batch:
         activations.append(_run_batch(model, frames_batch, device))
 
-    act_all = np.concatenate(activations, axis=0)   # (T, N_BINS)
-    confidence = act_all.max(axis=1)                 # peak activation as confidence
+    act_all = np.concatenate(activations, axis=0)
+    confidence = act_all.max(axis=1)
 
     if viterbi:
         freqs = activation_to_hz_viterbi(act_all)
     else:
         freqs = np.array([activation_to_hz(a) for a in act_all])
 
-    # Silence low-confidence frames
     freqs[confidence < confidence_threshold] = 0.0
 
     return times[: len(freqs)], freqs, confidence

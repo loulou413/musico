@@ -11,10 +11,8 @@ import mir_eval
 from tqdm import tqdm
 
 from .model import CREPELike, activation_to_hz
-from .dataset import SaragaPitchDataset, TARGET_SR, HOP_SAMPLES, FRAME_LEN
+from .dataset import SaragaPitchDataset, PITCH_BINS_HZ, TARGET_SR, HOP_SAMPLES, FRAME_LEN
 
-
-# ── Loss ──────────────────────────────────────────────────────────────────────
 
 def pitch_loss(
     pred: torch.Tensor,          # (B, 360) sigmoid outputs
@@ -26,13 +24,10 @@ def pitch_loss(
     Unvoiced frames contribute nothing to the pitch loss; the model learns
     to output low activations for them naturally via the lack of signal.
     """
-    bce = nn.functional.binary_cross_entropy(pred, label, reduction="none")  # (B, 360)
-    # mask unvoiced frames
-    mask = voiced.unsqueeze(1)                                                 # (B, 1)
+    bce = nn.functional.binary_cross_entropy(pred, label, reduction="none")
+    mask = voiced.unsqueeze(1)
     return (bce * mask).sum() / (mask.sum() * 360 + 1e-8)
 
-
-# ── Validation ────────────────────────────────────────────────────────────────
 
 @torch.no_grad()
 def validate(
@@ -56,9 +51,7 @@ def validate(
         pred_np = pred.cpu().numpy()
         for i in range(frames.shape[0]):
             est_hz = activation_to_hz(pred_np[i])
-            ref_hz = float((labels[i].cpu() * torch.tensor(
-                __import__('src.pitch.dataset', fromlist=['PITCH_BINS_HZ']).PITCH_BINS_HZ,
-            )).sum())
+            ref_hz = float((labels[i].cpu().numpy() * PITCH_BINS_HZ).sum())
             is_voiced = voiced[i].item() > 0.5
 
             all_ref_voiced.append(is_voiced)
@@ -66,7 +59,6 @@ def validate(
             all_ref_hz.append(ref_hz if is_voiced else 0.0)
             all_est_hz.append(est_hz)
 
-    # mir_eval per-frame melody scores (wrap as single "track" of frames)
     ref_arr = np.array(all_ref_hz)
     est_arr = np.array(all_est_hz)
     times = np.arange(len(ref_arr)) * (HOP_SAMPLES / TARGET_SR)
@@ -83,8 +75,6 @@ def validate(
         "overall_accuracy": oa,
     }
 
-
-# ── Training loop ─────────────────────────────────────────────────────────────
 
 def train(
     model: CREPELike,
@@ -173,8 +163,6 @@ def train(
     print(f"Checkpoint saved to {out / 'best_model.pt'}")
     return history
 
-
-# ── Load checkpoint ────────────────────────────────────────────────────────────
 
 def load_model(checkpoint_path: str, **model_kwargs) -> CREPELike:
     model = CREPELike(**model_kwargs)

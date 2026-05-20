@@ -25,7 +25,6 @@ def compute_mel(
         y=audio, sr=sr, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels
     )
     log_mel = librosa.power_to_db(mel, ref=np.max)
-    # Normalise to [0, 1]
     lo, hi = log_mel.min(), log_mel.max()
     if hi > lo:
         log_mel = (log_mel - lo) / (hi - lo)
@@ -52,7 +51,6 @@ def beats_to_frame_labels(
         labels[frame_idx] = 1.0
         return labels
 
-    # Gaussian smearing ±2σ around each beat frame
     half = int(np.ceil(2 * gaussian_sigma))
     t = np.arange(-half, half + 1)
     kernel = np.exp(-0.5 * (t / gaussian_sigma) ** 2)
@@ -100,7 +98,6 @@ class SaragaBeatDataset(Dataset):
                 track.beat_times, n_frames, track.sr, hop_length, gaussian_sigma
             )
 
-            # Slice into non-overlapping segments; discard the last partial one
             for start in range(0, n_frames - seq_len + 1, seq_len):
                 mel_seg = mel[:, start: start + seq_len]        # (n_mels, seq_len)
                 lbl_seg = labels[start: start + seq_len]         # (seq_len,)

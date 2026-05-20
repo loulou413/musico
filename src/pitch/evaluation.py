@@ -92,8 +92,6 @@ def aggregate_results(results: list[PitchEvalResult]) -> dict:
     return agg
 
 
-# ── helpers ──────────────────────────────────────────────────────────────────
-
 def _align_to_ref(
     ref_times: np.ndarray,
     est_times: np.ndarray,

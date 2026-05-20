@@ -104,7 +104,6 @@ class CREPELike(nn.Module):
         super().__init__()
         self.n_filters_scale = n_filters_scale
 
-        # Track length flowing through the network. Starts at 1024.
         cur_len = 1024
         in_ch = 1
         blocks = []
@@ -115,36 +114,25 @@ class CREPELike(nn.Module):
                 kernel=kernel, stride=stride,
                 in_len=cur_len, dropout=dropout,
             ))
-            # post-conv length = ceil(cur_len / stride); post-pool = floor / 2
             cur_len = (cur_len + stride - 1) // stride
             cur_len = cur_len // 2
             in_ch = out_ch
         self.blocks = nn.ModuleList(blocks)
-
-        # After 6 blocks, feature shape is (B, in_ch=last_filters, cur_len, 1)
-        # CREPE transposes (Permute (3,1,2)) → (B, 1, last_filters, cur_len) before flatten,
-        # but since we just flatten everything, ordering must match to use TF weights.
-        # We emulate TF's Permute((3,1,2)) + Flatten ordering in forward().
         self.flatten_size = in_ch * cur_len
         self.classifier = nn.Linear(self.flatten_size, N_BINS)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """x: (B, 1, 1024) → (B, 360)"""
-        # Reshape (B, 1, 1024) → (B, 1, 1024, 1) to match Keras's (H=1024, W=1, C=1)
         x = x.unsqueeze(-1)
         for blk in self.blocks:
             x = blk(x)
-        # x: (B, C, H, W=1).  Keras Permute(dims=(2,1,3)) reorders (H,W,C) → (W,H,C),
-        # then row-major Flatten. With W=1 this is equivalent to flattening as
-        # [h0_c0, h0_c1, ..., h0_cN, h1_c0, ...]  — i.e. H is the outer index, C inner.
-        # In PyTorch (B,C,H,W) we must transpose to (B,H,W,C) first.
-        x = x.permute(0, 2, 3, 1).contiguous()  # (B, H, W, C)
-        x = x.view(x.size(0), -1)               # row-major: H outer, W middle, C inner
+        # Emulate Keras Permute((3,1,2)) + Flatten: transpose to (B,H,W,C) before flattening
+        # so weight layout matches the converted CREPE checkpoint.
+        x = x.permute(0, 2, 3, 1).contiguous()
+        x = x.view(x.size(0), -1)
         x = self.classifier(x)
         return torch.sigmoid(x)
 
-
-# ── Inference helpers ─────────────────────────────────────────────────────────
 
 def activation_to_hz(activation: np.ndarray) -> float:
     """Weighted mean of pitch bins — smoother than argmax for gamakas."""

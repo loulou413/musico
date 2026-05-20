@@ -49,19 +49,14 @@ class BeatActivationModel(nn.Module):
     ):
         super().__init__()
 
-        # --- CNN front-end: compress mel bands into a feature vector per frame ---
         cnn_in = n_mels
         cnn_blocks = []
         for out_ch in cnn_channels:
             cnn_blocks.append(ConvBlock(cnn_in, out_ch, kernel=3, dropout=dropout))
             cnn_in = out_ch
         self.cnn = nn.Sequential(*cnn_blocks)
+        self.pool = nn.AdaptiveAvgPool1d(1)
 
-        # After CNN the "frequency" dimension is the channel dimension → average pool
-        # so each frame becomes a cnn_channels[-1]-dim vector
-        self.pool = nn.AdaptiveAvgPool1d(1)  # used per-frame via a reshape trick below
-
-        # --- BiLSTM temporal model ---
         self.lstm = nn.LSTM(
             input_size=cnn_channels[-1],
             hidden_size=lstm_hidden,
@@ -71,31 +66,17 @@ class BeatActivationModel(nn.Module):
             dropout=dropout if lstm_layers > 1 else 0.0,
         )
 
-        # --- Output head ---
         self.head = nn.Sequential(
             nn.Linear(lstm_hidden * 2, 1),
             nn.Sigmoid(),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """
-        x: (B, n_mels, T)
-        returns: (B, T)  beat activation probabilities
-        """
-        B, M, T = x.shape
+        feat = self.cnn(x)                   # (B, C, T)
+        feat = feat.permute(0, 2, 1)         # (B, T, C)
+        lstm_out, _ = self.lstm(feat)        # (B, T, 2*lstm_hidden)
+        return self.head(lstm_out).squeeze(-1)
 
-        # CNN operates over frequency dimension for each time frame.
-        # Treat each frame independently: reshape → (B*T, n_mels, 1) → CNN → pool
-        # Equivalent trick: swap axes so CNN sees (B, n_mels, T) and processes time.
-        feat = self.cnn(x)                    # (B, C, T)  C = cnn_channels[-1]
-        feat = feat.permute(0, 2, 1)          # (B, T, C)
-
-        lstm_out, _ = self.lstm(feat)         # (B, T, 2*lstm_hidden)
-        act = self.head(lstm_out).squeeze(-1) # (B, T)
-        return act
-
-
-# ── Inference helper ─────────────────────────────────────────────────────────
 
 def activation_to_beat_times(
     activation: torch.Tensor,

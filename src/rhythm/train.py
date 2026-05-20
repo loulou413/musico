@@ -13,15 +13,11 @@ from .model import BeatActivationModel, activation_to_beat_times
 from .dataset import SaragaBeatDataset
 
 
-# ── Loss ─────────────────────────────────────────────────────────────────────
-
 def beat_loss(pred: torch.Tensor, target: torch.Tensor, pos_weight: float = 10.0) -> torch.Tensor:
     """Weighted BCE — beats are rare (~5 % of frames), so upweight positives."""
     weight = torch.where(target > 0.5, torch.tensor(pos_weight, device=pred.device), torch.ones(1, device=pred.device))
     return nn.functional.binary_cross_entropy(pred, target, weight=weight)
 
-
-# ── Validation ────────────────────────────────────────────────────────────────
 
 @torch.no_grad()
 def validate(
@@ -41,7 +37,6 @@ def validate(
         total_loss += beat_loss(pred, labels).item()
         n_batches += 1
 
-        # Compute beat F-measure per segment
         for i in range(mel.shape[0]):
             ref_times = _labels_to_times(labels[i].cpu().numpy(), hop_length, sr)
             est_times = activation_to_beat_times(pred[i], sr=sr, hop_length=hop_length)
@@ -54,8 +49,6 @@ def validate(
         "f_measure": float(np.mean(f_measures)) if f_measures else 0.0,
     }
 
-
-# ── Training loop ─────────────────────────────────────────────────────────────
 
 def train(
     model: BeatActivationModel,
@@ -71,10 +64,6 @@ def train(
     hop_length: int = 512,
     num_workers: int = 0,
 ) -> dict:
-    """Train `model` and save the best checkpoint to `output_dir`.
-
-    Returns a dict with training history.
-    """
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
 
@@ -145,8 +134,6 @@ def train(
     return history
 
 
-# ── Load checkpoint ───────────────────────────────────────────────────────────
-
 def load_model(checkpoint_path: str, **model_kwargs) -> BeatActivationModel:
     model = BeatActivationModel(**model_kwargs)
     state = torch.load(checkpoint_path, map_location="cpu")
@@ -154,8 +141,6 @@ def load_model(checkpoint_path: str, **model_kwargs) -> BeatActivationModel:
     model.eval()
     return model
 
-
-# ── helper ────────────────────────────────────────────────────────────────────
 
 def _labels_to_times(labels: np.ndarray, hop_length: int, sr: int) -> np.ndarray:
     """Convert binary frame label array back to seconds (for mir_eval)."""

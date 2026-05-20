@@ -5,7 +5,6 @@ import librosa
 import yaml
 from pathlib import Path
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 def load_config(config_path: str = "config/config.yaml") -> dict:
@@ -20,11 +19,11 @@ class AudioTrack:
     sr: int
     domain: str  # "carnatic" or "western"
     # Optional ground-truth annotations
-    beat_times: Optional[np.ndarray] = None       # seconds
-    downbeat_times: Optional[np.ndarray] = None   # seconds (sam / downbeat)
-    f0_times: Optional[np.ndarray] = None         # seconds
-    f0_freqs: Optional[np.ndarray] = None         # Hz (0 = unvoiced)
-    f0_confidence: Optional[np.ndarray] = None
+    beat_times: np.ndarray | None = None       # seconds
+    downbeat_times: np.ndarray | None = None   # seconds (sam / downbeat)
+    f0_times: np.ndarray | None = None         # seconds
+    f0_freqs: np.ndarray | None = None         # Hz (0 = unvoiced)
+    f0_confidence: np.ndarray | None = None
     metadata: dict = field(default_factory=dict)
 
 

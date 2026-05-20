@@ -15,7 +15,6 @@ from torch.utils.data import Dataset
 
 from src.preprocessing.common import AudioTrack
 
-# ── CREPE-compatible frequency bins ──────────────────────────────────────────
 N_BINS = 360
 PITCH_BINS_HZ = 440.0 * 2.0 ** ((np.arange(N_BINS) * 20 - 6900) / 1200.0)
 PITCH_BINS_CENTS = 1200.0 * np.log2(PITCH_BINS_HZ / 10.0)   # cents re 10 Hz
